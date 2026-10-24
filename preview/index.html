@@ -1086,11 +1086,15 @@
       const grid = document.getElementById('productsGrid');
       grid.innerHTML = '';
 
-      const query = document.getElementById('searchInput').value.toLowerCase();
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
 
       const filtered = products.filter(p => {
-        const matchesCategory = (currentCategory === 'all' || p.category === currentCategory);
-        const matchesQuery = p.title.toLowerCase().includes(query) || p.vendor.toLowerCase().includes(query);
+        const matchesCategory = (query !== '' || currentCategory === 'all' || p.category === currentCategory);
+        const matchesQuery = query === '' || 
+          p.title.toLowerCase().includes(query) || 
+          p.vendor.toLowerCase().includes(query) || 
+          p.desc.toLowerCase().includes(query) ||
+          p.sku.toLowerCase().includes(query);
         return matchesCategory && matchesQuery;
       });
 
