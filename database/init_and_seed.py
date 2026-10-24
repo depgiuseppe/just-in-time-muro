@@ -85,18 +85,19 @@ def init_database():
                 req_ship = 1 if row["Variant Requires Shipping"].upper() == "TRUE" else 0
                 condition = "Ricondizionato Grado A+" if "ricondizionato" in tags_str.lower() else "Nuovo"
                 warranty = 12 if "ricondizionato" in tags_str.lower() else 24
+                is_featured = 1 if ("vetrina" in tags_str.lower() or "evidenza" in tags_str.lower() or "outlet" in tags_str.lower() or "promo" in tags_str.lower()) else 0
                 img_url = row["Image Src"]
 
                 cursor.execute("""
                     INSERT INTO products (
                         category_id, handle, title, description_html, vendor,
                         product_type, base_price, compare_at_price, is_available_in_store,
-                        lead_time_hours, requires_shipping, condition, warranty_months, image_url
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        is_featured, lead_time_hours, requires_shipping, condition, warranty_months, image_url
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     cat_id, handle, title, body_html, vendor,
                     ptype, base_price, comp_price, is_avail,
-                    lead_time, req_ship, condition, warranty, img_url
+                    is_featured, lead_time, req_ship, condition, warranty, img_url
                 ))
                 prod_id = cursor.lastrowid
                 products_seen[handle] = prod_id

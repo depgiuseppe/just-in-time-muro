@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS products (
     base_price DECIMAL(10, 2) NOT NULL,
     compare_at_price DECIMAL(10, 2),
     is_available_in_store INTEGER DEFAULT 1,  -- 1 = disponibile subito a Muro Leccese
+    is_featured INTEGER DEFAULT 0,            -- 1 = articolo in vetrina / evidenza in home
     lead_time_hours INTEGER DEFAULT 2,         -- ore per ritiro (2h, 24h, 48h)
     requires_shipping INTEGER DEFAULT 1,       -- 0 per servizi digitali e riparazioni
     condition TEXT DEFAULT 'Nuovo',            -- 'Nuovo', 'Ricondizionato Grado A+'

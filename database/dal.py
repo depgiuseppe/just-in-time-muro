@@ -58,7 +58,7 @@ class JustInTimeDAL:
                 wildcard = f"%{query}%"
                 params.extend([wildcard, wildcard, wildcard, wildcard])
 
-            sql += " GROUP BY p.id ORDER BY p.id ASC"
+            sql += " GROUP BY p.id ORDER BY p.is_featured DESC, p.id ASC"
 
             rows = conn.execute(sql, params).fetchall()
             products = []

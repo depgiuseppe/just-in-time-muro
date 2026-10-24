@@ -1094,8 +1094,8 @@
   </div>
 
   <script>
-    // 15 Pilot Products data aligned with Shopify CSV
-    const products = [
+    // 15 Pilot Products data (offline fallback, sincronizzato con SQLite / CSV)
+    let products = [
       {
         id: 1,
         title: "Notebook HP 250 G9 15.6'' Intel Core i5 16GB RAM 512GB SSD Windows 11 Pro",
@@ -1608,8 +1608,48 @@
       location.reload();
     }
 
+    async function loadProductsFromApi() {
+      try {
+        const res = await fetch('/api/products');
+        if (res.ok) {
+          const dbProducts = await res.json();
+          if (Array.isArray(dbProducts) && dbProducts.length > 0) {
+            products = dbProducts.map(p => {
+              const primaryVariant = (p.variants && p.variants.length > 0) ? p.variants[0] : {};
+              const catCode = p.category_code ? p.category_code.split('-')[0] : 'informatica';
+              const isService = catCode === 'servizi';
+              const isOutlet = (p.tags_list && p.tags_list.includes('outlet'));
+              
+              let badge = isOutlet ? 'Occasione Outlet' : isService ? 'Servizio Tecnico' : (p.is_featured ? 'In Evidenza' : '');
+              let badgeClass = isOutlet ? 'outlet' : isService ? 'service' : '';
+
+              return {
+                id: p.id,
+                title: p.title,
+                category: catCode,
+                vendor: p.vendor || 'Just in Time',
+                price: parseFloat(primaryVariant.price || p.min_price || p.base_price || 0),
+                comparePrice: (primaryVariant.compare_at_price || p.compare_at_price) ? parseFloat(primaryVariant.compare_at_price || p.compare_at_price) : null,
+                badge: badge,
+                badgeClass: badgeClass,
+                avail: p.is_available_in_store ? 'Disponibile subito in sede' : 'Ordinabile in 24/48h',
+                availClass: p.is_available_in_store ? 'avail-now' : 'avail-order',
+                img: p.image_url || 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600',
+                sku: primaryVariant.sku || p.handle,
+                desc: p.description_html ? p.description_html.replace(/<[^>]*>?/gm, '').slice(0, 140) + '...' : ''
+              };
+            });
+            renderProducts();
+          }
+        }
+      } catch (e) {
+        // Fallback su prodotti statici
+      }
+    }
+
     // Initial render
     renderProducts();
+    loadProductsFromApi();
   </script>
 </body>
 </html>
