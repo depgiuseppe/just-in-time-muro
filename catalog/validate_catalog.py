@@ -119,9 +119,17 @@ def validate_csv(csv_path):
         if status not in ('active', 'draft', 'archived'):
             raise ValueError(f"Row {idx}: Invalid Status '{status}'")
 
-        # Image URL
-        if not img.startswith(('http://', 'https://')):
-            raise ValueError(f"Row {idx}: Invalid Image Src '{img}'")
+        # Image URL / Local Asset verification
+        if img.startswith(('http://', 'https://')):
+            pass
+        elif img.startswith('assets/'):
+            # Verifica esistenza fisica del file immagine locale
+            base_project_dir = os.path.dirname(os.path.dirname(os.path.abspath(csv_path)))
+            local_img_path = os.path.join(base_project_dir, img)
+            if not os.path.isfile(local_img_path):
+                raise ValueError(f"Row {idx}: Local Image Src '{img}' not found on disk at {local_img_path}")
+        else:
+            raise ValueError(f"Row {idx}: Invalid Image Src '{img}' (must be http(s) URL or local assets/ path)")
 
         if barcode:
             barcode_list.append((sku, barcode))

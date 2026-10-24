@@ -4,3 +4,5 @@ __pycache__/
 roster.json
 roster-backups/
 hive/
+worktrees/
+database/backups/

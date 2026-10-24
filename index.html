@@ -833,6 +833,9 @@
       </div>
 
       <div class="header-actions">
+        <button onclick="openRepairTrackerModal()" style="padding: 8px 14px; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid var(--border-color); background: #fff; cursor: pointer; color: var(--primary); display: flex; align-items: center; gap: 6px;">
+          🔬 Stato Riparazione
+        </button>
         <div class="location-pill">
           📍 Via Corsica 151
         </div>
@@ -1006,6 +1009,26 @@
     </div>
   </footer>
 
+  <!-- Modal Verifica Riparazione Laboratorio -->
+  <div class="modal-overlay" id="repairModalOverlay">
+    <div class="checkout-modal" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3>🔬 Verifica Stato Riparazione Lab</h3>
+        <button class="modal-close" onclick="closeRepairTrackerModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 24px;">
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+          Inserisci il numero di scheda rilasciato al banco (es. <code>LAB-2026-0012</code>) per verificare in tempo reale lo stato del tuo computer o dispositivo.
+        </p>
+        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+          <input type="text" id="trackTicketInput" placeholder="Codice Scheda (es. LAB-2026-0012)" style="flex: 1; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-weight: bold; font-family: monospace; font-size: 15px; text-transform: uppercase;">
+          <button class="btn-modal-confirm" onclick="trackRepairTicket()" style="white-space: nowrap; padding: 0 18px;">Cerca</button>
+        </div>
+        <div id="repairTrackerResult"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal Checkout & Pagamento -->
   <div class="modal-overlay" id="checkoutModalOverlay">
     <div class="checkout-modal">
@@ -1107,7 +1130,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600",
+        img: "assets/images/prodotti/notebook-hp-250-g9-i5-16gb.jpg",
         sku: "JIT-HP250-BASE",
         desc: "Notebook aziendale ideale per lavoro, scuola e produttività. Display Full HD antiriflesso, Intel i5 12a gen, 16GB RAM e SSD 512GB."
       },
@@ -1122,7 +1145,7 @@
         badgeClass: "outlet",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600",
+        img: "assets/images/prodotti/lenovo-thinkpad-t480-ricondizionato.jpg",
         sku: "JIT-THINKPAD-T480",
         desc: "Robustezza militare, testato in laboratorio con 25 controlli. Tastiera retroilluminata e garanzia 12 mesi Just in Time."
       },
@@ -1137,7 +1160,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600",
+        img: "assets/images/prodotti/kingston-a400-ssd-480gb.jpg",
         sku: "JIT-KNG-A400-480",
         desc: "Fino a 10 volte più veloce di un hard disk tradizionale. Installabile su PC fisso o portatile nel nostro laboratorio."
       },
@@ -1152,7 +1175,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600",
+        img: "assets/images/prodotti/kit-wireless-logitech-mk270.jpg",
         sku: "JIT-LOGI-MK270",
         desc: "Connessione wireless a 2.4 GHz senza ritardi, ricevitore nano USB plug-and-play e batterie incluse."
       },
@@ -1167,7 +1190,7 @@
         badgeClass: "",
         avail: "Ordinabile in 24h",
         availClass: "avail-order",
-        img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600",
+        img: "assets/images/prodotti/router-tplink-archer-ax12-wifi6.jpg",
         sku: "JIT-TPL-AX12",
         desc: "Tecnologia Wi-Fi 6 di ultima generazione, velocità Gigabit e 4 antenne esterne ad alto guadagno."
       },
@@ -1182,7 +1205,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600",
+        img: "assets/images/prodotti/epson-603xl-nero-originale.jpg",
         sku: "JIT-EPS-603XL-BK",
         desc: "Cartuccia originale Epson ad alta capacità per serie Expression Home e WorkForce."
       },
@@ -1197,7 +1220,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?w=600",
+        img: "assets/images/prodotti/toner-compatibile-hp-106a.jpg",
         sku: "JIT-TON-HP106A-COMP",
         desc: "Resa fino a 1.000 pagine. Chip incluso e garanzia di sostituzione diretta in negozio."
       },
@@ -1212,7 +1235,7 @@
         badgeClass: "",
         avail: "Ordinabile in 24h",
         availClass: "avail-order",
-        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600",
+        img: "assets/images/prodotti/stampante-canon-pixma-ts3350.jpg",
         sku: "JIT-CAN-TS3350",
         desc: "Multifunzione compatta con stampa da smartphone, display LCD e cartucce starter incluse."
       },
@@ -1227,7 +1250,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600",
+        img: "assets/images/prodotti/risme-carta-a4-navigator-80g.jpg",
         sku: "JIT-NAV-A4-BOX5",
         desc: "Punto di bianco eccezionale, nessun inceppamento e certificazione ecologica FSC."
       },
@@ -1242,7 +1265,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600",
+        img: "assets/images/prodotti/zaino-eastpak-padded-pakr-black.jpg",
         sku: "JIT-EAST-PAK-BLK",
         desc: "Iconico zaino Eastpak in tessuto balistico super resistente, spallacci ergonomici imbottiti."
       },
@@ -1257,7 +1280,7 @@
         badgeClass: "",
         avail: "Disponibile subito in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=600",
+        img: "assets/images/prodotti/set-penne-pilot-g2-07-gel.jpg",
         sku: "JIT-PIL-G2-TRIO",
         desc: "Inchiostro gel fluido a rapida asciugatura con impugnatura in gomma ergonomica."
       },
@@ -1272,7 +1295,7 @@
         badgeClass: "service",
         avail: "Prenotabile in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600",
+        img: "assets/images/prodotti/servizio-diagnosi-riparazione-pc.jpg",
         sku: "JIT-SRV-DIAG",
         desc: "Diagnosi completa in laboratorio entro 24 ore. L'importo viene scalato dall'eventuale riparazione."
       },
@@ -1287,7 +1310,7 @@
         badgeClass: "service",
         avail: "Prenotabile in sede",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600",
+        img: "assets/images/prodotti/servizio-formattazione-windows.jpg",
         sku: "JIT-SRV-FORMAT-STD",
         desc: "Backup preventivo dati, reinstallazione pulita Windows, driver proprietari, suite ufficio e antivirus."
       },
@@ -1302,7 +1325,7 @@
         badgeClass: "service",
         avail: "Pronto in 24h",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600",
+        img: "assets/images/prodotti/servizio-clonazione-upgrade-ssd.jpg",
         sku: "JIT-SRV-UPGRADE-SSD",
         desc: "Include SSD Kingston 480GB, manodopera di montaggio e clonazione esatta di programmi e file."
       },
@@ -1317,7 +1340,7 @@
         badgeClass: "service",
         avail: "Aperto a Muro Leccese",
         availClass: "avail-now",
-        img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600",
+        img: "assets/images/prodotti/prenotazione-libri-scolastici.jpg",
         sku: "JIT-SRV-LIBRI-TESTO",
         desc: "Ordina l'elenco libri per le scuole del Salento. Servizio copertine Colibrì su richiesta e pagamento al ritiro."
       }
@@ -1634,7 +1657,7 @@
                 badgeClass: badgeClass,
                 avail: p.is_available_in_store ? 'Disponibile subito in sede' : 'Ordinabile in 24/48h',
                 availClass: p.is_available_in_store ? 'avail-now' : 'avail-order',
-                img: p.image_url || 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600',
+                img: p.image_url || 'assets/images/prodotti/notebook-hp-250-g9-i5-16gb.jpg',
                 sku: primaryVariant.sku || p.handle,
                 desc: p.description_html ? p.description_html.replace(/<[^>]*>?/gm, '').slice(0, 140) + '...' : ''
               };
@@ -1644,6 +1667,62 @@
         }
       } catch (e) {
         // Fallback su prodotti statici
+      }
+    }
+
+    function openRepairTrackerModal() {
+      document.getElementById('repairModalOverlay').classList.add('active');
+    }
+
+    function closeRepairTrackerModal() {
+      document.getElementById('repairModalOverlay').classList.remove('active');
+    }
+
+    async function trackRepairTicket() {
+      const code = document.getElementById('trackTicketInput').value.trim();
+      const resDiv = document.getElementById('repairTrackerResult');
+      if (!code) {
+        resDiv.innerHTML = '<div style="color: #dc2626; font-size: 13px;">Inserisci un codice valido.</div>';
+        return;
+      }
+      resDiv.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 15px;">Ricerca scheda nei registri di laboratorio...</div>';
+      try {
+        const res = await fetch(`/api/repairs/${encodeURIComponent(code)}`);
+        if (res.ok) {
+          const ticket = await res.json();
+          const statusLabels = {
+            'received': '📥 Preso in Carico al Banco',
+            'diagnosing': '🔬 Diagnosi Tecnica in Corso',
+            'waiting_approval': '⏳ In Attesa Approvazione Preventivo',
+            'in_repair': '🛠️ In Riparazione / Test Hardware',
+            'ready_for_pickup': '✅ PRONTO PER IL RITIRO AL BANCO!',
+            'delivered': '🏁 Consegnato al Cliente',
+            'unrepairable': '❌ Non Riparabile'
+          };
+          const isReady = ticket.status === 'ready_for_pickup';
+          const label = statusLabels[ticket.status] || ticket.status;
+          resDiv.innerHTML = `
+            <div style="background: ${isReady ? '#ecfdf5' : '#f8fafc'}; border: 1px solid ${isReady ? '#10b981' : '#e2e8f0'}; border-radius: 12px; padding: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-weight: 900; font-size: 16px; color: var(--primary);">${ticket.ticket_number}</span>
+                <span style="background: ${isReady ? '#059669' : '#0F4C81'}; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 800;">${label}</span>
+              </div>
+              <div style="font-size: 14px; margin-bottom: 6px;"><strong>Dispositivo:</strong> ${ticket.brand_model} (${ticket.device_type})</div>
+              <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Problema:</strong> ${ticket.reported_issue}</div>
+              ${ticket.diagnosis_notes ? `<div style="font-size: 13px; background: #fff; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1; margin-bottom: 12px;"><strong>Note Tecniche:</strong> ${ticket.diagnosis_notes}</div>` : ''}
+              ${isReady ? `<div style="background: #10b981; color: #fff; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 12px;">Puoi ritirare il tuo dispositivo in Via Corsica 151 a Muro Leccese negli orari di negozio!</div>` : ''}
+              <div style="text-align: center; margin-top: 10px;">
+                <a href="https://wa.me/393206025789?text=Ciao%20Andrea,%20chiedo%20info%20sulla%20riparazione%20${encodeURIComponent(ticket.ticket_number)}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #059669; font-weight: bold; text-decoration: none; font-size: 13px;">
+                  <span>💬</span> Scrivi ad Andrea su WhatsApp per questa scheda
+                </a>
+              </div>
+            </div>
+          `;
+        } else {
+          resDiv.innerHTML = `<div style="background: #fee2e2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px; font-size: 13px;">Nessuna scheda trovata con il codice <strong>${code}</strong>. Verifica il codice rilasciato al banco in Via Corsica 151.</div>`;
+        }
+      } catch (e) {
+        resDiv.innerHTML = '<div style="color: #dc2626; font-size: 13px;">Errore di connessione al database locale.</div>';
       }
     }
 

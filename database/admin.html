@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pannello Gestionale Banco — Just in Time (Muro Leccese)</title>
+  <style>
+    :root {
+      --primary: #0F4C81;
+      --primary-dark: #092c4c;
+      --accent: #F59E0B;
+      --success: #059669;
+      --danger: #dc2626;
+      --warning: #d97706;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text-main); line-height: 1.5; }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-title { font-size: 19px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: var(--accent); color: #000; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 12px; }
+    .header-links a { color: #fff; text-decoration: none; margin-left: 16px; font-size: 13px; font-weight: 600; opacity: 0.9; }
+    .header-links a:hover { opacity: 1; text-decoration: underline; }
+
+    .container { max-width: 1240px; margin: 24px auto; padding: 0 20px; }
+
+    /* STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .stat-icon {
+      font-size: 28px;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff6ff;
+    }
+    .stat-val { font-size: 24px; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+
+    /* NAVIGATION TABS */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .tab-btn {
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--primary); }
+    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .tab-badge { background: #fee2e2; color: #991b1b; font-size: 11px; padding: 2px 7px; border-radius: 10px; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* CARDS & TABLES */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .card-title { font-size: 18px; font-weight: 800; color: var(--primary); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { text-align: left; padding: 12px; background: #f8fafc; font-weight: 700; color: var(--text-muted); border-bottom: 1px solid var(--border); font-size: 12px; text-transform: uppercase; }
+    td { padding: 14px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:hover { background: #fdfdfd; }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-pending { background: #fef3c7; color: #92400e; }
+    .badge-ready { background: #d1fae5; color: #065f46; }
+    .badge-completed { background: #e0e7ff; color: #3730a3; }
+    .badge-cancelled { background: #fee2e2; color: #991b1b; }
+    .badge-repairing { background: #e0f2fe; color: #0369a1; }
+
+    .btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-success { background: var(--success); color: #fff; }
+    .btn-success:hover { background: #047857; }
+    .btn-outline { background: #fff; border: 1px solid var(--border); color: var(--text-main); }
+    .btn-outline:hover { background: #f1f5f9; }
+    .btn-sm { padding: 5px 10px; font-size: 12px; }
+
+    /* MODAL */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-backdrop.show { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      padding: 24px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
+    .form-control { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-title">
+      <span>🏪 Just in Time</span>
+      <span class="brand-badge">GESTIONALE LOCALE AL BANCO</span>
+    </div>
+    <div class="header-links">
+      <a href="/" target="_blank">🌐 Apri Storefront Web</a>
+      <a href="/api/stats" target="_blank">📊 Raw API Stats</a>
+      <a href="https://wa.me/393206025789" target="_blank">💬 WhatsApp Banco</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- CRUSCOTTO CONTATORI RAPIDI -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="stat-icon">🛍️</div>
+        <div>
+          <div class="stat-val" id="statOrders">-</div>
+          <div class="stat-label">Ordini Totali</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #fef3c7;">⏳</div>
+        <div>
+          <div class="stat-val" id="statPendingOrders" style="color: var(--warning);">-</div>
+          <div class="stat-label">Ordini da Evadere</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #e0f2fe;">🔬</div>
+        <div>
+          <div class="stat-val" id="statOpenRepairs" style="color: #0369a1;">-</div>
+          <div class="stat-label">PC in Laboratorio</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #d1fae5;">💶</div>
+        <div>
+          <div class="stat-val" id="statRevenue" style="color: var(--success);">-</div>
+          <div class="stat-label">Incassato Vendite</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #fee2e2;">⚠️</div>
+        <div>
+          <div class="stat-val" id="statLowStock" style="color: var(--danger);">-</div>
+          <div class="stat-label">Scorte in Esaurimento</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHEDE PRINCIPALI -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('ordersTab')">
+        <span>🛒 Ordini & Click & Collect</span>
+        <span class="tab-badge" id="badgeOrders">0</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('repairsTab')">
+        <span>🛠️ Laboratorio Riparazioni</span>
+        <span class="tab-badge" id="badgeRepairs">0</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('productsTab')">
+        <span>📦 Magazzino & Catalogo</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('booksTab')">
+        <span>📚 Prenotazioni Libri</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: ORDINI -->
+    <div id="ordersTab" class="tab-content active">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Storico Ordini Web e Ritiro in Sede (Via Corsica 151)</div>
+          <button class="btn btn-outline btn-sm" onclick="loadOrders()">🔄 Aggiorna Lista</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Codice Ordine</th>
+              <th>Data</th>
+              <th>Cliente & Recapito</th>
+              <th>Tipo Ritiro</th>
+              <th>Pagamento</th>
+              <th>Totale</th>
+              <th>Stato</th>
+              <th>Azioni al Banco</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <tr><td colspan="8" style="text-align: center; color: var(--text-muted);">Caricamento ordini in corso...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 2: RIPARAZIONI LABORATORIO -->
+    <div id="repairsTab" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Schede di Assistenza & Riparazione Dispositivi</div>
+          <button class="btn btn-primary" onclick="openNewRepairModal()">➕ Nuova Accettazione al Banco</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Scheda / Data</th>
+              <th>Cliente & Tel</th>
+              <th>Dispositivo / Modello</th>
+              <th>Problema Riscontrato</th>
+              <th>Acconto / Spesa</th>
+              <th>Stato Avanzamento</th>
+              <th>Ricevuta & Azioni</th>
+            </tr>
+          </thead>
+          <tbody id="repairsTableBody">
+            <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Caricamento schede riparazione...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: PRODOTTI & MAGAZZINO -->
+    <div id="productsTab" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Giacenze Magazzino & Prezzi Catalogo</div>
+          <input type="text" id="prodSearchInput" placeholder="Filtra per nome o SKU..." onkeyup="filterProductsTable()" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; width: 250px;">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>SKU</th>
+              <th>Prodotto</th>
+              <th>Categoria</th>
+              <th>Prezzo Vendita</th>
+              <th>Giacenza Banco</th>
+              <th>Stato Magazzino</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody">
+            <tr><td colspan="6" style="text-align: center;">Caricamento catalogo...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 4: LIBRI SCOLASTICI -->
+    <div id="booksTab" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Campagna Prenotazione Testi Scolastici Salento</div>
+          <button class="btn btn-outline btn-sm" onclick="loadBooks()">🔄 Aggiorna</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Codice</th>
+              <th>Genitore / Tel</th>
+              <th>Studente & Scuola</th>
+              <th>Testi Richiesti</th>
+              <th>Copertine Colibrì</th>
+              <th>Stato</th>
+            </tr>
+          </thead>
+          <tbody id="booksTableBody">
+            <tr><td colspan="6" style="text-align: center;">Caricamento prenotazioni...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL NUOVA ACCETTAZIONE RIPARAZIONE -->
+  <div id="newRepairModal" class="modal-backdrop">
+    <div class="modal">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="color: var(--primary);">🛠️ Nuova Accettazione al Banco</h3>
+        <button onclick="closeNewRepairModal()" style="background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
+      </div>
+      <form id="newRepairForm" onsubmit="submitNewRepair(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome Cliente *</label>
+            <input type="text" id="repFirstName" class="form-control" required placeholder="Es. Marco">
+          </div>
+          <div class="form-group">
+            <label>Cognome *</label>
+            <input type="text" id="repLastName" class="form-control" required placeholder="Es. Bianchi">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Recapito Telefonico / WhatsApp *</label>
+            <input type="tel" id="repPhone" class="form-control" required placeholder="+39 320 0000000">
+          </div>
+          <div class="form-group">
+            <label>Email (opzionale)</label>
+            <input type="email" id="repEmail" class="form-control" placeholder="cliente@email.it">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tipo Dispositivo *</label>
+            <select id="repDeviceType" class="form-control">
+              <option value="notebook">Notebook / Portatile</option>
+              <option value="desktop">PC Desktop / Fisso</option>
+              <option value="smartphone">Smartphone / Tablet</option>
+              <option value="printer">Stampante</option>
+              <option value="other">Altro Dispositivo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Marca e Modello *</label>
+            <input type="text" id="repBrandModel" class="form-control" required placeholder="Es. HP Pavilion 15">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Numero di Matricola / Seriale (se presente)</label>
+          <input type="text" id="repSerial" class="form-control" placeholder="Es. 5CD123456">
+        </div>
+        <div class="form-group">
+          <label>Difetto / Problema Riscontrato *</label>
+          <textarea id="repIssue" class="form-control" rows="3" required placeholder="Descrivi il guasto segnalato dal cliente..."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Acconto Versato al Banco (€)</label>
+            <input type="number" id="repAdvance" class="form-control" step="0.5" value="20.00">
+          </div>
+          <div class="form-group">
+            <label>Preventivo Indicativo (€)</label>
+            <input type="number" id="repEstimate" class="form-control" step="1.0" placeholder="Es. 45.00">
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+          <button type="button" class="btn btn-outline" onclick="closeNewRepairModal()">Annulla</button>
+          <button type="submit" class="btn btn-primary">Registra e Genera Ricevuta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let allProducts = [];
+
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/stats');
+        if (res.ok) {
+          const s = await res.json();
+          document.getElementById('statOrders').innerText = s.total_orders;
+          document.getElementById('statPendingOrders').innerText = s.pending_orders;
+          document.getElementById('statOpenRepairs').innerText = s.open_repairs_count;
+          document.getElementById('statRevenue').innerText = `€${s.total_revenue_eur.toFixed(2)}`;
+          document.getElementById('statLowStock').innerText = s.low_stock_items_count;
+
+          document.getElementById('badgeOrders').innerText = s.pending_orders;
+          document.getElementById('badgeRepairs').innerText = s.open_repairs_count;
+        }
+      } catch (e) {
+        console.error("Errore statistiche:", e);
+      }
+    }
+
+    async function loadOrders() {
+      try {
+        const res = await fetch('/api/orders');
+        if (!res.ok) return;
+        const orders = await res.json();
+        const tbody = document.getElementById('ordersTableBody');
+        if (orders.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted);">Nessun ordine presente.</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = orders.map(o => {
+          const statusMap = {
+            'pending': '<span class="badge badge-pending">In Attesa</span>',
+            'confirmed': '<span class="badge badge-repairing">Confermato</span>',
+            'ready_for_pickup': '<span class="badge badge-ready">Pronto al Banco</span>',
+            'shipped': '<span class="badge badge-completed">Spedito</span>',
+            'completed': '<span class="badge badge-completed">Completato</span>',
+            'cancelled': '<span class="badge badge-cancelled">Annullato</span>'
+          };
+          const badgeHtml = statusMap[o.order_status] || o.order_status;
+          const delivery = o.delivery_type === 'pickup' ? '🏪 Ritiro in Sede' : '🚚 Corriere';
+          const itemsSummary = (o.items || []).map(i => `${i.quantity}x ${i.product_title}`).join(', ');
+
+          return `
+            <tr>
+              <td><strong>${o.order_number}</strong></td>
+              <td style="font-size: 12px; color: var(--text-muted);">${o.created_at ? o.created_at.slice(0, 16) : '-'}</td>
+              <td>
+                <strong>${o.first_name || ''} ${o.last_name || ''}</strong><br>
+                <a href="https://wa.me/${(o.phone || '').replace(/[^0-9]/g, '')}" target="_blank" style="color: var(--success); text-decoration: none; font-weight: bold; font-size: 12px;">📞 ${o.phone || 'N/D'}</a>
+              </td>
+              <td>${delivery}</td>
+              <td style="font-size: 13px;">${o.payment_method}</td>
+              <td><strong>€${parseFloat(o.total_amount).toFixed(2)}</strong></td>
+              <td>${badgeHtml}</td>
+              <td>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                  ${o.order_status === 'pending' || o.order_status === 'confirmed' ? `
+                    <button class="btn btn-success btn-sm" onclick="advanceOrderStatus('${o.id}', 'ready_for_pickup')">✅ Pronto al Ritiro</button>
+                  ` : ''}
+                  ${o.order_status === 'ready_for_pickup' ? `
+                    <button class="btn btn-primary btn-sm" onclick="advanceOrderStatus('${o.id}', 'completed', 'paid')">📦 Consegnato & Saldato</button>
+                  ` : ''}
+                  <a href="/api/orders/${o.id}/receipt" target="_blank" class="btn btn-outline btn-sm">🖨️ Ricevuta</a>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error("Errore caricamento ordini:", e);
+      }
+    }
+
+    async function advanceOrderStatus(orderId, orderStatus, paymentStatus=null) {
+      const payload = { order_status: orderStatus };
+      if (paymentStatus) payload.payment_status = paymentStatus;
+      try {
+        const res = await fetch(`/api/orders/${orderId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          loadOrders();
+          loadStats();
+        }
+      } catch (e) {
+        alert("Errore aggiornamento ordine: " + e);
+      }
+    }
+
+    async function loadRepairs() {
+      try {
+        const res = await fetch('/api/repairs');
+        if (!res.ok) return;
+        const repairs = await res.json();
+        const tbody = document.getElementById('repairsTableBody');
+        if (repairs.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Nessuna scheda di riparazione attiva.</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = repairs.map(r => {
+          const statusMap = {
+            'received': '<span class="badge badge-pending">Ricevuto al Banco</span>',
+            'diagnosing': '<span class="badge badge-repairing">In Diagnosi</span>',
+            'waiting_approval': '<span class="badge badge-pending">Attesa Preventivo</span>',
+            'in_repair': '<span class="badge badge-repairing">In Riparazione</span>',
+            'ready_for_pickup': '<span class="badge badge-ready">Pronto al Ritiro</span>',
+            'delivered': '<span class="badge badge-completed">Consegnato</span>',
+            'unrepairable': '<span class="badge badge-cancelled">Non Riparabile</span>'
+          };
+          const badgeHtml = statusMap[r.status] || r.status;
+
+          return `
+            <tr>
+              <td>
+                <strong style="color: var(--primary);">${r.ticket_number}</strong><br>
+                <span style="font-size: 11px; color: var(--text-muted);">${r.received_at ? r.received_at.slice(0, 10) : '-'}</span>
+              </td>
+              <td>
+                <strong>${r.first_name || ''} ${r.last_name || ''}</strong><br>
+                <a href="https://wa.me/${(r.phone || '').replace(/[^0-9]/g, '')}" target="_blank" style="color: var(--success); font-weight: bold; font-size: 12px; text-decoration: none;">💬 ${r.phone || ''}</a>
+              </td>
+              <td>
+                <span style="font-weight: 700; text-transform: uppercase; font-size: 11px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">${r.device_type}</span>
+                <div>${r.brand_model}</div>
+                ${r.serial_number ? `<span style="font-size: 11px; color: var(--text-muted);">S/N: ${r.serial_number}</span>` : ''}
+              </td>
+              <td style="max-width: 250px; font-size: 13px;">${r.reported_issue}</td>
+              <td style="font-size: 13px;">
+                Acconto: <strong>€${(r.advance_fee || 0).toFixed(2)}</strong><br>
+                ${r.final_cost ? `Saldo: <strong>€${r.final_cost.toFixed(2)}</strong>` : r.estimated_cost ? `Prev: €${r.estimated_cost.toFixed(2)}` : ''}
+              </td>
+              <td>
+                <select onchange="updateRepairStatus('${r.id}', this.value)" style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); font-size: 12px; font-weight: bold;">
+                  <option value="received" ${r.status==='received'?'selected':''}>Ricevuto</option>
+                  <option value="diagnosing" ${r.status==='diagnosing'?'selected':''}>In Diagnosi</option>
+                  <option value="in_repair" ${r.status==='in_repair'?'selected':''}>In Riparazione</option>
+                  <option value="ready_for_pickup" ${r.status==='ready_for_pickup'?'selected':''}>Pronto Ritiro</option>
+                  <option value="delivered" ${r.status==='delivered'?'selected':''}>Consegnato</option>
+                </select>
+                <div style="margin-top: 4px;">${badgeHtml}</div>
+              </td>
+              <td>
+                <a href="/api/repairs/${r.ticket_number}/receipt" target="_blank" class="btn btn-outline btn-sm">🖨️ Stampa Tag & Ricevuta</a>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error("Errore caricamento riparazioni:", e);
+      }
+    }
+
+    async function updateRepairStatus(ticketId, newStatus) {
+      try {
+        const res = await fetch(`/api/repairs/${ticketId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: newStatus })
+        });
+        if (res.ok) {
+          loadRepairs();
+          loadStats();
+        }
+      } catch (e) {
+        alert("Errore aggiornamento riparazione: " + e);
+      }
+    }
+
+    async function loadProducts() {
+      try {
+        const res = await fetch('/api/products');
+        if (!res.ok) return;
+        allProducts = await res.json();
+        renderProductsTable(allProducts);
+      } catch (e) {
+        console.error("Errore caricamento catalogo:", e);
+      }
+    }
+
+    function renderProductsTable(prods) {
+      const tbody = document.getElementById('productsTableBody');
+      tbody.innerHTML = prods.map(p => {
+        const primaryVar = (p.variants && p.variants.length > 0) ? p.variants[0] : {};
+        const stock = primaryVar.stock_quantity ?? p.total_stock ?? 0;
+        const price = primaryVar.price ?? p.min_price ?? p.base_price ?? 0;
+        const stockBadge = stock <= 0 
+          ? '<span class="badge badge-cancelled">Esaurito (0)</span>' 
+          : stock <= 2 
+          ? `<span class="badge badge-pending">In Esaurimento (${stock})</span>` 
+          : `<span class="badge badge-ready">Disponibile (${stock} pz)</span>`;
+
+        return `
+          <tr>
+            <td><code>${primaryVar.sku || p.handle}</code></td>
+            <td><strong>${p.title}</strong><br><span style="font-size: 11px; color: var(--text-muted);">${p.vendor || ''}</span></td>
+            <td>${p.category_name || '-'}</td>
+            <td><strong>€${parseFloat(price).toFixed(2)}</strong></td>
+            <td>${stock} pezzi</td>
+            <td>${stockBadge}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterProductsTable() {
+      const q = document.getElementById('prodSearchInput').value.toLowerCase();
+      const filtered = allProducts.filter(p => {
+        const primaryVar = (p.variants && p.variants.length > 0) ? p.variants[0] : {};
+        return (p.title || '').toLowerCase().includes(q) || (primaryVar.sku || '').toLowerCase().includes(q);
+      });
+      renderProductsTable(filtered);
+    }
+
+    async function loadBooks() {
+      try {
+        const res = await fetch('/api/books');
+        if (!res.ok) return;
+        const books = await res.json();
+        const tbody = document.getElementById('booksTableBody');
+        if (books.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Nessuna prenotazione libri al momento.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = books.map(b => `
+          <tr>
+            <td><strong>${b.reservation_code}</strong></td>
+            <td>
+              <strong>${b.first_name || ''} ${b.last_name || ''}</strong><br>
+              <a href="https://wa.me/${(b.phone || '').replace(/[^0-9]/g, '')}" target="_blank" style="color: var(--success); font-weight: bold; font-size: 12px; text-decoration: none;">📞 ${b.phone || ''}</a>
+            </td>
+            <td><strong>${b.student_name}</strong><br><span style="font-size: 12px; color: var(--text-muted);">${b.school_name} (${b.class_grade})</span></td>
+            <td style="max-width: 300px; font-size: 12px;">${b.book_list_text}</td>
+            <td style="text-align: center;">${b.colibri_covers_required ? '✅ Richieste' : 'No'}</td>
+            <td><span class="badge badge-repairing">${b.status}</span></td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        console.error("Errore caricamento libri:", e);
+      }
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function openNewRepairModal() {
+      document.getElementById('newRepairModal').classList.add('show');
+    }
+
+    function closeNewRepairModal() {
+      document.getElementById('newRepairModal').classList.remove('show');
+    }
+
+    async function submitNewRepair(e) {
+      e.preventDefault();
+      const payload = {
+        customer: {
+          first_name: document.getElementById('repFirstName').value,
+          last_name: document.getElementById('repLastName').value,
+          phone: document.getElementById('repPhone').value,
+          email: document.getElementById('repEmail').value
+        },
+        device_type: document.getElementById('repDeviceType').value,
+        brand_model: document.getElementById('repBrandModel').value,
+        serial_number: document.getElementById('repSerial').value,
+        reported_issue: document.getElementById('repIssue').value,
+        advance_fee: parseFloat(document.getElementById('repAdvance').value || 0),
+        estimated_cost: document.getElementById('repEstimate').value ? parseFloat(document.getElementById('repEstimate').value) : null
+      };
+
+      try {
+        const res = await fetch('/api/repairs', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          const created = await res.json();
+          closeNewRepairModal();
+          document.getElementById('newRepairForm').reset();
+          loadRepairs();
+          loadStats();
+          // Apri ricevuta stampabile in una nuova scheda
+          window.open(`/api/repairs/${created.ticket_number}/receipt`, '_blank');
+        } else {
+          const err = await res.json();
+          alert("Errore inserimento scheda: " + (err.error || "Errore sconosciuto"));
+        }
+      } catch (err) {
+        alert("Errore di rete: " + err);
+      }
+    }
+
+    // Caricamento iniziale
+    loadStats();
+    loadOrders();
+    loadRepairs();
+    loadProducts();
+    loadBooks();
+
+    // Polling automatico ogni 15 secondi per nuovi ordini dal web
+    setInterval(() => {
+      loadStats();
+      loadOrders();
+    }, 15000);
+  </script>
+</body>
+</html>
