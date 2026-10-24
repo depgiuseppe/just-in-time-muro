@@ -1,0 +1,90 @@
+{
+  "summary": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0
+  },
+  "tests": [
+    {
+      "name": "TC-01: Caricamento Pagina Desktop",
+      "status": "PASS",
+      "details": "Header, Hero e Griglia renderizzati correttamente"
+    },
+    {
+      "name": "TC-02: Filtro Categoria Informatica",
+      "status": "PASS",
+      "details": "Visualizzati 5 prodotti (attesi 5)"
+    },
+    {
+      "name": "TC-03: Ricerca 'Toner'",
+      "status": "PASS",
+      "details": "Visualizzati 1 prodotti (atteso 1)"
+    },
+    {
+      "name": "TC-04: Reset Filtri",
+      "status": "PASS",
+      "details": "Visualizzati 15 prodotti (attesi 15)"
+    },
+    {
+      "name": "TC-05: Aggiunta al carrello & Apertura automatica Drawer",
+      "status": "PASS",
+      "details": "Badge carrello = 1"
+    },
+    {
+      "name": "TC-06: Click & Collect Selezionato di default",
+      "status": "PASS",
+      "details": "Totale pickup: €549.00"
+    },
+    {
+      "name": "TC-07: Soglia Spedizione Gratuita (> €79)",
+      "status": "PASS",
+      "details": "Totale ordine > €79: €549.00 (Spedizione gratuita)"
+    },
+    {
+      "name": "TC-08: Calcolo Spedizione Corriere (< €79 -> +€6,90)",
+      "status": "PASS",
+      "details": "Totale: €12.80 (atteso €12,80)"
+    },
+    {
+      "name": "TC-09: Switch Click & Collect Ritiro in Negozio (€0,00)",
+      "status": "PASS",
+      "details": "Totale: €5.90 (atteso €5,90)"
+    },
+    {
+      "name": "TC-10: Trigger Conferma Ordine / Checkout",
+      "status": "PASS",
+      "details": "Messaggio popup: Riepilogo Ordine Simulato:\n\nModalità: Ritiro Gratuito in Neg"
+    },
+    {
+      "name": "TC-11: Chiusura Drawer Carrello",
+      "status": "PASS",
+      "details": "Classi drawer: cart-drawer"
+    },
+    {
+      "name": "TC-12: Layout Mobile Header e Hero",
+      "status": "PASS",
+      "details": "Layout stack verticale responsive a 390px"
+    },
+    {
+      "name": "TC-13: Navigazione Categorie Mobile",
+      "status": "PASS",
+      "details": "Visualizzati 3 prodotti Stampa (attesi 3)"
+    },
+    {
+      "name": "TC-14: Drawer Carrello Mobile Responsive",
+      "status": "PASS",
+      "details": "Larghezza drawer su mobile: 390px (viewport: 390px)"
+    },
+    {
+      "name": "TC-15: Pulsante Galleggiante WhatsApp Mobile",
+      "status": "PASS",
+      "details": "Visible: True, Href: https://wa.me/393206025789?text=Ciao%20Andrea,%20ti%20contatto%20dal%20sito%20Just%20in%20Time"
+    },
+    {
+      "name": "TC-16: Adattabilità Tablet 768px (BreakPoint esatto)",
+      "status": "PASS",
+      "details": "Layout fluido e collaudato"
+    }
+  ],
+  "console_errors": []
+}

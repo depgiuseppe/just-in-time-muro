@@ -836,10 +836,10 @@
       <div class="footer-col">
         <h4>Informazioni Legali</h4>
         <ul>
-          <li><a href="#" onclick="alert('Informativa Privacy conforme GDPR redatta nella cartella pages-legal/')">Informativa Privacy (GDPR)</a></li>
-          <li><a href="#" onclick="alert('Cookie Policy conforme al Garante Privacy redatta nella cartella pages-legal/')">Cookie Policy</a></li>
-          <li><a href="#" onclick="alert('Condizioni Generali di Vendita e Diritto di Recesso a 14gg redatte nella cartella pages-legal/')">Termini di Vendita e Recesso</a></li>
-          <li><a href="#" onclick="alert('Click & Collect gratuito in Via Corsica 151')">Condizioni Ritiro in Sede</a></li>
+          <li><a href="../pages-legal/informativa-privacy-gdpr.html" target="_blank">Informativa Privacy (GDPR)</a></li>
+          <li><a href="../pages-legal/informativa-privacy-gdpr.html#cookie" target="_blank">Cookie Policy</a></li>
+          <li><a href="../pages-legal/termini-condizioni-e-recesso.html" target="_blank">Termini di Vendita e Recesso</a></li>
+          <li><a href="../pages-legal/ritiro-in-sede-e-spedizioni.html" target="_blank">Condizioni Ritiro in Sede</a></li>
         </ul>
       </div>
     </div>
@@ -1141,7 +1141,17 @@
       renderProducts();
     }
 
-    document.getElementById('searchInput').addEventListener('input', renderProducts);
+    document.getElementById('searchInput').addEventListener('input', () => {
+      const q = document.getElementById('searchInput').value.trim();
+      if (q !== '' && currentCategory !== 'all') {
+        currentCategory = 'all';
+        document.querySelectorAll('.category-btn').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.innerText.includes('Tutti')) btn.classList.add('active');
+        });
+      }
+      renderProducts();
+    });
 
     // Cart management
     function addToCart(productId) {
