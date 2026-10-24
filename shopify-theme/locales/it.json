@@ -1,0 +1,43 @@
+{
+  "general": {
+    "password_page": {
+      "login_form_heading": "Accedi al negozio con password",
+      "login_password_button": "Entra"
+    },
+    "social": {
+      "share_on_facebook": "Condividi",
+      "share_on_whatsapp": "Invia su WhatsApp"
+    },
+    "continue_shopping": "Continua gli acquisti",
+    "search": {
+      "search": "Cerca computer, cartucce, cancelleria o servizi...",
+      "reset": "Cancella"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Ritiro gratuito in negozio a Muro Leccese entro 2 ore | Spedizioni rapide | Assistenza diretta WhatsApp",
+      "cart_count": {
+        "one": "{{ count }} articolo",
+        "other": "{{ count }} articoli"
+      }
+    },
+    "cart": {
+      "title": "Il tuo carrello Just in Time",
+      "checkout": "Procedi al Checkout sicuro",
+      "empty": "Il tuo carrello è vuoto",
+      "pickup_note": "Scegli 'Ritiro in sede' al passaggio successivo per ritirare gratis in Via Corsica 151 a Muro Leccese."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Aggiungi al Carrello",
+      "sold_out": "Esaurito (Disponibile su ordinazione)",
+      "pickup_availability": {
+        "title": "Disponibilità per il ritiro",
+        "available_at": "Disponibile per il ritiro immediato in sede (Muro Leccese)",
+        "check_stores": "Verifica disponibilità in laboratorio"
+      }
+    }
+  }
+}

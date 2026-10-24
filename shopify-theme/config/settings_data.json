@@ -1,0 +1,28 @@
+{
+  "current": {
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#0f4c81",
+    "colors_accent_2": "#f59e0b",
+    "colors_text": "#1e293b",
+    "colors_outline_button_labels": "#0f4c81",
+    "colors_background_1": "#ffffff",
+    "colors_background_2": "#f8fafc",
+    "type_header_font": "assistant_n7",
+    "heading_scale": 100,
+    "type_body_font": "assistant_n4",
+    "body_scale": 100,
+    "page_width": 1200,
+    "spacing_sections": 36,
+    "spacing_grid_horizontal": 24,
+    "spacing_grid_vertical": 24,
+    "badge_corner_radius": 4,
+    "card_style": "card",
+    "card_color_scheme": "background-2",
+    "social_facebook_link": "https://facebook.com/justintime.muroleccese",
+    "social_instagram_link": "https://instagram.com/justintime.muroleccese",
+    "brand_headline": "Just in Time di Benegiamo Andrea",
+    "brand_description": "Vendita e assistenza informatica, cartoleria, consumabili di stampa e servizi digitali a Muro Leccese (LE).",
+    "whatsapp_phone": "+393206025789",
+    "store_address": "Via Corsica 151, 73036 Muro Leccese (LE)"
+  }
+}

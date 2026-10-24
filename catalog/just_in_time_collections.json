@@ -1,0 +1,59 @@
+{
+  "collections": [
+    {
+      "handle": "informatica-tecnologia",
+      "title": "Informatica & Tecnologia",
+      "description": "Notebook, PC desktop, componentistica hardware, periferiche e networking selezionati e testati dal laboratorio Just in Time a Muro Leccese.",
+      "sort_order": "best-selling",
+      "rule": {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "informatica"
+      }
+    },
+    {
+      "handle": "stampa-consumabili",
+      "title": "Stampa & Consumabili",
+      "description": "Cartucce originali e compatibili garantite, toner laser ad alta resa, stampanti multifunzione e carta fotografica.",
+      "sort_order": "manual",
+      "rule": {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "stampa"
+      }
+    },
+    {
+      "handle": "scuola-cancelleria",
+      "title": "Scuola & Cancelleria",
+      "description": "Tutto l'occorrente per la scuola e l'ufficio: risme di carta, penne, quaderni, zaini Eastpak e prenotazione testi scolastici.",
+      "sort_order": "best-selling",
+      "rule": {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "scuola"
+      }
+    },
+    {
+      "handle": "servizi-assistenza-tecnica",
+      "title": "Servizi & Laboratorio Tecnico",
+      "description": "Riparazione computer, upgrade con SSD, rimozione virus, formattazione, travaso dati e assistenza specializzata in sede a Muro Leccese.",
+      "sort_order": "manual",
+      "rule": {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "servizi"
+      }
+    },
+    {
+      "handle": "offerte-outlet",
+      "title": "Offerte & Ricondizionati d'Occasione",
+      "description": "I migliori sconti del mese e notebook aziendali ricondizionati certificati Grado A+ con garanzia 12 mesi Just in Time.",
+      "sort_order": "price-ascending",
+      "rule": {
+        "column": "tag",
+        "relation": "equals",
+        "condition": "promo:outlet"
+      }
+    }
+  ]
+}
