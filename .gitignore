@@ -1,2 +1,6 @@
 .DS_Store
+*.pyc
+__pycache__/
+roster.json
 roster-backups/
+hive/
