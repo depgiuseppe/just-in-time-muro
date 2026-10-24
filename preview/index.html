@@ -642,6 +642,163 @@
       box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
     }
 
+    /* Checkout & Payment Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 37, 64, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .checkout-modal {
+      background: #ffffff;
+      width: 100%;
+      max-width: 580px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+      animation: modalFadeIn 0.25s ease-out;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+    .modal-header h3 { font-size: 18px; font-weight: 800; color: var(--primary); margin: 0; }
+    .modal-close { background: none; border: none; font-size: 26px; cursor: pointer; color: var(--text-muted); line-height: 1; }
+    .modal-body { padding: 24px; }
+    .checkout-step-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin: 18px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .checkout-step-title:first-child { margin-top: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-full { grid-column: span 2; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+    
+    .payment-options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .payment-option-card {
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: all 0.2s;
+    }
+    .payment-option-card:hover { border-color: var(--primary); background: #f8fafc; }
+    .payment-option-card.selected {
+      border-color: var(--primary);
+      background: #eff6ff;
+    }
+    .payment-option-card input[type="radio"] { margin-top: 3px; accent-color: var(--primary); }
+    .payment-card-content h5 { margin: 0 0 3px; font-size: 14px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .payment-card-content p { margin: 0; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+    .payment-badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+    }
+    .order-summary-box {
+      background: #f1f5f9;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .order-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+    .order-summary-row.total {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--primary);
+      border-top: 1px dashed var(--border-color);
+      padding-top: 8px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .modal-footer {
+      padding: 18px 24px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      background: #f8fafc;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+    .btn-modal-cancel {
+      padding: 10px 18px;
+      border: 1px solid var(--border-color);
+      background: #fff;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-modal-confirm {
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-modal-confirm:hover { background: var(--accent-hover); }
+
     @media (max-width: 768px) {
       .hero-content { grid-template-columns: 1fr; }
       .hero-text h2 { font-size: 28px; }
@@ -848,6 +1005,93 @@
       <div>Membro ASSCOMM (Associazione Commercianti Muro Leccese)</div>
     </div>
   </footer>
+
+  <!-- Modal Checkout & Pagamento -->
+  <div class="modal-overlay" id="checkoutModalOverlay">
+    <div class="checkout-modal">
+      <div class="modal-header">
+        <h3>💳 Completa il tuo Ordine</h3>
+        <button class="modal-close" onclick="closeCheckoutModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalMainBody">
+        <div class="checkout-step-title">1. I tuoi Dati di Contatto</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nome *</label>
+            <input type="text" id="custFirstName" placeholder="Mario" required>
+          </div>
+          <div class="form-group">
+            <label>Cognome *</label>
+            <input type="text" id="custLastName" placeholder="Rossi" required>
+          </div>
+          <div class="form-group">
+            <label>Telefono / WhatsApp *</label>
+            <input type="tel" id="custPhone" placeholder="es. 333 1234567" required>
+          </div>
+          <div class="form-group">
+            <label>Email (opzionale)</label>
+            <input type="email" id="custEmail" placeholder="mario.rossi@email.it">
+          </div>
+          <div class="form-group form-full" id="shippingAddressGroup" style="display: none;">
+            <label>Indirizzo di Spedizione *</label>
+            <input type="text" id="custAddress" placeholder="Via, Civico, Città, CAP">
+          </div>
+          <div class="form-group form-full">
+            <label>Note per Andrea (opzionale)</label>
+            <input type="text" id="custNotes" placeholder="Es. orario di ritiro preferito, modello PC per verifica compatibilità...">
+          </div>
+        </div>
+
+        <div class="checkout-step-title">2. Modalità di Pagamento</div>
+        <div class="payment-options-grid">
+          <label class="payment-option-card selected" id="card-pos_on_pickup" onclick="selectPaymentCard('pos_on_pickup')">
+            <input type="radio" name="paymentOption" value="pos_on_pickup" checked>
+            <div class="payment-card-content">
+              <h5>🏪 Al Ritiro in Negozio (Contanti o POS) <span class="payment-badge">Zero Commissioni</span></h5>
+              <p>Ritira in Via Corsica 151 a Muro Leccese e paga direttamente al banco in contanti o con carta (Bancomat/SumUp).</p>
+            </div>
+          </label>
+
+          <label class="payment-option-card" id="card-stripe" onclick="selectPaymentCard('stripe')">
+            <input type="radio" name="paymentOption" value="stripe">
+            <div class="payment-card-content">
+              <h5>💳 Carta di Credito / Debito Online o PayByLink</h5>
+              <p>Paga in sicurezza con Visa, Mastercard, Postepay, Apple Pay o ricevi il link di pagamento rapido via WhatsApp.</p>
+            </div>
+          </label>
+
+          <label class="payment-option-card" id="card-bank_transfer" onclick="selectPaymentCard('bank_transfer')">
+            <input type="radio" name="paymentOption" value="bank_transfer">
+            <div class="payment-card-content">
+              <h5>🏛️ Bonifico Bancario Anticipato</h5>
+              <p>Ti verranno fornite le coordinate bancarie (IBAN) di Just in Time per effettuare il bonifico prima del ritiro/spedizione.</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="order-summary-box">
+          <div class="order-summary-row">
+            <span>Modalità consegna:</span>
+            <strong id="modalDeliveryTypeLabel">Ritiro in sede</strong>
+          </div>
+          <div class="order-summary-row">
+            <span>Articoli selezionati:</span>
+            <strong id="modalItemsCountLabel">0</strong>
+          </div>
+          <div class="order-summary-row total">
+            <span>Totale da Pagare:</span>
+            <span id="modalTotalLabel">€0,00</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" id="modalFooter">
+        <button class="btn-modal-cancel" onclick="closeCheckoutModal()">Annulla</button>
+        <button class="btn-modal-confirm" onclick="submitFinalOrder()">
+          <span>Conferma Ordine e Procedi</span> &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script>
     // 15 Pilot Products data aligned with Shopify CSV
@@ -1226,22 +1470,142 @@
     document.getElementById('closeCartBtn').addEventListener('click', closeCart);
     document.getElementById('cartOverlay').addEventListener('click', closeCart);
 
+    let selectedPayment = 'pos_on_pickup';
+
+    function selectPaymentCard(method) {
+      selectedPayment = method;
+      document.querySelectorAll('.payment-option-card').forEach(c => c.classList.remove('selected'));
+      const activeCard = document.getElementById('card-' + method);
+      if (activeCard) activeCard.classList.add('selected');
+      const radio = document.querySelector(`input[name="paymentOption"][value="${method}"]`);
+      if (radio) radio.checked = true;
+    }
+
     function checkoutSimulate() {
       if (cart.length === 0) {
         alert("Il carrello è vuoto. Aggiungi almeno un articolo prima di procedere.");
         return;
       }
+      closeCart();
+
       const method = document.querySelector('input[name="deliveryMethod"]:checked').value;
       const isPickup = (method === 'pickup');
-      const itemsList = cart.map(i => `- ${i.qty}x ${i.title} (€${(i.price * i.qty).toFixed(2)})`).join('\n');
-      const total = document.getElementById('cartTotalDisplay').innerText;
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalStr = document.getElementById('cartTotalDisplay').innerText;
 
-      const summary = `Riepilogo Ordine Simulato:\n\nModalità: ${isPickup ? 'Ritiro Gratuito in Negozio (Via Corsica 151, Muro Leccese)' : 'Spedizione con Corriere Espresso'}\n\nArticoli:\n${itemsList}\n\nTotale: ${total}\n\n(Nota: Modalità sandbox/sviluppo attiva. Nessuna transazione reale effettuata).`;
+      document.getElementById('modalDeliveryTypeLabel').innerText = isPickup ? "Ritiro in sede (Via Corsica 151, Muro)" : "Spedizione Corriere Espresso";
+      document.getElementById('modalItemsCountLabel').innerText = `${totalItems} articoli`;
+      document.getElementById('modalTotalLabel').innerText = totalStr;
 
-      if (confirm(summary + "\n\nVuoi inviare la richiesta di prenotazione via WhatsApp direttamente ad Andrea?")) {
-        const text = `Ciao Andrea, vorrei confermare questo ordine dal sito Just in Time:\n${itemsList}\nTotale: ${total}\nModalità: ${isPickup ? 'Ritiro in sede a Muro Leccese' : 'Spedizione a domicilio'}`;
-        window.open(`https://wa.me/393206025789?text=${encodeURIComponent(text)}`, '_blank');
+      const addressGroup = document.getElementById('shippingAddressGroup');
+      addressGroup.style.display = isPickup ? 'none' : 'block';
+
+      document.getElementById('checkoutModalOverlay').classList.add('active');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModalOverlay').classList.remove('active');
+    }
+
+    async function submitFinalOrder() {
+      const firstName = document.getElementById('custFirstName').value.trim();
+      const lastName = document.getElementById('custLastName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const email = document.getElementById('custEmail').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+      const notes = document.getElementById('custNotes').value.trim();
+      const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+
+      if (!firstName || !lastName) {
+        alert("Inserisci Nome e Cognome per intestare l'ordine.");
+        return;
       }
+      if (!phone) {
+        alert("Inserisci un recapito telefonico o cellulare/WhatsApp per essere avvisato della disponibilità.");
+        return;
+      }
+      if (deliveryMethod === 'shipping' && !address) {
+        alert("Inserisci l'indirizzo di spedizione completo (Via, Civico, Città, CAP).");
+        return;
+      }
+
+      const totalStr = document.getElementById('modalTotalLabel').innerText;
+      let orderNumber = `JIT-${Date.now().toString().slice(-6)}`;
+      let isDbSaved = false;
+
+      // Invio all'API locale se attiva
+      try {
+        const payload = {
+          customer: {
+            first_name: firstName,
+            last_name: lastName,
+            phone: phone,
+            email: email,
+            address: address || "Ritiro in sede",
+            city: "Muro Leccese"
+          },
+          items: cart.map(i => ({ sku: i.sku, quantity: i.qty })),
+          delivery_type: deliveryMethod,
+          payment_method: selectedPayment,
+          notes: notes
+        };
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          const data = await res.json();
+          orderNumber = data.order_number || orderNumber;
+          isDbSaved = true;
+        }
+      } catch (e) {
+        console.log("Ordine registrato in modalità sandbox client:", e);
+      }
+
+      // Descrizione pagamento
+      let paymentDesc = "";
+      if (selectedPayment === 'pos_on_pickup') {
+        paymentDesc = "🏪 <strong>Pagamento al ritiro in negozio</strong>: Pagherai in contanti o con carta/Bancomat al banco in Via Corsica 151 al ritiro dei prodotti.";
+      } else if (selectedPayment === 'stripe') {
+        paymentDesc = "💳 <strong>Pagamento con Carta Online / PayByLink</strong>: Riceverai da Andrea il link sicuro di pagamento (SumUp / Stripe) su WhatsApp o email per saldare con carta o Apple Pay.";
+      } else {
+        paymentDesc = "🏛️ <strong>Bonifico Bancario Anticipato</strong>: Riceverai via messaggio l'IBAN aziendale di Just in Time per effettuare il bonifico con causale <code>" + orderNumber + "</code>.";
+      }
+
+      const itemsList = cart.map(i => `• ${i.qty}x ${i.title} (€${(i.price * i.qty).toFixed(2)})`).join('\n');
+      const waMessage = `Ciao Andrea, ho completato l'ordine *${orderNumber}* sul sito Just in Time:\n\n*Cliente:* ${firstName} ${lastName} (${phone})\n*Modalità:* ${deliveryMethod === 'pickup' ? 'Ritiro in sede a Muro Leccese' : 'Spedizione a domicilio (' + address + ')'}\n*Pagamento:* ${selectedPayment === 'pos_on_pickup' ? 'Al ritiro in negozio' : selectedPayment === 'stripe' ? 'Carta / PayByLink' : 'Bonifico Bancario'}\n\n*Articoli:*\n${itemsList}\n\n*Totale:* ${totalStr}${notes ? '\n\n*Note:* ' + notes : ''}`;
+
+      // Rendering schermata di conferma
+      document.getElementById('modalMainBody').innerHTML = `
+        <div style="text-align: center; padding: 20px 10px;">
+          <div style="font-size: 54px; margin-bottom: 12px;">✅</div>
+          <h4 style="font-size: 20px; font-weight: 800; color: #059669; margin-bottom: 8px;">Ordine Registrato con Successo!</h4>
+          <p style="font-size: 15px; color: var(--text-main); margin-bottom: 16px;">
+            Codice Ordine: <strong style="font-size: 17px; color: var(--primary);">${orderNumber}</strong>
+            ${isDbSaved ? '<br><span style="font-size: 12px; color: #059669;">💾 Registrato nel Database Locale SQLite</span>' : ''}
+          </p>
+          <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; text-align: left; margin-bottom: 20px; font-size: 13px; line-height: 1.6;">
+            ${paymentDesc}
+          </div>
+          <a href="https://wa.me/393206025789?text=${encodeURIComponent(waMessage)}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--whatsapp); color: #fff; padding: 14px 24px; border-radius: 30px; font-weight: 800; font-size: 15px; text-decoration: none; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); width: 100%; box-sizing: border-box;">
+            <span>💬</span> Invia Notifica ad Andrea su WhatsApp
+          </a>
+        </div>
+      `;
+
+      document.getElementById('modalFooter').innerHTML = `
+        <button class="btn-modal-cancel" style="width: 100%;" onclick="finishAndCloseCheckout()">Chiudi e Torna al Negozio</button>
+      `;
+
+      // Reset carrello
+      cart = [];
+      updateCartUI();
+    }
+
+    function finishAndCloseCheckout() {
+      closeCheckoutModal();
+      location.reload();
     }
 
     // Initial render
