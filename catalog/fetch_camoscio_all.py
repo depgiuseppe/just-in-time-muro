@@ -77,8 +77,8 @@ def map_category(sottogruppo: str, desc: str) -> tuple[str, str]:
         return "storage", "SSD & Hard Disk"
 
     # 2. Stampa, Scanner & Reti
-    if any(k in sg for k in ("STAMPANT", "SCANNER", "SWITCH", "ROUTER", "EXTENDER", "POWERLINE", "ACCESS POINT", "SCHEDE RETE", "USB WIRELESS", "IP CAMERA", "CARICA BATTERIE")):
-        return "stampa-reti", "Stampa, Scanner & Reti"
+    if any(k in sg for k in ("STAMPANT", "SCANNER", "SWITCH", "ROUTER", "EXTENDER", "POWERLINE", "ACCESS POINT", "SCHEDE RETE", "USB WIRELESS", "IP CAMERA")):
+        return "stampa-reti", "Stampa, Reti & Scanner"
 
     # 3. Gaming, Desk & Sim Racing
     if any(k in sg for k in (
@@ -86,17 +86,25 @@ def map_category(sottogruppo: str, desc: str) -> tuple[str, str]:
         "DEZCTOP", "SEDIA", "GAMING DESK", "VOLANTI", "PEDALIERE", "BUNDLE",
         "MOTORE / BASI", "SEDUTE", "SISTEMA CONTROLLO", "SISTEMA DI MOVIMENTO", "PRESENTER"
     )) or any(k in d for k in ("MOZA ", "VOLANTE", "PEDALIERA")):
-        return "gaming", "Gaming, Desk & Sim Racing"
+        return "gaming", "Gaming & Sim Racing"
 
-    # 4. Componenti & PC
+    # 4. Componenti & PC (CPU, Motherboard, RAM, GPU, PC assemblati, Notebook)
     if any(k in sg for k in (
         "SOCKET", "NVIDIA", "AMD", "INTEL", "DDR4", "DDR5", "SO DIMM",
         "PC ASSEMBLATI", "NOTEBOOK", "MICROSOFT"
     )) and "DISSIPATORI NOTEBOOK" not in sg:
-        return "componenti", "Componenti & PC"
+        return "componenti", "CPU, Schede & PC"
 
-    # 5. Case, Cooling & Alimentatori (default hardware category for cases, coolers, fans, PSUs, UPS, ARGB)
-    return "case-cooling", "Case, Cooling & PSU"
+    # 5. Alimentatori & UPS
+    if any(k in sg for k in ("ATX MODULARI", "ATX STANDARD", "SFX", "UPS", "RIDONDANTI", "CARICA BATTERIE")):
+        return "alimentatori", "Alimentatori & UPS"
+
+    # 6. Dissipatori & Raffreddamento
+    if any(k in sg for k in ("DISSIPATORI", "VENTOLE", "LUCI CENTRALINE", "DEEPCOOL PIXEL", "CAVO & SOSTEGNO", "CAVO RAISER", "HUB USB")):
+        return "cooling", "Raffreddamento & Ventole"
+
+    # 7. Case & Chassis (tutti i formati)
+    return "case", "Case & Chassis"
 
 
 def clean_title(raw_desc: str, brand: str) -> str:

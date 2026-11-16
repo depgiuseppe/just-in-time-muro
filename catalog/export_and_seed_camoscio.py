@@ -44,10 +44,14 @@ SHOPIFY_STANDARD_COLUMNS = [
 
 FALLBACK_BY_CAT = {
     "componenti": "assets/images/prodotti/notebook-hp-250-g9-i5-16gb.jpg",
-    "case-cooling": "assets/images/prodotti/kingston-a400-ssd-480gb.jpg",
+    "case": "assets/images/prodotti/kingston-a400-ssd-480gb.jpg",
+    "cooling": "assets/images/prodotti/kingston-a400-ssd-480gb.jpg",
+    "alimentatori": "assets/images/prodotti/kingston-a400-ssd-480gb.jpg",
     "gaming": "assets/images/prodotti/kit-wireless-logitech-mk270.jpg",
     "storage": "assets/images/prodotti/kingston-a400-ssd-480gb.jpg",
     "stampa-reti": "assets/images/prodotti/router-tplink-archer-ax12-wifi6.jpg",
+    "servizi": "assets/images/prodotti/servizio-diagnosi-riparazione-pc.jpg",
+    "scuola": "assets/images/prodotti/prenotazione-libri-scolastici.jpg",
 }
 
 
@@ -197,7 +201,7 @@ def main():
             "vendor": "Just in Time Lab",
             "raw_brand": "JUST IN TIME",
             "category": "servizi",
-            "categoryLabel": "Laboratorio & Servizi",
+            "categoryLabel": "Laboratorio & Riparazioni",
             "subCategory": "ASSISTENZA TECNICA IN SEDE",
             "price": 20.00,
             "stock": 99,
@@ -218,7 +222,7 @@ def main():
             "vendor": "Just in Time Lab",
             "raw_brand": "JUST IN TIME",
             "category": "servizi",
-            "categoryLabel": "Laboratorio & Servizi",
+            "categoryLabel": "Laboratorio & Riparazioni",
             "subCategory": "ASSISTENZA TECNICA IN SEDE",
             "price": 45.00,
             "stock": 99,
@@ -239,7 +243,7 @@ def main():
             "vendor": "Just in Time Lab",
             "raw_brand": "JUST IN TIME",
             "category": "servizi",
-            "categoryLabel": "Laboratorio & Servizi",
+            "categoryLabel": "Laboratorio & Riparazioni",
             "subCategory": "ASSEMBLAGGIO & UPGRADE",
             "price": 35.00,
             "stock": 99,
@@ -252,6 +256,27 @@ def main():
             "avail": "Pronto in 24h in Laboratorio",
             "availState": "in-stock",
             "desc": "Assemblaggio PC su misura con i componenti del listino, cablaggio professionale, test termici e clonazione."
+        },
+        {
+            "sku": "JIT-SRV-LIBRI-TESTO",
+            "handle": "servizio-prenotazione-libri-scolastici",
+            "title": "Servizio Prenotazione Libri di Testo Scolastici (Medie e Superiori)",
+            "vendor": "Just in Time Scuola",
+            "raw_brand": "JUST IN TIME",
+            "category": "scuola",
+            "categoryLabel": "Libri Scolastici & Scuola",
+            "subCategory": "PRENOTAZIONE TESTI & COLIBRI",
+            "price": 0.00,
+            "stock": 999,
+            "nextDate": None,
+            "incomingQty": 0,
+            "mpn": "SCUOLA-LIBRI-TESTO",
+            "ean": "",
+            "img": "assets/images/prodotti/prenotazione-libri-scolastici.jpg",
+            "featured": True,
+            "avail": "Attivo ad Anticipo Zero",
+            "availState": "in-stock",
+            "desc": "Prenota la lista dei libri di testo per le scuole secondarie di I e II grado del Salento (Muro Leccese, Maglie, Poggiardo, Otranto) ad anticipo zero. Ritiro in sede e servizio copertinatura protettiva Colibrì System su richiesta."
         },
     ]
 

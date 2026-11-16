@@ -252,6 +252,27 @@
       cursor: pointer;
     }
     .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); border-color: #fff; }
+    .btn-school {
+      background: #ffffff;
+      color: var(--primary);
+      border: 2px solid #ffffff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+    .btn-school:hover {
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    }
 
     .hero-card-preview {
       background: rgba(255, 255, 255, 0.08);
@@ -907,6 +928,9 @@
       </div>
 
       <div class="header-actions">
+        <button onclick="openBookModal()" style="padding: 8px 14px; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid var(--accent); background: #fffdf5; cursor: pointer; color: #b45309; display: flex; align-items: center; gap: 6px;">
+          📚 Libri Scolastici
+        </button>
         <button onclick="openRepairTrackerModal()" style="padding: 8px 14px; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid var(--border-color); background: #fff; cursor: pointer; color: var(--primary); display: flex; align-items: center; gap: 6px;">
           🔬 Stato Riparazione
         </button>
@@ -930,10 +954,11 @@
           <span class="hero-badge-item">🏛️ Fornitore PA MEPA</span>
         </div>
         <h2>La tua tecnologia di fiducia, <span>a portata di click</span></h2>
-        <p>Acquista online dagli 884 articoli del nostro listino ufficiale con la comodità del ritiro immediato a Muro Leccese o richiedi la spedizione a domicilio. Assistenza specializzata, assemblaggio PC e travaso dati garantiti in sede da Andrea.</p>
+        <p>Acquista online dagli 884 articoli del nostro listino ufficiale con la comodità del ritiro immediato a Muro Leccese o richiedi la spedizione a domicilio. Assistenza specializzata, assemblaggio PC, travaso dati e prenotazione testi scolastici ad anticipo zero garantiti in sede da Andrea.</p>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="filterCategory('all')">Esplora il Catalogo (887)</button>
+          <button class="btn-primary" onclick="filterCategory('all')">Esplora il Catalogo (888)</button>
           <button class="btn-secondary" onclick="filterCategory('servizi')">Laboratorio & Riparazioni</button>
+          <button class="btn-school" onclick="openBookModal()">📚 Servizio Prenotazione Libri di Testo Scolastici (Medie e Superiori)</button>
         </div>
       </div>
 
@@ -992,13 +1017,16 @@
       </div>
 
       <div class="category-pills">
-        <button class="category-btn active" data-cat="all" onclick="filterCategory('all')">Tutti (887)</button>
-        <button class="category-btn" data-cat="componenti" onclick="filterCategory('componenti')">Componenti & PC</button>
-        <button class="category-btn" data-cat="case-cooling" onclick="filterCategory('case-cooling')">Case, Cooling & PSU</button>
+        <button class="category-btn active" data-cat="all" onclick="filterCategory('all')">Tutti (888)</button>
+        <button class="category-btn" data-cat="componenti" onclick="filterCategory('componenti')">CPU, Schede & PC</button>
+        <button class="category-btn" data-cat="cooling" onclick="filterCategory('cooling')">Raffreddamento & Ventole</button>
+        <button class="category-btn" data-cat="case" onclick="filterCategory('case')">Case & Chassis</button>
+        <button class="category-btn" data-cat="alimentatori" onclick="filterCategory('alimentatori')">Alimentatori & UPS</button>
         <button class="category-btn" data-cat="gaming" onclick="filterCategory('gaming')">Gaming & Sim Racing</button>
         <button class="category-btn" data-cat="storage" onclick="filterCategory('storage')">SSD & Hard Disk</button>
-        <button class="category-btn" data-cat="stampa-reti" onclick="filterCategory('stampa-reti')">Stampa, Scanner & Reti</button>
-        <button class="category-btn" data-cat="servizi" onclick="filterCategory('servizi')">Riparazioni & Servizi</button>
+        <button class="category-btn" data-cat="stampa-reti" onclick="filterCategory('stampa-reti')">Stampa, Reti & Scanner</button>
+        <button class="category-btn" data-cat="scuola" onclick="filterCategory('scuola')">📚 Libri Scolastici</button>
+        <button class="category-btn" data-cat="servizi" onclick="filterCategory('servizi')">Laboratorio & Riparazioni</button>
       </div>
     </div>
 
@@ -1113,6 +1141,75 @@
       <div>Membro ASSCOMM (Associazione Commercianti Muro Leccese)</div>
     </div>
   </footer>
+
+  <!-- Modal Prenotazione Libri di Testo Scolastici -->
+  <div class="modal-overlay" id="bookModalOverlay">
+    <div class="checkout-modal" style="max-width: 580px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 24px;">📚</span>
+          <div>
+            <h3 style="margin: 0; font-size: 18px;">Prenotazione Libri di Testo Scolastici</h3>
+            <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Medie e Superiori • Anticipo Zero • Colibrì System</span>
+          </div>
+        </div>
+        <button class="modal-close" onclick="closeBookModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 24px;">
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; font-size: 13px; color: #1e40af; line-height: 1.5;">
+          <strong>🎒 Servizio Ufficiale Just in Time per il Salento:</strong><br>
+          Ordina tutti i libri per le scuole secondarie di I e II grado (Muro Leccese, Maglie, Poggiardo, Otranto, Scorrano, Tricase, ecc.).<br>
+          • <strong>Anticipo Zero:</strong> paghi al ritiro in negozio in Via Corsica 151 man mano che i testi arrivano.<br>
+          • <strong>Servizio Colibrì System:</strong> copertine protettive trasparenti e igieniche saldate su misura.
+        </div>
+
+        <form id="bookReservationForm" onsubmit="submitBookReservation(event)">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Nome e Cognome Genitore/Studente *</label>
+              <input type="text" id="bookStudentName" required placeholder="Mario Rossi" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Cellulare / WhatsApp *</label>
+              <input type="tel" id="bookPhone" required placeholder="320 1234567" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-bottom: 14px;">
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Istituto Scolastico *</label>
+              <input type="text" id="bookSchool" required placeholder="Es. Liceo Capece Maglie / Medie Muro L." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Classe e Sez. *</label>
+              <input type="text" id="bookGrade" required placeholder="Es. 1A, 2B, 3 Sc." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Elenco Libri di Testo (Incolla lista o Codici ISBN o scrivi 'Lista completa') *</label>
+            <textarea id="bookListText" required rows="4" placeholder="Incolla l'elenco dei libri oppure scrivi 'Lista completa adottata dalla scuola' o le materie richieste..." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+          </div>
+
+          <div style="margin-bottom: 20px; background: #fffdf5; border: 1px solid #fde68a; border-radius: 8px; padding: 12px;">
+            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 13px; color: #78350f;">
+              <input type="checkbox" id="bookColibriCheck" checked style="margin-top: 3px; accent-color: #d97706; width: 16px; height: 16px;">
+              <span><strong>Servizio Colibrì System:</strong> Richiedi la foderatura protettiva trasparente saldata su misura per tutti i volumi ritirati.</span>
+            </label>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-direction: column;">
+            <button type="submit" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; padding: 14px 20px; border-radius: 30px; font-weight: 800; font-size: 15px; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">
+              <span>💬</span> Invia Prenotazione ad Andrea su WhatsApp (Anticipo Zero)
+            </button>
+            <button type="button" onclick="filterCategory('scuola'); closeBookModal();" style="background: transparent; color: var(--text-muted); border: none; font-size: 13px; text-decoration: underline; cursor: pointer; padding: 6px;">
+              Visualizza scheda servizio nel catalogo
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal Verifica Riparazione Laboratorio -->
   <div class="modal-overlay" id="repairModalOverlay">
@@ -1268,12 +1365,15 @@
       });
       const catLabels = {
         'all': 'Tutti',
-        'componenti': 'Componenti & PC',
-        'case-cooling': 'Case, Cooling & PSU',
+        'componenti': 'CPU, Schede & PC',
+        'cooling': 'Raffreddamento & Ventole',
+        'case': 'Case & Chassis',
+        'alimentatori': 'Alimentatori & UPS',
         'gaming': 'Gaming & Sim Racing',
         'storage': 'SSD & Hard Disk',
-        'stampa-reti': 'Stampa, Scanner & Reti',
-        'servizi': 'Riparazioni & Servizi'
+        'stampa-reti': 'Stampa, Reti & Scanner',
+        'scuola': '📚 Libri Scolastici',
+        'servizi': 'Laboratorio & Riparazioni'
       };
       document.querySelectorAll('.category-btn').forEach(btn => {
         const c = btn.getAttribute('data-cat');
@@ -1675,6 +1775,54 @@
       } catch (e) {
         resDiv.innerHTML = '<div style="color: #dc2626; font-size: 13px;">Errore di connessione al database locale.</div>';
       }
+    }
+
+    function openBookModal() {
+      document.getElementById('bookModalOverlay').classList.add('active');
+    }
+
+    function closeBookModal() {
+      document.getElementById('bookModalOverlay').classList.remove('active');
+    }
+
+    async function submitBookReservation(e) {
+      e.preventDefault();
+      const name = document.getElementById('bookStudentName').value.trim();
+      const phone = document.getElementById('bookPhone').value.trim();
+      const school = document.getElementById('bookSchool').value.trim();
+      const grade = document.getElementById('bookGrade').value.trim();
+      const listText = document.getElementById('bookListText').value.trim();
+      const colibri = document.getElementById('bookColibriCheck').checked;
+
+      try {
+        await fetch('/api/book_reservations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            student_name: name,
+            phone: phone,
+            school_name: school,
+            class_grade: grade,
+            book_list_text: listText,
+            colibri_covers: colibri
+          })
+        });
+      } catch (err) {
+        // Fallback statico
+      }
+
+      const waMsg = `*PRENOTAZIONE LIBRI SCOLASTICI - JUST IN TIME*\n\n` +
+        `👤 *Genitore/Studente:* ${name}\n` +
+        `📱 *Telefono:* ${phone}\n` +
+        `🏫 *Scuola:* ${school}\n` +
+        `📚 *Classe/Sezione:* ${grade}\n` +
+        `🛡️ *Copertine Colibrì System:* ${colibri ? 'SÌ (Richieste)' : 'No'}\n\n` +
+        `📖 *Elenco Testi / Note:*\n${listText}\n\n` +
+        `_Inviato dal sito Just in Time (Anticipo Zero - Ritiro in Via Corsica 151, Muro Leccese)_`;
+
+      window.open(`https://wa.me/393206025789?text=${encodeURIComponent(waMsg)}`, '_blank');
+      closeBookModal();
+      alert('Richiesta preparata con successo! Si aprirà ora WhatsApp per trasmettere la lista direttamente ad Andrea ad anticipo zero.');
     }
 
     // Initial render
