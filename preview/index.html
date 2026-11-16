@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Just in Time di Benegiamo Andrea | Negozio & Assistenza Informatica Muro Leccese</title>
-  <meta name="description" content="E-commerce e laboratorio tecnico Just in Time a Muro Leccese. Vendita computer, notebook, cartucce, cancelleria e assistenza tecnica specializzata.">
+  <meta name="description" content="E-commerce e laboratorio tecnico Just in Time a Muro Leccese. Vendita computer, componenti hardware, gaming, stampanti e assistenza tecnica specializzata.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -301,7 +301,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       flex-wrap: wrap;
       gap: 16px;
     }
@@ -331,6 +331,53 @@
       background: var(--primary);
       border-color: var(--primary);
       color: #ffffff;
+    }
+
+    /* Filter Bar Secondaria per 884 Articoli */
+    .sub-filters-bar {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sub-filters-bar select {
+      padding: 8px 12px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      background: #f8fafc;
+      outline: none;
+      cursor: pointer;
+    }
+    .sub-filters-bar select:focus {
+      border-color: var(--primary);
+      background: #ffffff;
+    }
+    .stock-filter-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 6px 12px;
+      background: var(--primary-light);
+      border-radius: 20px;
+    }
+    .results-counter {
+      margin-left: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
     }
 
     /* Products Grid */
@@ -373,17 +420,19 @@
 
     .product-thumb {
       height: 190px;
-      background: #f1f5f9;
+      background: #ffffff;
+      border-bottom: 1px solid #f1f5f9;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 12px;
     }
     .product-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
       transition: transform 0.3s;
     }
     .product-card:hover .product-thumb img { transform: scale(1.05); }
@@ -400,6 +449,9 @@
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
     }
     .product-title {
       font-size: 15px;
@@ -433,6 +485,7 @@
       border-top: 1px dashed var(--border-color);
       display: flex;
       align-items: baseline;
+      justify-content: space-between;
       gap: 8px;
       margin-bottom: 12px;
     }
@@ -441,10 +494,10 @@
       font-weight: 800;
       color: var(--primary);
     }
-    .price-compare {
-      font-size: 13px;
+    .price-sku-tag {
+      font-size: 11px;
       color: var(--text-muted);
-      text-decoration: line-through;
+      font-weight: 600;
     }
 
     .product-actions {
@@ -479,6 +532,26 @@
       transition: all 0.2s;
     }
     .btn-quick-wa:hover { background: #25d366; color: #fff; }
+
+    .load-more-container {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .btn-load-more {
+      background: #ffffff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-load-more:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
 
     /* Cart Drawer Modal */
     .cart-drawer-overlay {
@@ -530,7 +603,7 @@
       border-bottom: 1px solid #f1f5f9;
       padding-bottom: 14px;
     }
-    .cart-item img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; }
+    .cart-item img { width: 64px; height: 64px; object-fit: contain; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px; background: #fff; }
     .cart-item-info { flex: 1; }
     .cart-item-title { font-size: 14px; font-weight: 700; line-height: 1.3; }
     .cart-item-price { font-size: 14px; font-weight: 800; color: var(--primary); margin-top: 4px; }
@@ -805,6 +878,7 @@
       .header-container { flex-direction: column; align-items: stretch; }
       .search-box { max-width: 100%; }
       .header-actions { justify-content: space-between; }
+      .results-counter { margin-left: 0; width: 100%; }
     }
   </style>
 </head>
@@ -829,7 +903,7 @@
 
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="Cerca computer, toner, cartucce, cancelleria o riparazioni...">
+        <input type="text" id="searchInput" placeholder="Cerca tra 884 articoli: CPU, schede video, case, dissipatori, stampanti, codici...">
       </div>
 
       <div class="header-actions">
@@ -856,9 +930,9 @@
           <span class="hero-badge-item">🏛️ Fornitore PA MEPA</span>
         </div>
         <h2>La tua tecnologia di fiducia, <span>a portata di click</span></h2>
-        <p>Acquista online con la comodità del ritiro immediato a Muro Leccese o richiedi la spedizione a domicilio. Assistenza specializzata, configurazione PC e travaso dati garantiti in sede da Andrea.</p>
+        <p>Acquista online dagli 884 articoli del nostro listino ufficiale con la comodità del ritiro immediato a Muro Leccese o richiedi la spedizione a domicilio. Assistenza specializzata, assemblaggio PC e travaso dati garantiti in sede da Andrea.</p>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="filterCategory('all')">Esplora il Catalogo</button>
+          <button class="btn-primary" onclick="filterCategory('all')">Esplora il Catalogo (887)</button>
           <button class="btn-secondary" onclick="filterCategory('servizi')">Laboratorio & Riparazioni</button>
         </div>
       </div>
@@ -869,7 +943,7 @@
           <span><strong>Indirizzo:</strong> Via Corsica 151, Muro Leccese (LE)</span>
           <span><strong>Orari:</strong> Lun-Sab 08:30-13:00 / 16:30-20:00</span>
           <span><strong>WhatsApp Diretto:</strong> +39 320 602 5789</span>
-          <span><strong>Servizi:</strong> Vendita, Assistenza PC, Ricariche, Bollettini, Amazon Counter</span>
+          <span><strong>Servizi:</strong> Vendita Hardware, Assistenza PC, Ricariche, Bollettini, Amazon Counter</span>
         </div>
       </div>
     </div>
@@ -896,7 +970,7 @@
         <div class="trust-icon">🛠️</div>
         <div>
           <div class="trust-title">Laboratorio in Sede</div>
-          <div class="trust-sub">Upgrade SSD, riparazioni e backup dati</div>
+          <div class="trust-sub">Assemblaggio PC, upgrade SSD e riparazioni</div>
         </div>
       </div>
       <div class="trust-card">
@@ -910,25 +984,56 @@
   </section>
 
   <!-- Main Catalog Content -->
-  <main class="main-container">
+  <main class="main-container" id="catalogoSection">
     <div class="section-header">
       <div>
-        <h2>Catalogo & Servizi Pilota</h2>
-        <p style="color: var(--text-muted); font-size: 14px;">Seleziona una categoria o filtra i prodotti disponibili in negozio</p>
+        <h2>Catalogo Ufficiale & Servizi</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">Tutti gli 884 articoli del Listino Camoscio con disponibilità e prezzi aggiornati</p>
       </div>
 
       <div class="category-pills">
-        <button class="category-btn active" onclick="filterCategory('all')">Tutti (15)</button>
-        <button class="category-btn" onclick="filterCategory('informatica')">Informatica & PC</button>
-        <button class="category-btn" onclick="filterCategory('stampa')">Stampa & Consumabili</button>
-        <button class="category-btn" onclick="filterCategory('scuola')">Scuola & Cancelleria</button>
-        <button class="category-btn" onclick="filterCategory('servizi')">Riparazioni & Servizi</button>
+        <button class="category-btn active" data-cat="all" onclick="filterCategory('all')">Tutti (887)</button>
+        <button class="category-btn" data-cat="componenti" onclick="filterCategory('componenti')">Componenti & PC</button>
+        <button class="category-btn" data-cat="case-cooling" onclick="filterCategory('case-cooling')">Case, Cooling & PSU</button>
+        <button class="category-btn" data-cat="gaming" onclick="filterCategory('gaming')">Gaming & Sim Racing</button>
+        <button class="category-btn" data-cat="storage" onclick="filterCategory('storage')">SSD & Hard Disk</button>
+        <button class="category-btn" data-cat="stampa-reti" onclick="filterCategory('stampa-reti')">Stampa, Scanner & Reti</button>
+        <button class="category-btn" data-cat="servizi" onclick="filterCategory('servizi')">Riparazioni & Servizi</button>
       </div>
+    </div>
+
+    <div class="sub-filters-bar">
+      <select id="subcatSelect" onchange="applyCatalogFilters()">
+        <option value="all">Tutti i sottogruppi</option>
+      </select>
+
+      <select id="brandSelect" onchange="applyCatalogFilters()">
+        <option value="all">Tutte le marche (43)</option>
+      </select>
+
+      <select id="sortSelect" onchange="applyCatalogFilters()">
+        <option value="featured">Ordina: In Evidenza e Disponibili</option>
+        <option value="price-asc">Prezzo: dal più basso</option>
+        <option value="price-desc">Prezzo: dal più alto</option>
+        <option value="stock-desc">Quantità disponibile</option>
+        <option value="title-asc">Nome (A-Z)</option>
+      </select>
+
+      <label class="stock-filter-check">
+        <input type="checkbox" id="onlyStockCheckbox" onchange="applyCatalogFilters()">
+        <span>Solo disponibili in magazzino</span>
+      </label>
+
+      <span class="results-counter" id="resultsCounter">887 articoli</span>
     </div>
 
     <!-- Products Grid -->
     <div class="products-grid" id="productsGrid">
       <!-- Injected via JavaScript -->
+    </div>
+
+    <div class="load-more-container" id="loadMoreWrap" style="display: none;">
+      <button class="btn-load-more" id="loadMoreBtn" onclick="loadMoreProducts()">Mostra altri articoli</button>
     </div>
   </main>
 
@@ -973,7 +1078,7 @@
       <div class="footer-col">
         <h4>Just in Time</h4>
         <p style="margin-bottom: 12px; color: #94a3b8;">di Benegiamo Andrea</p>
-        <p style="color: #94a3b8; line-height: 1.6;">Negozio e centro assistenza informatica, cartoleria e servizi digitali per cittadini e imprese del Salento.</p>
+        <p style="color: #94a3b8; line-height: 1.6;">Negozio e centro assistenza informatica, componentistica hardware, gaming, cartoleria e servizi digitali per cittadini e imprese del Salento.</p>
       </div>
       <div class="footer-col">
         <h4>Sede & Contatti</h4>
@@ -996,10 +1101,10 @@
       <div class="footer-col">
         <h4>Informazioni Legali</h4>
         <ul>
-          <li><a href="../pages-legal/informativa-privacy-gdpr.html" target="_blank">Informativa Privacy (GDPR)</a></li>
-          <li><a href="../pages-legal/informativa-privacy-gdpr.html#cookie" target="_blank">Cookie Policy</a></li>
-          <li><a href="../pages-legal/termini-condizioni-e-recesso.html" target="_blank">Termini di Vendita e Recesso</a></li>
-          <li><a href="../pages-legal/ritiro-in-sede-e-spedizioni.html" target="_blank">Condizioni Ritiro in Sede</a></li>
+          <li><a href="pages-legal/informativa-privacy-gdpr.html" target="_blank">Informativa Privacy (GDPR)</a></li>
+          <li><a href="pages-legal/informativa-privacy-gdpr.html#cookie" target="_blank">Cookie Policy</a></li>
+          <li><a href="pages-legal/termini-condizioni-e-recesso.html" target="_blank">Termini di Vendita e Recesso</a></li>
+          <li><a href="pages-legal/ritiro-in-sede-e-spedizioni.html" target="_blank">Condizioni Ritiro in Sede</a></li>
         </ul>
       </div>
     </div>
@@ -1116,280 +1221,157 @@
     </div>
   </div>
 
+  <!-- Carica gli 884 articoli reali di LISTINO Camoscio.xlsx -->
+  <script src="assets/camoscio_products.js"></script>
   <script>
-    // 15 Pilot Products data (offline fallback, sincronizzato con SQLite / CSV)
-    let products = [
-      {
-        id: 1,
-        title: "Notebook HP 250 G9 15.6'' Intel Core i5 16GB RAM 512GB SSD Windows 11 Pro",
-        category: "informatica",
-        vendor: "HP",
-        price: 549.00,
-        comparePrice: 599.00,
-        badge: "In Evidenza",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/notebook-hp-250-g9-i5-16gb.jpg",
-        sku: "JIT-HP250-BASE",
-        desc: "Notebook aziendale ideale per lavoro, scuola e produttività. Display Full HD antiriflesso, Intel i5 12a gen, 16GB RAM e SSD 512GB."
-      },
-      {
-        id: 2,
-        title: "Notebook Ricondizionato Lenovo ThinkPad T480 14'' Intel i5 16GB 256GB SSD Grado A+",
-        category: "informatica",
-        vendor: "Lenovo",
-        price: 289.00,
-        comparePrice: 349.00,
-        badge: "Occasione Outlet",
-        badgeClass: "outlet",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/lenovo-thinkpad-t480-ricondizionato.jpg",
-        sku: "JIT-THINKPAD-T480",
-        desc: "Robustezza militare, testato in laboratorio con 25 controlli. Tastiera retroilluminata e garanzia 12 mesi Just in Time."
-      },
-      {
-        id: 3,
-        title: "SSD Interno Kingston A400 480GB SATA 3 2.5'' (Velocizza il tuo PC)",
-        category: "informatica",
-        vendor: "Kingston",
-        price: 39.90,
-        comparePrice: 49.90,
-        badge: "Upgrade PC",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/kingston-a400-ssd-480gb.jpg",
-        sku: "JIT-KNG-A400-480",
-        desc: "Fino a 10 volte più veloce di un hard disk tradizionale. Installabile su PC fisso o portatile nel nostro laboratorio."
-      },
-      {
-        id: 4,
-        title: "Kit Tastiera e Mouse Wireless Logitech MK270 Layout Italiano",
-        category: "informatica",
-        vendor: "Logitech",
-        price: 29.90,
-        comparePrice: 36.90,
-        badge: "Bestseller",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/kit-wireless-logitech-mk270.jpg",
-        sku: "JIT-LOGI-MK270",
-        desc: "Connessione wireless a 2.4 GHz senza ritardi, ricevitore nano USB plug-and-play e batterie incluse."
-      },
-      {
-        id: 5,
-        title: "Router Wi-Fi 6 TP-Link Archer AX12 Dual-Band Gigabit 1500 Mbps",
-        category: "informatica",
-        vendor: "TP-Link",
-        price: 44.90,
-        comparePrice: 54.90,
-        badge: "Nuovo Wi-Fi 6",
-        badgeClass: "",
-        avail: "Ordinabile in 24h",
-        availClass: "avail-order",
-        img: "assets/images/prodotti/router-tplink-archer-ax12-wifi6.jpg",
-        sku: "JIT-TPL-AX12",
-        desc: "Tecnologia Wi-Fi 6 di ultima generazione, velocità Gigabit e 4 antenne esterne ad alto guadagno."
-      },
-      {
-        id: 6,
-        title: "Cartuccia Originale Epson 603XL Nero Stella Marina",
-        category: "stampa",
-        vendor: "Epson",
-        price: 21.50,
-        comparePrice: 24.90,
-        badge: "Originale",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/epson-603xl-nero-originale.jpg",
-        sku: "JIT-EPS-603XL-BK",
-        desc: "Cartuccia originale Epson ad alta capacità per serie Expression Home e WorkForce."
-      },
-      {
-        id: 7,
-        title: "Toner Compatibile Certificato HP 106A (W1106A) con Chip per LaserJet",
-        category: "stampa",
-        vendor: "Just in Time Lab",
-        price: 24.90,
-        comparePrice: 34.90,
-        badge: "Compatibile TOP",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/toner-compatibile-hp-106a.jpg",
-        sku: "JIT-TON-HP106A-COMP",
-        desc: "Resa fino a 1.000 pagine. Chip incluso e garanzia di sostituzione diretta in negozio."
-      },
-      {
-        id: 8,
-        title: "Stampante Multifunzione Inkjet Wi-Fi Canon PIXMA TS3350 (3-in-1)",
-        category: "stampa",
-        vendor: "Canon",
-        price: 49.90,
-        comparePrice: 59.90,
-        badge: "Stampa & Copia",
-        badgeClass: "",
-        avail: "Ordinabile in 24h",
-        availClass: "avail-order",
-        img: "assets/images/prodotti/stampante-canon-pixma-ts3350.jpg",
-        sku: "JIT-CAN-TS3350",
-        desc: "Multifunzione compatta con stampa da smartphone, display LCD e cartucce starter incluse."
-      },
-      {
-        id: 9,
-        title: "Box 5 Risme Carta A4 Navigator Universal 80g (2.500 Fogli)",
-        category: "scuola",
-        vendor: "Navigator",
-        price: 26.50,
-        comparePrice: 31.90,
-        badge: "Scuola & Ufficio",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/risme-carta-a4-navigator-80g.jpg",
-        sku: "JIT-NAV-A4-BOX5",
-        desc: "Punto di bianco eccezionale, nessun inceppamento e certificazione ecologica FSC."
-      },
-      {
-        id: 10,
-        title: "Zaino Scuola e Tempo Libero Eastpak Padded Pak'r Black (24L)",
-        category: "scuola",
-        vendor: "Eastpak",
-        price: 44.90,
-        comparePrice: 55.00,
-        badge: "Garanzia 30 Anni",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/zaino-eastpak-padded-pakr-black.jpg",
-        sku: "JIT-EAST-PAK-BLK",
-        desc: "Iconico zaino Eastpak in tessuto balistico super resistente, spallacci ergonomici imbottiti."
-      },
-      {
-        id: 11,
-        title: "Set 3 Penne Gel a Scatto Pilot G-2 0.7mm (Nero, Blu, Rosso)",
-        category: "scuola",
-        vendor: "Pilot",
-        price: 5.90,
-        comparePrice: 7.20,
-        badge: "Cancelleria",
-        badgeClass: "",
-        avail: "Disponibile subito in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/set-penne-pilot-g2-07-gel.jpg",
-        sku: "JIT-PIL-G2-TRIO",
-        desc: "Inchiostro gel fluido a rapida asciugatura con impugnatura in gomma ergonomica."
-      },
-      {
-        id: 12,
-        title: "Servizio di Diagnosi Guasto e Riparazione Hardware PC / Notebook",
-        category: "servizi",
-        vendor: "Just in Time Lab",
-        price: 20.00,
-        comparePrice: null,
-        badge: "Servizio Tecnico",
-        badgeClass: "service",
-        avail: "Prenotabile in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/servizio-diagnosi-riparazione-pc.jpg",
-        sku: "JIT-SRV-DIAG",
-        desc: "Diagnosi completa in laboratorio entro 24 ore. L'importo viene scalato dall'eventuale riparazione."
-      },
-      {
-        id: 13,
-        title: "Servizio Formattazione, Ripristino Windows e Configurazione Antivirus",
-        category: "servizi",
-        vendor: "Just in Time Lab",
-        price: 45.00,
-        comparePrice: null,
-        badge: "Servizio Tecnico",
-        badgeClass: "service",
-        avail: "Prenotabile in sede",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/servizio-formattazione-windows.jpg",
-        sku: "JIT-SRV-FORMAT-STD",
-        desc: "Backup preventivo dati, reinstallazione pulita Windows, driver proprietari, suite ufficio e antivirus."
-      },
-      {
-        id: 14,
-        title: "Pacchetto Upgrade: Disco SSD Kingston 480GB + Clonazione e Installazione",
-        category: "servizi",
-        vendor: "Just in Time Lab",
-        price: 79.00,
-        comparePrice: 95.00,
-        badge: "Pacchetto Completo",
-        badgeClass: "service",
-        avail: "Pronto in 24h",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/servizio-clonazione-upgrade-ssd.jpg",
-        sku: "JIT-SRV-UPGRADE-SSD",
-        desc: "Include SSD Kingston 480GB, manodopera di montaggio e clonazione esatta di programmi e file."
-      },
-      {
-        id: 15,
-        title: "Servizio Prenotazione Libri di Testo Scolastici (Medie e Superiori)",
-        category: "scuola",
-        vendor: "Just in Time Edizioni",
-        price: 0.00,
-        comparePrice: null,
-        badge: "Anticipo Zero",
-        badgeClass: "service",
-        avail: "Aperto a Muro Leccese",
-        availClass: "avail-now",
-        img: "assets/images/prodotti/prenotazione-libri-scolastici.jpg",
-        sku: "JIT-SRV-LIBRI-TESTO",
-        desc: "Ordina l'elenco libri per le scuole del Salento. Servizio copertine Colibrì su richiesta e pagamento al ritiro."
-      }
-    ];
-
+    let products = Array.isArray(window.CAMOSCIO_PRODUCTS) ? window.CAMOSCIO_PRODUCTS : [];
+    let filteredProducts = [];
     let cart = [];
     let currentCategory = 'all';
+    let visibleCount = 36;
+    const PAGE_SIZE = 36;
+
+    function populateFilterDropdowns() {
+      const subcatSelect = document.getElementById('subcatSelect');
+      const brandSelect = document.getElementById('brandSelect');
+      const currentSub = subcatSelect.value;
+      const currentBrand = brandSelect.value;
+
+      const baseSet = products.filter(p => currentCategory === 'all' || p.category === currentCategory);
+
+      // Sottogruppi
+      const subCounts = {};
+      baseSet.forEach(p => {
+        const sg = p.subCategory || 'ALTRO';
+        subCounts[sg] = (subCounts[sg] || 0) + 1;
+      });
+      const sortedSubs = Object.entries(subCounts).sort((a, b) => b[1] - a[1]);
+      subcatSelect.innerHTML = `<option value="all">Tutti i sottogruppi (${sortedSubs.length})</option>` +
+        sortedSubs.map(([sg, cnt]) => `<option value="${sg.replace(/"/g, '&quot;')}">${sg} (${cnt})</option>`).join('');
+      subcatSelect.value = subCounts[currentSub] ? currentSub : 'all';
+
+      // Marche
+      const brandCounts = {};
+      baseSet.forEach(p => {
+        const br = p.vendor || 'Altro';
+        brandCounts[br] = (brandCounts[br] || 0) + 1;
+      });
+      const sortedBrands = Object.entries(brandCounts).sort((a, b) => b[1] - a[1]);
+      brandSelect.innerHTML = `<option value="all">Tutte le marche (${sortedBrands.length})</option>` +
+        sortedBrands.map(([br, cnt]) => `<option value="${br.replace(/"/g, '&quot;')}">${br} (${cnt})</option>`).join('');
+      brandSelect.value = brandCounts[currentBrand] ? currentBrand : 'all';
+
+      // Aggiorna contatori sui bottoni categoria
+      const catCounts = { all: products.length };
+      products.forEach(p => {
+        catCounts[p.category] = (catCounts[p.category] || 0) + 1;
+      });
+      const catLabels = {
+        'all': 'Tutti',
+        'componenti': 'Componenti & PC',
+        'case-cooling': 'Case, Cooling & PSU',
+        'gaming': 'Gaming & Sim Racing',
+        'storage': 'SSD & Hard Disk',
+        'stampa-reti': 'Stampa, Scanner & Reti',
+        'servizi': 'Riparazioni & Servizi'
+      };
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        const c = btn.getAttribute('data-cat');
+        if (c && catLabels[c]) {
+          btn.textContent = `${catLabels[c]} (${catCounts[c] || 0})`;
+        }
+      });
+    }
+
+    function applyCatalogFilters(resetPage = true) {
+      if (resetPage) visibleCount = PAGE_SIZE;
+
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      const subcat = document.getElementById('subcatSelect').value;
+      const brand = document.getElementById('brandSelect').value;
+      const sortBy = document.getElementById('sortSelect').value;
+      const onlyStock = document.getElementById('onlyStockCheckbox').checked;
+
+      filteredProducts = products.filter(p => {
+        const matchesCategory = (currentCategory === 'all' || p.category === currentCategory);
+        const matchesSub = (subcat === 'all' || p.subCategory === subcat);
+        const matchesBrand = (brand === 'all' || p.vendor === brand);
+        const matchesStock = (!onlyStock || (p.stock && p.stock > 0));
+        const matchesQuery = query === '' ||
+          (p.title && p.title.toLowerCase().includes(query)) ||
+          (p.vendor && p.vendor.toLowerCase().includes(query)) ||
+          (p.desc && p.desc.toLowerCase().includes(query)) ||
+          (p.sku && p.sku.toLowerCase().includes(query)) ||
+          (p.mpn && p.mpn.toLowerCase().includes(query)) ||
+          (p.ean && p.ean.toLowerCase().includes(query)) ||
+          (p.subCategory && p.subCategory.toLowerCase().includes(query));
+
+        return matchesCategory && matchesSub && matchesBrand && matchesStock && matchesQuery;
+      });
+
+      filteredProducts.sort((a, b) => {
+        if (sortBy === 'price-asc') return a.price - b.price;
+        if (sortBy === 'price-desc') return b.price - a.price;
+        if (sortBy === 'stock-desc') return (b.stock || 0) - (a.stock || 0);
+        if (sortBy === 'title-asc') return a.title.localeCompare(b.title, 'it');
+        if ((b.featured ? 1 : 0) !== (a.featured ? 1 : 0)) return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+        const aIn = a.stock > 0 ? 1 : 0;
+        const bIn = b.stock > 0 ? 1 : 0;
+        if (bIn !== aIn) return bIn - aIn;
+        return a.id - b.id;
+      });
+
+      renderProducts();
+    }
 
     function renderProducts() {
       const grid = document.getElementById('productsGrid');
+      const counterEl = document.getElementById('resultsCounter');
+      const loadMoreWrap = document.getElementById('loadMoreWrap');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+
       grid.innerHTML = '';
 
-      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      const total = filteredProducts.length;
+      const slice = filteredProducts.slice(0, visibleCount);
+      counterEl.textContent = `Visualizzati ${slice.length} di ${total} articoli`;
 
-      const filtered = products.filter(p => {
-        const matchesCategory = (query !== '' || currentCategory === 'all' || p.category === currentCategory);
-        const matchesQuery = query === '' || 
-          p.title.toLowerCase().includes(query) || 
-          p.vendor.toLowerCase().includes(query) || 
-          p.desc.toLowerCase().includes(query) ||
-          p.sku.toLowerCase().includes(query);
-        return matchesCategory && matchesQuery;
-      });
-
-      if (filtered.length === 0) {
+      if (total === 0) {
         grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
           Nessun articolo trovato per questa ricerca. Contatta Andrea su WhatsApp per richiedere la disponibilità a magazzino!
         </div>`;
+        loadMoreWrap.style.display = 'none';
         return;
       }
 
-      filtered.forEach(p => {
+      slice.forEach(p => {
         const card = document.createElement('div');
         card.className = 'product-card';
+
+        const isService = p.category === 'servizi';
+        const badgeText = isService ? 'Servizio Tecnico' : (p.featured ? 'In Evidenza' : (p.subCategory || ''));
+        const badgeClass = isService ? 'service' : '';
+        const availClass = (p.availState === 'in-stock' || p.stock > 0) ? 'avail-now' : 'avail-order';
+        const codeDisplay = p.mpn || p.sku;
+
         card.innerHTML = `
-          <div class="product-badge ${p.badgeClass}">${p.badge}</div>
+          ${badgeText ? `<div class="product-badge ${badgeClass}">${badgeText}</div>` : ''}
           <div class="product-thumb">
-            <img src="${p.img}" alt="${p.title}" loading="lazy">
+            <img src="${p.img}" alt="${p.title.replace(/"/g, '&quot;')}" loading="lazy">
           </div>
           <div class="product-details">
-            <div class="product-vendor">${p.vendor}</div>
-            <h3 class="product-title" title="${p.title}">${p.title}</h3>
-            <div class="product-avail ${p.availClass}">
+            <div class="product-vendor">
+              <span>${p.vendor}</span>
+              <span>${codeDisplay}</span>
+            </div>
+            <h3 class="product-title" title="${p.title.replace(/"/g, '&quot;')}">${p.title}</h3>
+            <div class="product-avail ${availClass}">
               <span class="avail-dot"></span>
               <span>${p.avail}</span>
             </div>
             <div class="product-price-row">
               <span class="price-current">${p.price === 0 ? 'Gratuito / Al ritiro' : '€' + p.price.toFixed(2)}</span>
-              ${p.comparePrice ? `<span class="price-compare">€${p.comparePrice.toFixed(2)}</span>` : ''}
+              <span class="price-sku-tag">${p.ean ? 'EAN: ' + p.ean : p.sku}</span>
             </div>
             <div class="product-actions">
               <button class="btn-add-cart" onclick="addToCart(${p.id})">Aggiungi al Carrello</button>
@@ -1399,17 +1381,29 @@
         `;
         grid.appendChild(card);
       });
+
+      if (visibleCount < total) {
+        const remaining = total - visibleCount;
+        loadMoreWrap.style.display = 'block';
+        loadMoreBtn.textContent = `Mostra altri ${Math.min(PAGE_SIZE, remaining)} articoli (${remaining} rimanenti)`;
+      } else {
+        loadMoreWrap.style.display = 'none';
+      }
+    }
+
+    function loadMoreProducts() {
+      visibleCount += PAGE_SIZE;
+      renderProducts();
     }
 
     function filterCategory(cat) {
       currentCategory = cat;
       document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.innerText.toLowerCase().includes(cat) || (cat === 'all' && btn.innerText.includes('Tutti'))) {
-          btn.classList.add('active');
-        }
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
       });
-      renderProducts();
+      document.getElementById('subcatSelect').value = 'all';
+      populateFilterDropdowns();
+      applyCatalogFilters(true);
     }
 
     document.getElementById('searchInput').addEventListener('input', () => {
@@ -1417,11 +1411,11 @@
       if (q !== '' && currentCategory !== 'all') {
         currentCategory = 'all';
         document.querySelectorAll('.category-btn').forEach(btn => {
-          btn.classList.remove('active');
-          if (btn.innerText.includes('Tutti')) btn.classList.add('active');
+          btn.classList.toggle('active', btn.getAttribute('data-cat') === 'all');
         });
+        populateFilterDropdowns();
       }
-      renderProducts();
+      applyCatalogFilters(true);
     });
 
     // Cart management
@@ -1457,7 +1451,7 @@
       } else {
         container.innerHTML = cart.map(item => `
           <div class="cart-item">
-            <img src="${item.img}" alt="${item.title}">
+            <img src="${item.img}" alt="${item.title.replace(/"/g, '&quot;')}">
             <div class="cart-item-info">
               <div class="cart-item-title">${item.title}</div>
               <div class="cart-item-price">${item.qty} x €${item.price.toFixed(2)}</div>
@@ -1556,7 +1550,6 @@
       let orderNumber = `JIT-${Date.now().toString().slice(-6)}`;
       let isDbSaved = false;
 
-      // Invio all'API locale se attiva
       try {
         const payload = {
           customer: {
@@ -1586,7 +1579,6 @@
         console.log("Ordine registrato in modalità sandbox client:", e);
       }
 
-      // Descrizione pagamento
       let paymentDesc = "";
       if (selectedPayment === 'pos_on_pickup') {
         paymentDesc = "🏪 <strong>Pagamento al ritiro in negozio</strong>: Pagherai in contanti o con carta/Bancomat al banco in Via Corsica 151 al ritiro dei prodotti.";
@@ -1599,7 +1591,6 @@
       const itemsList = cart.map(i => `• ${i.qty}x ${i.title} (€${(i.price * i.qty).toFixed(2)})`).join('\n');
       const waMessage = `Ciao Andrea, ho completato l'ordine *${orderNumber}* sul sito Just in Time:\n\n*Cliente:* ${firstName} ${lastName} (${phone})\n*Modalità:* ${deliveryMethod === 'pickup' ? 'Ritiro in sede a Muro Leccese' : 'Spedizione a domicilio (' + address + ')'}\n*Pagamento:* ${selectedPayment === 'pos_on_pickup' ? 'Al ritiro in negozio' : selectedPayment === 'stripe' ? 'Carta / PayByLink' : 'Bonifico Bancario'}\n\n*Articoli:*\n${itemsList}\n\n*Totale:* ${totalStr}${notes ? '\n\n*Note:* ' + notes : ''}`;
 
-      // Rendering schermata di conferma
       document.getElementById('modalMainBody').innerHTML = `
         <div style="text-align: center; padding: 20px 10px;">
           <div style="font-size: 54px; margin-bottom: 12px;">✅</div>
@@ -1621,7 +1612,6 @@
         <button class="btn-modal-cancel" style="width: 100%;" onclick="finishAndCloseCheckout()">Chiudi e Torna al Negozio</button>
       `;
 
-      // Reset carrello
       cart = [];
       updateCartUI();
     }
@@ -1629,45 +1619,6 @@
     function finishAndCloseCheckout() {
       closeCheckoutModal();
       location.reload();
-    }
-
-    async function loadProductsFromApi() {
-      try {
-        const res = await fetch('/api/products');
-        if (res.ok) {
-          const dbProducts = await res.json();
-          if (Array.isArray(dbProducts) && dbProducts.length > 0) {
-            products = dbProducts.map(p => {
-              const primaryVariant = (p.variants && p.variants.length > 0) ? p.variants[0] : {};
-              const catCode = p.category_code ? p.category_code.split('-')[0] : 'informatica';
-              const isService = catCode === 'servizi';
-              const isOutlet = (p.tags_list && p.tags_list.includes('outlet'));
-              
-              let badge = isOutlet ? 'Occasione Outlet' : isService ? 'Servizio Tecnico' : (p.is_featured ? 'In Evidenza' : '');
-              let badgeClass = isOutlet ? 'outlet' : isService ? 'service' : '';
-
-              return {
-                id: p.id,
-                title: p.title,
-                category: catCode,
-                vendor: p.vendor || 'Just in Time',
-                price: parseFloat(primaryVariant.price || p.min_price || p.base_price || 0),
-                comparePrice: (primaryVariant.compare_at_price || p.compare_at_price) ? parseFloat(primaryVariant.compare_at_price || p.compare_at_price) : null,
-                badge: badge,
-                badgeClass: badgeClass,
-                avail: p.is_available_in_store ? 'Disponibile subito in sede' : 'Ordinabile in 24/48h',
-                availClass: p.is_available_in_store ? 'avail-now' : 'avail-order',
-                img: p.image_url || 'assets/images/prodotti/notebook-hp-250-g9-i5-16gb.jpg',
-                sku: primaryVariant.sku || p.handle,
-                desc: p.description_html ? p.description_html.replace(/<[^>]*>?/gm, '').slice(0, 140) + '...' : ''
-              };
-            });
-            renderProducts();
-          }
-        }
-      } catch (e) {
-        // Fallback su prodotti statici
-      }
     }
 
     function openRepairTrackerModal() {
@@ -1727,8 +1678,9 @@
     }
 
     // Initial render
-    renderProducts();
-    loadProductsFromApi();
+    populateFilterDropdowns();
+    applyCatalogFilters(true);
+    updateCartUI();
   </script>
 </body>
 </html>

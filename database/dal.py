@@ -80,14 +80,21 @@ class JustInTimeDAL:
             sql += " GROUP BY p.id ORDER BY p.is_featured DESC, c.sort_order ASC, p.id ASC"
 
             rows = conn.execute(sql, params).fetchall()
+            if not rows:
+                return []
+
+            all_vars = conn.execute("""
+                SELECT * FROM product_variants WHERE is_active = 1 ORDER BY id ASC
+            """).fetchall()
+            vars_by_prod = {}
+            for v in all_vars:
+                vd = dict(v)
+                vars_by_prod.setdefault(vd["product_id"], []).append(vd)
+
             products = []
             for r in rows:
                 p_dict = dict(r)
-                vars_rows = conn.execute("""
-                    SELECT * FROM product_variants WHERE product_id = ? AND is_active = 1
-                    ORDER BY id ASC
-                """, (p_dict["id"],)).fetchall()
-                p_dict["variants"] = [dict(v) for v in vars_rows]
+                p_dict["variants"] = vars_by_prod.get(p_dict["id"], [])
                 products.append(p_dict)
             return products
 
