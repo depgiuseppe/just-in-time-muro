@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Just in Time di Benegiamo Andrea | Negozio & Assistenza Informatica Muro Leccese</title>
-  <meta name="description" content="E-commerce e laboratorio tecnico Just in Time a Muro Leccese. Vendita computer, componenti hardware, gaming, stampanti e assistenza tecnica specializzata.">
+  <meta name="description"
+    content="E-commerce e laboratorio tecnico Just in Time a Muro Leccese. Vendita computer, componenti hardware, gaming, stampanti e assistenza tecnica specializzata.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #0f4c81;
@@ -23,13 +26,24 @@
       --success: #10b981;
       --whatsapp: #25d366;
       --radius: 10px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-    body { background-color: var(--bg-page); color: var(--text-main); line-height: 1.5; padding-bottom: 60px; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
 
     /* Announcement Bar */
     .announcement-bar {
@@ -44,6 +58,7 @@
       align-items: center;
       gap: 12px;
     }
+
     .announcement-bar span.pill {
       background: var(--accent);
       color: #000;
@@ -63,6 +78,7 @@
       z-index: 1000;
       box-shadow: var(--shadow-sm);
     }
+
     .header-container {
       max-width: 1240px;
       margin: 0 auto;
@@ -72,6 +88,7 @@
       justify-content: space-between;
       gap: 20px;
     }
+
     .brand-logo {
       display: flex;
       align-items: center;
@@ -79,6 +96,7 @@
       text-decoration: none;
       color: inherit;
     }
+
     .brand-symbol {
       width: 44px;
       height: 44px;
@@ -92,6 +110,7 @@
       font-weight: 800;
       border: 2px solid var(--accent);
     }
+
     .brand-text h1 {
       font-size: 20px;
       font-weight: 800;
@@ -99,6 +118,7 @@
       letter-spacing: -0.5px;
       line-height: 1.1;
     }
+
     .brand-text span {
       font-size: 11px;
       color: var(--text-muted);
@@ -112,6 +132,7 @@
       max-width: 500px;
       position: relative;
     }
+
     .search-box input {
       width: 100%;
       padding: 10px 16px 10px 42px;
@@ -122,11 +143,13 @@
       transition: all 0.2s;
       background: #f1f5f9;
     }
+
     .search-box input:focus {
       background: #ffffff;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
     }
+
     .search-icon {
       position: absolute;
       left: 14px;
@@ -141,6 +164,7 @@
       align-items: center;
       gap: 16px;
     }
+
     .location-pill {
       display: flex;
       align-items: center;
@@ -152,6 +176,7 @@
       padding: 6px 12px;
       border-radius: 20px;
     }
+
     .cart-btn {
       position: relative;
       background: var(--primary);
@@ -167,7 +192,11 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .cart-btn:hover { background: var(--primary-dark); }
+
+    .cart-btn:hover {
+      background: var(--primary-dark);
+    }
+
     .cart-count {
       background: var(--accent);
       color: #000;
@@ -185,6 +214,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero-content {
       max-width: 1240px;
       margin: 0 auto;
@@ -193,25 +223,32 @@
       align-items: center;
       gap: 40px;
     }
+
     .hero-text h2 {
       font-size: 38px;
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 16px;
     }
-    .hero-text h2 span { color: var(--accent); }
+
+    .hero-text h2 span {
+      color: var(--accent);
+    }
+
     .hero-text p {
       font-size: 16px;
       color: #cbd5e1;
       margin-bottom: 24px;
       max-width: 560px;
     }
+
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 28px;
     }
+
     .hero-badge-item {
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(8px);
@@ -221,11 +258,13 @@
       font-size: 13px;
       font-weight: 600;
     }
+
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
     }
+
     .btn-primary {
       background: var(--accent);
       color: #000000;
@@ -238,7 +277,12 @@
       border: none;
       cursor: pointer;
     }
-    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
     .btn-secondary {
       background: transparent;
       color: #ffffff;
@@ -251,7 +295,12 @@
       transition: all 0.2s;
       cursor: pointer;
     }
-    .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); border-color: #fff; }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+    }
+
     .btn-school {
       background: #ffffff;
       color: var(--primary);
@@ -268,6 +317,7 @@
       gap: 8px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     }
+
     .btn-school:hover {
       background: #f8fafc;
       transform: translateY(-2px);
@@ -281,9 +331,25 @@
       padding: 24px;
       backdrop-filter: blur(12px);
     }
-    .hero-card-preview h3 { font-size: 18px; margin-bottom: 12px; color: var(--accent); }
-    .hero-store-info { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
-    .hero-store-info span { display: flex; align-items: center; gap: 8px; }
+
+    .hero-card-preview h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .hero-store-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .hero-store-info span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
     /* Trust Section */
     .trust-section {
@@ -293,11 +359,13 @@
       position: relative;
       z-index: 10;
     }
+
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
+
     .trust-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
@@ -308,9 +376,21 @@
       gap: 16px;
       box-shadow: var(--shadow-sm);
     }
-    .trust-icon { font-size: 28px; }
-    .trust-title { font-size: 14px; font-weight: 700; color: var(--primary); }
-    .trust-sub { font-size: 12px; color: var(--text-muted); }
+
+    .trust-icon {
+      font-size: 28px;
+    }
+
+    .trust-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .trust-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
 
     /* Filter & Categories Navigation */
     .main-container {
@@ -318,6 +398,7 @@
       margin: 0 auto;
       padding: 20px;
     }
+
     .section-header {
       display: flex;
       justify-content: space-between;
@@ -326,16 +407,19 @@
       flex-wrap: wrap;
       gap: 16px;
     }
+
     .section-header h2 {
       font-size: 26px;
       font-weight: 800;
       color: var(--primary);
     }
+
     .category-pills {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
+
     .category-btn {
       padding: 8px 18px;
       border-radius: 20px;
@@ -347,7 +431,12 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .category-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    .category-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
     .category-btn.active {
       background: var(--primary);
       border-color: var(--primary);
@@ -367,6 +456,7 @@
       gap: 12px;
       box-shadow: var(--shadow-sm);
     }
+
     .sub-filters-bar select {
       padding: 8px 12px;
       border: 1.5px solid var(--border-color);
@@ -378,10 +468,12 @@
       outline: none;
       cursor: pointer;
     }
+
     .sub-filters-bar select:focus {
       border-color: var(--primary);
       background: #ffffff;
     }
+
     .stock-filter-check {
       display: inline-flex;
       align-items: center;
@@ -394,6 +486,7 @@
       background: var(--primary-light);
       border-radius: 20px;
     }
+
     .results-counter {
       margin-left: auto;
       font-size: 13px;
@@ -407,6 +500,7 @@
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 22px;
     }
+
     .product-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
@@ -418,11 +512,13 @@
       transition: transform 0.2s, box-shadow 0.2s;
       position: relative;
     }
+
     .product-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-md);
       border-color: #cbd5e1;
     }
+
     .product-badge {
       position: absolute;
       top: 12px;
@@ -436,8 +532,15 @@
       border-radius: 12px;
       letter-spacing: 0.3px;
     }
-    .product-badge.outlet { background: #e11d48; }
-    .product-badge.service { background: var(--accent); color: #000; }
+
+    .product-badge.outlet {
+      background: #e11d48;
+    }
+
+    .product-badge.service {
+      background: var(--accent);
+      color: #000;
+    }
 
     .product-thumb {
       height: 190px;
@@ -450,13 +553,17 @@
       justify-content: center;
       padding: 12px;
     }
+
     .product-thumb img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
       transition: transform 0.3s;
     }
-    .product-card:hover .product-thumb img { transform: scale(1.05); }
+
+    .product-card:hover .product-thumb img {
+      transform: scale(1.05);
+    }
 
     .product-details {
       padding: 16px;
@@ -464,6 +571,7 @@
       flex-direction: column;
       flex: 1;
     }
+
     .product-vendor {
       font-size: 11px;
       font-weight: 700;
@@ -474,6 +582,7 @@
       justify-content: space-between;
       gap: 6px;
     }
+
     .product-title {
       font-size: 15px;
       font-weight: 700;
@@ -486,6 +595,7 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
+
     .product-avail {
       font-size: 12px;
       font-weight: 600;
@@ -494,11 +604,29 @@
       align-items: center;
       gap: 6px;
     }
-    .avail-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-    .avail-now { color: #059669; }
-    .avail-now .avail-dot { background: #059669; }
-    .avail-order { color: #d97706; }
-    .avail-order .avail-dot { background: #d97706; }
+
+    .avail-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .avail-now {
+      color: #059669;
+    }
+
+    .avail-now .avail-dot {
+      background: #059669;
+    }
+
+    .avail-order {
+      color: #d97706;
+    }
+
+    .avail-order .avail-dot {
+      background: #d97706;
+    }
 
     .product-price-row {
       margin-top: auto;
@@ -510,11 +638,13 @@
       gap: 8px;
       margin-bottom: 12px;
     }
+
     .price-current {
       font-size: 19px;
       font-weight: 800;
       color: var(--primary);
     }
+
     .price-sku-tag {
       font-size: 11px;
       color: var(--text-muted);
@@ -526,6 +656,7 @@
       grid-template-columns: 1fr auto;
       gap: 8px;
     }
+
     .btn-add-cart {
       background: var(--primary);
       color: #fff;
@@ -537,7 +668,11 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .btn-add-cart:hover { background: var(--primary-dark); }
+
+    .btn-add-cart:hover {
+      background: var(--primary-dark);
+    }
+
     .btn-quick-wa {
       background: #e6f9ed;
       color: #15803d;
@@ -552,12 +687,17 @@
       justify-content: center;
       transition: all 0.2s;
     }
-    .btn-quick-wa:hover { background: #25d366; color: #fff; }
+
+    .btn-quick-wa:hover {
+      background: #25d366;
+      color: #fff;
+    }
 
     .load-more-container {
       text-align: center;
       margin-top: 32px;
     }
+
     .btn-load-more {
       background: #ffffff;
       color: var(--primary);
@@ -569,6 +709,7 @@
       cursor: pointer;
       transition: all 0.2s;
     }
+
     .btn-load-more:hover {
       background: var(--primary);
       color: #ffffff;
@@ -577,16 +718,22 @@
     /* Cart Drawer Modal */
     .cart-drawer-overlay {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
       z-index: 2000;
       display: none;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
+
     .cart-drawer {
       position: fixed;
-      top: 0; right: 0; bottom: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
       width: 100%;
       max-width: 420px;
       background: #ffffff;
@@ -595,10 +742,17 @@
       flex-direction: column;
       transform: translateX(100%);
       transition: transform 0.3s ease;
-      box-shadow: -4px 0 25px rgba(0,0,0,0.15);
+      box-shadow: -4px 0 25px rgba(0, 0, 0, 0.15);
     }
-    .cart-drawer.open { transform: translateX(0); }
-    .cart-drawer-overlay.open { display: block; opacity: 1; }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-drawer-overlay.open {
+      display: block;
+      opacity: 1;
+    }
 
     .drawer-header {
       padding: 18px 20px;
@@ -607,8 +761,20 @@
       justify-content: space-between;
       align-items: center;
     }
-    .drawer-header h3 { font-size: 18px; font-weight: 800; color: var(--primary); }
-    .drawer-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text-muted); }
+
+    .drawer-header h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .drawer-close {
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
 
     .drawer-body {
       padding: 20px;
@@ -618,23 +784,56 @@
       flex-direction: column;
       gap: 16px;
     }
+
     .cart-item {
       display: flex;
       gap: 14px;
       border-bottom: 1px solid #f1f5f9;
       padding-bottom: 14px;
     }
-    .cart-item img { width: 64px; height: 64px; object-fit: contain; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px; background: #fff; }
-    .cart-item-info { flex: 1; }
-    .cart-item-title { font-size: 14px; font-weight: 700; line-height: 1.3; }
-    .cart-item-price { font-size: 14px; font-weight: 800; color: var(--primary); margin-top: 4px; }
-    .cart-item-remove { font-size: 12px; color: #ef4444; cursor: pointer; background: none; border: none; margin-top: 6px; }
+
+    .cart-item img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      padding: 4px;
+      background: #fff;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .cart-item-price {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+
+    .cart-item-remove {
+      font-size: 12px;
+      color: #ef4444;
+      cursor: pointer;
+      background: none;
+      border: none;
+      margin-top: 6px;
+    }
 
     .drawer-footer {
       padding: 20px;
       border-top: 1px solid var(--border-color);
       background: #f8fafc;
     }
+
     .delivery-options {
       margin-bottom: 16px;
       background: #ffffff;
@@ -642,6 +841,7 @@
       border-radius: 8px;
       padding: 12px;
     }
+
     .delivery-options label {
       display: flex;
       align-items: center;
@@ -651,7 +851,11 @@
       cursor: pointer;
       margin-bottom: 8px;
     }
-    .delivery-options label:last-child { margin-bottom: 0; }
+
+    .delivery-options label:last-child {
+      margin-bottom: 0;
+    }
+
     .drawer-total {
       display: flex;
       justify-content: space-between;
@@ -659,6 +863,7 @@
       font-weight: 800;
       margin-bottom: 16px;
     }
+
     .btn-checkout {
       width: 100%;
       background: var(--accent);
@@ -671,7 +876,10 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .btn-checkout:hover { background: var(--accent-hover); }
+
+    .btn-checkout:hover {
+      background: var(--accent-hover);
+    }
 
     /* Footer */
     footer {
@@ -681,6 +889,7 @@
       margin-top: 60px;
       font-size: 14px;
     }
+
     .footer-grid {
       max-width: 1240px;
       margin: 0 auto;
@@ -688,18 +897,34 @@
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 36px;
       padding-bottom: 36px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+
     .footer-col h4 {
       color: #ffffff;
       font-size: 16px;
       margin-bottom: 16px;
       font-weight: 700;
     }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul li a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: #ffffff; }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+    }
+
     .footer-bottom {
       max-width: 1240px;
       margin: 24px auto 0;
@@ -731,6 +956,7 @@
       box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
       transition: transform 0.2s, box-shadow 0.2s;
     }
+
     .whatsapp-floater:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
@@ -739,7 +965,10 @@
     /* Checkout & Payment Modal */
     .modal-overlay {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: rgba(10, 37, 64, 0.65);
       backdrop-filter: blur(4px);
       z-index: 2000;
@@ -748,7 +977,11 @@
       justify-content: center;
       padding: 16px;
     }
-    .modal-overlay.active { display: flex; }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
     .checkout-modal {
       background: #ffffff;
       width: 100%;
@@ -759,10 +992,19 @@
       box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
       animation: modalFadeIn 0.25s ease-out;
     }
+
     @keyframes modalFadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .modal-header {
       padding: 20px 24px;
       border-bottom: 1px solid var(--border-color);
@@ -773,9 +1015,27 @@
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
     }
-    .modal-header h3 { font-size: 18px; font-weight: 800; color: var(--primary); margin: 0; }
-    .modal-close { background: none; border: none; font-size: 26px; cursor: pointer; color: var(--text-muted); line-height: 1; }
-    .modal-body { padding: 24px; }
+
+    .modal-header h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
     .checkout-step-title {
       font-size: 13px;
       font-weight: 700;
@@ -787,11 +1047,32 @@
       align-items: center;
       gap: 8px;
     }
-    .checkout-step-title:first-child { margin-top: 0; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .form-full { grid-column: span 2; }
-    .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
-    .form-group input, .form-group textarea, .form-group select {
+
+    .checkout-step-title:first-child {
+      margin-top: 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-full {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
       width: 100%;
       padding: 10px 12px;
       border: 1px solid var(--border-color);
@@ -802,14 +1083,19 @@
       box-sizing: border-box;
       transition: border-color 0.2s;
     }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
-    
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
     .payment-options-grid {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-top: 8px;
     }
+
     .payment-option-card {
       border: 1.5px solid var(--border-color);
       border-radius: 10px;
@@ -820,14 +1106,40 @@
       gap: 12px;
       transition: all 0.2s;
     }
-    .payment-option-card:hover { border-color: var(--primary); background: #f8fafc; }
+
+    .payment-option-card:hover {
+      border-color: var(--primary);
+      background: #f8fafc;
+    }
+
     .payment-option-card.selected {
       border-color: var(--primary);
       background: #eff6ff;
     }
-    .payment-option-card input[type="radio"] { margin-top: 3px; accent-color: var(--primary); }
-    .payment-card-content h5 { margin: 0 0 3px; font-size: 14px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
-    .payment-card-content p { margin: 0; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    .payment-option-card input[type="radio"] {
+      margin-top: 3px;
+      accent-color: var(--primary);
+    }
+
+    .payment-card-content h5 {
+      margin: 0 0 3px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .payment-card-content p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
     .payment-badge {
       font-size: 10px;
       padding: 2px 8px;
@@ -836,6 +1148,7 @@
       color: #15803d;
       font-weight: 700;
     }
+
     .order-summary-box {
       background: #f1f5f9;
       padding: 14px 18px;
@@ -843,12 +1156,14 @@
       margin-top: 20px;
       font-size: 14px;
     }
+
     .order-summary-row {
       display: flex;
       justify-content: space-between;
       margin-bottom: 6px;
       color: var(--text-muted);
     }
+
     .order-summary-row.total {
       font-size: 17px;
       font-weight: 800;
@@ -858,6 +1173,7 @@
       margin-top: 8px;
       margin-bottom: 0;
     }
+
     .modal-footer {
       padding: 18px 24px;
       border-top: 1px solid var(--border-color);
@@ -868,6 +1184,7 @@
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
     }
+
     .btn-modal-cancel {
       padding: 10px 18px;
       border: 1px solid var(--border-color);
@@ -877,6 +1194,7 @@
       font-weight: 600;
       cursor: pointer;
     }
+
     .btn-modal-confirm {
       padding: 12px 24px;
       background: var(--accent);
@@ -891,17 +1209,132 @@
       gap: 8px;
       transition: background 0.2s;
     }
-    .btn-modal-confirm:hover { background: var(--accent-hover); }
 
-    .book-form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-    .book-form-grid-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .btn-modal-confirm:hover {
+      background: var(--accent-hover);
+    }
 
-    /* PC Configurator Section */
+    .book-form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .book-form-grid-2-1 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    /* PC Configurator Section (Dedicated Separate View) */
     .pc-builder-section {
+      display: none;
       max-width: 1280px;
-      margin: 28px auto 12px;
+      margin: 24px auto 40px;
       padding: 0 24px;
     }
+    .pc-builder-section.active-view {
+      display: block;
+    }
+    .pc-back-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-back-catalog {
+      background: #ffffff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 9px 18px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-back-catalog:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .pc-dnd-hint-bar {
+      background: #eff6ff;
+      border: 1px dashed #3b82f6;
+      color: #1e40af;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pc-option-item[draggable="true"] {
+      cursor: grab;
+    }
+    .pc-option-item[draggable="true"]:active {
+      cursor: grabbing;
+    }
+    .pc-option-item.is-dragging, .pc-slot-row.is-dragging {
+      opacity: 0.45;
+      border: 2px dashed var(--primary);
+    }
+    .pc-drag-handle {
+      color: #94a3b8;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: grab;
+      user-select: none;
+      padding: 0 2px;
+    }
+    .pc-drop-install-banner {
+      border: 2px dashed #10b981;
+      background: #ecfdf5;
+      color: #065f46;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      transition: all 0.2s;
+    }
+    .pc-drop-install-banner.drag-active {
+      background: #d1fae5;
+      border-color: #059669;
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.22);
+    }
+    .pc-slot-row.drag-over-slot {
+      border: 2px dashed #059669 !important;
+      background: #d1fae5 !important;
+      transform: scale(1.01);
+    }
+    .pc-drop-remove-zone {
+      border: 2px dashed #cbd5e1;
+      background: #f8fafc;
+      color: #64748b;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .pc-drop-remove-zone.drag-remove-active {
+      border-color: #dc2626;
+      background: #fef2f2;
+      color: #991b1b;
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+    }
+
     .pc-builder-card {
       background: #ffffff;
       border: 2px solid #cbd5e1;
@@ -909,6 +1342,7 @@
       overflow: hidden;
       box-shadow: var(--shadow-md);
     }
+
     .pc-builder-banner {
       background: linear-gradient(135deg, #0b355c 0%, #0f4c81 60%, #165e9b 100%);
       color: #ffffff;
@@ -919,6 +1353,7 @@
       flex-wrap: wrap;
       gap: 18px;
     }
+
     .pc-builder-banner-text h2 {
       font-size: 24px;
       font-weight: 800;
@@ -927,17 +1362,20 @@
       align-items: center;
       gap: 10px;
     }
+
     .pc-builder-banner-text p {
       font-size: 14px;
       color: rgba(255, 255, 255, 0.9);
       max-width: 720px;
     }
+
     .pc-presets-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       align-items: center;
     }
+
     .btn-preset {
       background: rgba(255, 255, 255, 0.14);
       color: #ffffff;
@@ -952,11 +1390,13 @@
       align-items: center;
       gap: 6px;
     }
+
     .btn-preset:hover {
       background: var(--accent);
       color: #000000;
       border-color: var(--accent);
     }
+
     .pc-builder-body {
       display: grid;
       grid-template-columns: 1.65fr 1fr;
@@ -964,12 +1404,14 @@
       padding: 24px;
       background: #f8fafc;
     }
+
     .pc-steps-nav {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 8px;
       margin-bottom: 18px;
     }
+
     .pc-step-tab {
       background: #ffffff;
       border: 1px solid var(--border-color);
@@ -983,23 +1425,28 @@
       gap: 4px;
       position: relative;
     }
+
     .pc-step-tab:hover {
       border-color: var(--primary);
       background: #f0f7ff;
     }
+
     .pc-step-tab.active {
       border: 2px solid var(--primary);
       background: #eff6ff;
       box-shadow: 0 2px 8px rgba(15, 76, 129, 0.12);
     }
+
     .pc-step-tab.done {
       border-color: #10b981;
       background: #ecfdf5;
     }
+
     .pc-step-tab.warn {
       border-color: #f59e0b;
       background: #fffbeb;
     }
+
     .pc-step-num {
       font-size: 11px;
       font-weight: 800;
@@ -1008,8 +1455,15 @@
       justify-content: space-between;
       align-items: center;
     }
-    .pc-step-tab.done .pc-step-num { color: #059669; }
-    .pc-step-tab.active .pc-step-num { color: var(--primary); }
+
+    .pc-step-tab.done .pc-step-num {
+      color: #059669;
+    }
+
+    .pc-step-tab.active .pc-step-num {
+      color: var(--primary);
+    }
+
     .pc-step-name {
       font-size: 12px;
       font-weight: 700;
@@ -1018,6 +1472,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .pc-step-picked {
       font-size: 10px;
       color: #059669;
@@ -1026,12 +1481,14 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .pc-wizard-stage {
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 20px;
     }
+
     .pc-stage-header {
       display: flex;
       justify-content: space-between;
@@ -1042,6 +1499,7 @@
       border-bottom: 1px solid var(--border-color);
       flex-wrap: wrap;
     }
+
     .pc-stage-guide {
       background: #eff6ff;
       border-left: 4px solid var(--primary);
@@ -1052,6 +1510,7 @@
       margin-bottom: 14px;
       line-height: 1.5;
     }
+
     .pc-stage-toolbar {
       display: flex;
       gap: 10px;
@@ -1059,14 +1518,21 @@
       flex-wrap: wrap;
       align-items: center;
     }
-    .pc-stage-toolbar input, .pc-stage-toolbar select {
+
+    .pc-stage-toolbar input,
+    .pc-stage-toolbar select {
       padding: 8px 12px;
       border: 1px solid var(--border-color);
       border-radius: 8px;
       font-size: 13px;
       font-family: inherit;
     }
-    .pc-stage-toolbar input { flex: 1; min-width: 180px; }
+
+    .pc-stage-toolbar input {
+      flex: 1;
+      min-width: 180px;
+    }
+
     .pc-options-list {
       display: flex;
       flex-direction: column;
@@ -1075,6 +1541,7 @@
       overflow-y: auto;
       padding-right: 4px;
     }
+
     .pc-option-item {
       display: flex;
       align-items: center;
@@ -1086,14 +1553,17 @@
       transition: all 0.15s;
       cursor: pointer;
     }
+
     .pc-option-item:hover {
       border-color: var(--primary);
       background: #f8fafc;
     }
+
     .pc-option-item.selected {
       border: 2px solid #059669;
       background: #ecfdf5;
     }
+
     .pc-option-thumb {
       width: 58px;
       height: 58px;
@@ -1106,15 +1576,18 @@
       flex-shrink: 0;
       padding: 4px;
     }
+
     .pc-option-thumb img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
+
     .pc-option-info {
       flex: 1;
       min-width: 0;
     }
+
     .pc-option-title {
       font-size: 13px;
       font-weight: 700;
@@ -1122,6 +1595,7 @@
       margin-bottom: 4px;
       line-height: 1.35;
     }
+
     .pc-option-meta {
       display: flex;
       flex-wrap: wrap;
@@ -1130,6 +1604,7 @@
       color: var(--text-muted);
       align-items: center;
     }
+
     .pc-compat-pill {
       background: #dcfce7;
       color: #166534;
@@ -1138,6 +1613,7 @@
       border-radius: 10px;
       font-size: 10px;
     }
+
     .pc-option-right {
       text-align: right;
       flex-shrink: 0;
@@ -1146,11 +1622,13 @@
       align-items: flex-end;
       gap: 6px;
     }
+
     .pc-option-price {
       font-size: 16px;
       font-weight: 800;
       color: var(--primary);
     }
+
     .btn-pick-part {
       padding: 6px 14px;
       border-radius: 18px;
@@ -1161,9 +1639,11 @@
       color: #ffffff;
       cursor: pointer;
     }
+
     .pc-option-item.selected .btn-pick-part {
       background: #059669;
     }
+
     .pc-stage-nav-btns {
       display: flex;
       justify-content: space-between;
@@ -1173,6 +1653,7 @@
       border-top: 1px solid var(--border-color);
       gap: 10px;
     }
+
     .pc-summary-panel {
       background: #ffffff;
       border: 1px solid var(--border-color);
@@ -1185,22 +1666,26 @@
       position: sticky;
       top: 90px;
     }
+
     .pc-compat-box {
       padding: 12px 14px;
       border-radius: 10px;
       font-size: 12px;
       line-height: 1.5;
     }
+
     .pc-compat-box.ok {
       background: #ecfdf5;
       border: 1px solid #a7f3d0;
       color: #065f46;
     }
+
     .pc-compat-box.warn {
       background: #fffbeb;
       border: 1px solid #fde68a;
       color: #92400e;
     }
+
     .pc-summary-slots {
       display: flex;
       flex-direction: column;
@@ -1208,6 +1693,7 @@
       max-height: 310px;
       overflow-y: auto;
     }
+
     .pc-slot-row {
       display: flex;
       justify-content: space-between;
@@ -1220,15 +1706,21 @@
       font-size: 12px;
       cursor: pointer;
     }
-    .pc-slot-row:hover { border-color: var(--primary); }
+
+    .pc-slot-row:hover {
+      border-color: var(--primary);
+    }
+
     .pc-slot-row.filled {
       background: #f0fdf4;
       border-color: #bbf7d0;
     }
+
     .pc-slot-row.missing-req {
       background: #fef2f2;
       border-color: #fecaca;
     }
+
     .pc-addon-checks {
       background: #fffdf5;
       border: 1px solid #fde68a;
@@ -1239,6 +1731,7 @@
       gap: 8px;
       font-size: 12px;
     }
+
     .pc-addon-checks label {
       display: flex;
       align-items: flex-start;
@@ -1249,28 +1742,111 @@
     }
 
     @media (max-width: 768px) {
-      html, body { overflow-x: hidden; max-width: 100vw; }
-      .announcement-bar { font-size: 11px; padding: 8px 12px; flex-wrap: wrap; justify-content: center; text-align: center; gap: 6px; }
-      .header-container { flex-direction: column; align-items: stretch; padding: 12px 16px; gap: 10px; }
-      .search-box { max-width: 100%; }
-      .header-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-      .header-actions .location-pill { display: none; }
-      .header-actions button { justify-content: center; min-height: 40px; font-size: 12px !important; padding: 8px 10px !important; }
-      .header-actions .cart-btn { grid-column: 1 / -1; justify-content: center; }
 
-      .hero { padding: 28px 16px; }
-      .hero-content { grid-template-columns: 1fr; gap: 20px; }
-      .hero-text h2 { font-size: 26px; line-height: 1.2; }
-      .hero-text p { font-size: 14px; }
-      .hero-actions { flex-direction: column; gap: 10px; }
-      .hero-actions button { width: 100%; justify-content: center; text-align: center; padding: 12px 16px; font-size: 14px; min-height: 44px; }
-      .hero-card-preview { padding: 16px; }
+      html,
+      body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
 
-      .trust-section { padding: 0 16px; margin-top: 16px; }
-      .trust-grid { grid-template-columns: 1fr; gap: 10px; }
+      .announcement-bar {
+        font-size: 11px;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 6px;
+      }
 
-      .main-container { padding: 24px 16px; }
-      .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .header-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 16px;
+        gap: 10px;
+      }
+
+      .search-box {
+        max-width: 100%;
+      }
+
+      .header-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .header-actions .location-pill {
+        display: none;
+      }
+
+      .header-actions button {
+        justify-content: center;
+        min-height: 40px;
+        font-size: 12px !important;
+        padding: 8px 10px !important;
+      }
+
+      .header-actions .cart-btn {
+        grid-column: 1 / -1;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 28px 16px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .hero-text h2 {
+        font-size: 26px;
+        line-height: 1.2;
+      }
+
+      .hero-text p {
+        font-size: 14px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-actions button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 12px 16px;
+        font-size: 14px;
+        min-height: 44px;
+      }
+
+      .hero-card-preview {
+        padding: 16px;
+      }
+
+      .trust-section {
+        padding: 0 16px;
+        margin-top: 16px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .main-container {
+        padding: 24px 16px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
       .category-pills {
         display: flex;
         flex-wrap: nowrap;
@@ -1281,30 +1857,56 @@
         gap: 8px;
         scrollbar-width: none;
       }
-      .category-pills::-webkit-scrollbar { display: none; }
-      .category-btn { flex-shrink: 0; white-space: nowrap; min-height: 38px; }
 
-      .sub-filters-bar { flex-direction: column; align-items: stretch; gap: 10px; }
-      .sub-filters-bar select { width: 100%; min-height: 42px; }
-      .results-counter { margin-left: 0; width: 100%; text-align: left; }
+      .category-pills::-webkit-scrollbar {
+        display: none;
+      }
 
-      .products-grid { grid-template-columns: 1fr; gap: 16px; }
-      .btn-add-cart, .btn-quick-wa { min-height: 44px; }
+      .category-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+        min-height: 38px;
+      }
 
-      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .sub-filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
 
-      .cart-drawer { width: 100%; max-width: 100vw; }
-      .modal-overlay { padding: 12px; }
-      .checkout-modal { width: 100%; max-height: 92vh; overflow-y: auto; border-radius: 14px; }
-      .book-form-grid-2, .book-form-grid-2-1 { grid-template-columns: 1fr; gap: 12px; }
+      .sub-filters-bar select {
+        width: 100%;
+        min-height: 42px;
+      }
 
-      .pc-builder-section { padding: 0 16px; margin-top: 20px; }
-      .pc-builder-banner { padding: 18px 16px; }
-      .pc-builder-banner-text h2 { font-size: 20px; }
-      .pc-presets-bar { width: 100%; }
-      .btn-preset { flex: 1 1 auto; justify-content: center; }
-      .pc-builder-body { grid-template-columns: 1fr; padding: 14px; gap: 16px; }
+      .pc-builder-section {
+        padding: 0 16px;
+        margin-top: 20px;
+      }
+
+      .pc-builder-banner {
+        padding: 18px 16px;
+      }
+
+      .pc-builder-banner-text h2 {
+        font-size: 20px;
+      }
+
+      .pc-presets-bar {
+        width: 100%;
+      }
+
+      .btn-preset {
+        flex: 1 1 auto;
+        justify-content: center;
+      }
+
+      .pc-builder-body {
+        grid-template-columns: 1fr;
+        padding: 14px;
+        gap: 16px;
+      }
+
       .pc-steps-nav {
         display: flex;
         overflow-x: auto;
@@ -1313,29 +1915,110 @@
         gap: 8px;
         padding-bottom: 4px;
       }
-      .pc-steps-nav::-webkit-scrollbar { display: none; }
-      .pc-step-tab { min-width: 125px; flex-shrink: 0; }
-      .pc-wizard-stage { padding: 14px; }
-      .pc-option-item { flex-wrap: wrap; }
-      .pc-option-right { width: 100%; flex-direction: row; justify-content: space-between; align-items: center; border-top: 1px dashed #e2e8f0; padding-top: 8px; }
-      .pc-summary-panel { position: static; padding: 16px; }
 
-      .whatsapp-float { bottom: 14px; right: 14px; padding: 10px 14px; font-size: 13px; }
+      .pc-steps-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .pc-step-tab {
+        min-width: 125px;
+        flex-shrink: 0;
+      }
+
+      .pc-wizard-stage {
+        padding: 14px;
+      }
+
+      .pc-option-item {
+        flex-wrap: wrap;
+      }
+
+      .pc-option-right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px dashed #e2e8f0;
+        padding-top: 8px;
+      }
+
+      .pc-summary-panel {
+        position: static;
+        padding: 16px;
+      }
+
+      .results-counter {
+        margin-left: 0;
+        width: 100%;
+        text-align: left;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .btn-add-cart,
+      .btn-quick-wa {
+        min-height: 44px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+
+      .cart-drawer {
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      .modal-overlay {
+        padding: 12px;
+      }
+
+      .checkout-modal {
+        width: 100%;
+        max-height: 92vh;
+        overflow-y: auto;
+        border-radius: 14px;
+      }
+
+      .book-form-grid-2,
+      .book-form-grid-2-1 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .whatsapp-float {
+        bottom: 14px;
+        right: 14px;
+        padding: 10px 14px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Top Announcement Bar -->
   <div class="announcement-bar">
     <span class="pill">Click & Collect</span>
-    <span>Ritiro gratuito in negozio a Muro Leccese entro 2 ore | Spedizioni espresse in Salento e in tutta Italia</span>
+    <span>Ritiro gratuito in negozio a Muro Leccese entro 2 ore | Spedizioni espresse in Salento e in tutta
+      Italia</span>
   </div>
 
   <!-- Header -->
   <header>
     <div class="header-container">
-      <a href="#" class="brand-logo">
+      <a href="#" class="brand-logo" onclick="closePcBuilderSection()">
         <div class="brand-symbol">J</div>
         <div class="brand-text">
           <h1>Just in Time</h1>
@@ -1345,17 +2028,21 @@
 
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="Cerca tra 884 articoli: CPU, schede video, case, dissipatori, stampanti, codici...">
+        <input type="text" id="searchInput"
+          placeholder="Cerca tra 884 articoli: CPU, schede video, case, dissipatori, stampanti, codici...">
       </div>
 
       <div class="header-actions">
-        <button onclick="scrollToPcBuilder()" style="padding: 8px 14px; font-size: 13px; font-weight: 800; border-radius: 8px; border: 1px solid var(--primary); background: #eff6ff; cursor: pointer; color: var(--primary); display: flex; align-items: center; gap: 6px;">
+        <button id="headerPcBuilderBtn" onclick="openPcBuilderSection()"
+          style="padding: 8px 14px; font-size: 13px; font-weight: 800; border-radius: 8px; border: 1px solid var(--primary); background: #eff6ff; cursor: pointer; color: var(--primary); display: flex; align-items: center; gap: 6px;">
           🖥️ Configura PC
         </button>
-        <button onclick="openBookModal()" style="padding: 8px 14px; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid var(--accent); background: #fffdf5; cursor: pointer; color: #b45309; display: flex; align-items: center; gap: 6px;">
+        <button onclick="openBookModal()"
+          style="padding: 8px 14px; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid var(--accent); background: #fffdf5; cursor: pointer; color: #b45309; display: flex; align-items: center; gap: 6px;">
           📚 Libri Scolastici
         </button>
-        <button onclick="openRepairTrackerModal()" style="padding: 8px 14px; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid var(--border-color); background: #fff; cursor: pointer; color: var(--primary); display: flex; align-items: center; gap: 6px;">
+        <button onclick="openRepairTrackerModal()"
+          style="padding: 8px 14px; font-size: 13px; font-weight: 700; border-radius: 8px; border: 1px solid var(--border-color); background: #fff; cursor: pointer; color: var(--primary); display: flex; align-items: center; gap: 6px;">
           🔬 Stato Riparazione
         </button>
         <div class="location-pill">
@@ -1369,7 +2056,7 @@
   </header>
 
   <!-- Hero Banner -->
-  <section class="hero">
+  <section class="hero" id="heroBannerSection">
     <div class="hero-content">
       <div class="hero-text">
         <div class="hero-badges">
@@ -1378,12 +2065,16 @@
           <span class="hero-badge-item">🏛️ Fornitore PA MEPA</span>
         </div>
         <h2>La tua tecnologia di fiducia, <span>a portata di click</span></h2>
-        <p>Acquista online dagli 884 articoli del nostro listino ufficiale con la comodità del ritiro immediato a Muro Leccese o richiedi la spedizione a domicilio. Assistenza specializzata, assemblaggio PC, travaso dati e prenotazione testi scolastici ad anticipo zero garantiti in sede da Andrea.</p>
+        <p>Acquista online dagli 884 articoli del nostro listino ufficiale con la comodità del ritiro immediato a Muro
+          Leccese o richiedi la spedizione a domicilio. Assistenza specializzata, assemblaggio PC, travaso dati e
+          prenotazione testi scolastici ad anticipo zero garantiti in sede da Andrea.</p>
         <div class="hero-actions">
           <button class="btn-primary" onclick="filterCategory('all')">Esplora il Catalogo (888)</button>
-          <button class="btn-primary" style="background: #10b981; color: #ffffff;" onclick="scrollToPcBuilder()">🖥️ Configura il tuo PC Pezzo per Pezzo</button>
+          <button class="btn-primary" style="background: #10b981; color: #ffffff;" onclick="openPcBuilderSection()">🖥️
+            Configura il tuo PC Pezzo per Pezzo</button>
           <button class="btn-secondary" onclick="filterCategory('servizi')">Laboratorio & Riparazioni</button>
-          <button class="btn-school" onclick="openBookModal()">📚 Servizio Prenotazione Libri di Testo Scolastici (Medie e Superiori)</button>
+          <button class="btn-school" onclick="openBookModal()">📚 Servizio Prenotazione Libri di Testo Scolastici (Medie
+            e Superiori)</button>
         </div>
       </div>
 
@@ -1400,7 +2091,7 @@
   </section>
 
   <!-- Trust Badges -->
-  <section class="trust-section">
+  <section class="trust-section" id="trustBadgesSection">
     <div class="trust-grid">
       <div class="trust-card">
         <div class="trust-icon">🏬</div>
@@ -1433,32 +2124,46 @@
     </div>
   </section>
 
-  <!-- Configuratore PC Custom Passo-Passo -->
+  <!-- Configuratore PC Custom Passo-Passo (Sezione Dedicata a Parte con Drag & Drop) -->
   <section class="pc-builder-section" id="pcBuilderSection">
+    <div class="pc-back-bar">
+      <button type="button" class="btn-back-catalog" onclick="closePcBuilderSection()">
+        ← Torna al Catalogo Completo (888 articoli)
+      </button>
+      <div class="pc-dnd-hint-bar">
+        <span>🧲 <strong>Drag & Drop Attivo:</strong> Trascina un pezzo dalla lista a sinistra dentro il Riepilogo a destra per montarlo, oppure trascina un pezzo già montato nel cestino 🗑️ (o a sinistra) per smontarlo.</span>
+      </div>
+    </div>
+
     <div class="pc-builder-card">
       <div class="pc-builder-banner">
         <div class="pc-builder-banner-text">
           <h2>🖥️ Configuratore PC Custom Passo-Passo</h2>
-          <p>Assembla il tuo computer ideale scegliendo pezzo per pezzo dal listino reale. Ti guidiamo in <strong>10 passaggi</strong> con controllo automatico di compatibilità Socket, memoria DDR4/DDR5, dissipatore e calcolo del wattaggio alimentatore.</p>
+          <p>Assembla il tuo computer ideale scegliendo o trascinando i componenti dal listino reale. Ti guidiamo in <strong>10
+              passaggi</strong> con controllo automatico di compatibilità Socket, memoria DDR4/DDR5, dissipatore e
+            calcolo del wattaggio alimentatore.</p>
         </div>
         <div class="pc-presets-bar">
           <button class="btn-preset" onclick="loadPcPreset('office')">💼 Base Ufficio & Studio</button>
           <button class="btn-preset" onclick="loadPcPreset('gaming')">🎮 Base Gaming AM5 2K/4K</button>
           <button class="btn-preset" onclick="loadPcPreset('extreme')">🚀 Base Extreme 9800X3D</button>
-          <button class="btn-preset" style="background: rgba(220,38,38,0.25); border-color: rgba(252,165,165,0.5);" onclick="resetPcBuilder()">🔄 Azzera</button>
+          <button class="btn-preset" style="background: rgba(220,38,38,0.25); border-color: rgba(252,165,165,0.5);"
+            onclick="resetPcBuilder()">🔄 Azzera</button>
         </div>
       </div>
 
       <div class="pc-builder-body">
-        <!-- Colonna Sinistra: Navigazione 10 Step + Scelta Componente -->
-        <div>
+        <!-- Colonna Sinistra: Navigazione 10 Step + Scelta Componente (anche Drop Zone per smontare pezzi) -->
+        <div id="pcLeftWizardCol" ondragover="onPcAllowRemoveDrop(event)" ondrop="onPcDropRemove(event)">
           <div class="pc-steps-nav" id="pcStepsNav"></div>
 
           <div class="pc-wizard-stage">
             <div class="pc-stage-header">
               <div>
-                <div style="font-size: 12px; font-weight: 800; color: var(--primary); text-transform: uppercase;" id="pcStageStepLabel">Passo 1 di 10</div>
-                <h3 style="font-size: 19px; font-weight: 800; color: var(--text-main); margin-top: 2px;" id="pcStageTitle">1. Processore (CPU)</h3>
+                <div style="font-size: 12px; font-weight: 800; color: var(--primary); text-transform: uppercase;"
+                  id="pcStageStepLabel">Passo 1 di 10</div>
+                <h3 style="font-size: 19px; font-weight: 800; color: var(--text-main); margin-top: 2px;"
+                  id="pcStageTitle">1. Processore (CPU)</h3>
               </div>
               <div style="display: flex; gap: 8px; align-items: center;" id="pcStageExtraControls"></div>
             </div>
@@ -1466,12 +2171,16 @@
             <div class="pc-stage-guide" id="pcStageGuide"></div>
 
             <div class="pc-stage-toolbar">
-              <input type="text" id="pcStepSearch" placeholder="Filtra componente per nome, marca o codice (es. Ryzen, B850, 850W, 360)..." oninput="renderPcStepOptions()">
-              <label style="font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+              <input type="text" id="pcStepSearch"
+                placeholder="Filtra componente per nome, marca o codice (es. Ryzen, B850, 850W, 360)..."
+                oninput="renderPcStepOptions()">
+              <label
+                style="font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer;">
                 <input type="checkbox" id="pcOnlyCompatCheck" checked onchange="renderPcStepOptions()">
                 Solo compatibili
               </label>
-              <label style="font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+              <label
+                style="font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer;">
                 <input type="checkbox" id="pcOnlyStockCheck" checked onchange="renderPcStepOptions()">
                 Solo disponibili subito
               </label>
@@ -1487,12 +2196,14 @@
           </div>
         </div>
 
-        <!-- Colonna Destra: Riepilogo Build, Compatibilità, Watt & Checklist Anti-Dimenticanza -->
-        <div class="pc-summary-panel">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+        <!-- Colonna Destra: Riepilogo Build, Drop Zone Montaggio/Smontaggio, Compatibilità & Watt -->
+        <div class="pc-summary-panel" id="pcSummaryDropZone" ondragover="onPcAllowInstallDrop(event)" ondrop="onPcDropInstall(event, null)">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
             <div>
-              <h3 style="font-size: 17px; font-weight: 800; color: var(--primary);">📋 Riepilogo La Tua Build</h3>
-              <span style="font-size: 12px; color: var(--text-muted);" id="pcCompletionCounter">0 di 8 componenti base scelti</span>
+              <h3 style="font-size: 17px; font-weight: 800; color: var(--primary);">📋 Il Tuo PC (Drop Zone)</h3>
+              <span style="font-size: 12px; color: var(--text-muted);" id="pcCompletionCounter">0 di 8 componenti base
+                scelti</span>
             </div>
             <div style="text-align: right;">
               <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">STIMA CONSUMO</div>
@@ -1500,30 +2211,45 @@
             </div>
           </div>
 
+          <!-- Area Drop Montaggio Rapido -->
+          <div class="pc-drop-install-banner" id="pcInstallDropBanner" ondragover="onPcAllowInstallDrop(event)" ondrop="onPcDropInstall(event, null)">
+            📥 Trascina qui un componente dalla lista a sinistra per installarlo nel PC
+          </div>
+
           <div id="pcCompatStatusBox" class="pc-compat-box ok"></div>
 
           <div class="pc-summary-slots" id="pcSummarySlots"></div>
 
+          <!-- Area Drop Smontaggio / Rimozione Componente -->
+          <div class="pc-drop-remove-zone" id="pcTrashDropZone" ondragover="onPcAllowRemoveDrop(event)" ondrop="onPcDropRemove(event)">
+            🗑️ <strong>Zona Smontaggio:</strong> Trascina qui un componente già montato per toglierlo dal PC
+          </div>
+
           <!-- Checklist Rapida Non Dimenticare -->
           <div class="pc-addon-checks">
-            <div style="font-weight: 800; color: #92400e; font-size: 11px; text-transform: uppercase;">✅ Checklist Finale "Non Dimenticare":</div>
+            <div style="font-weight: 800; color: #92400e; font-size: 11px; text-transform: uppercase;">✅ Checklist
+              Finale "Non Dimenticare":</div>
             <label>
-              <input type="checkbox" id="pcQuickAssemblyCheck" onchange="togglePcQuickAddon('assembly', this.checked)" style="margin-top: 2px; accent-color: #d97706;">
+              <input type="checkbox" id="pcQuickAssemblyCheck" onchange="togglePcQuickAddon('assembly', this.checked)"
+                style="margin-top: 2px; accent-color: #d97706;">
               <span>🛠️ Assemblaggio Professionale, Cablaggio & Stress Test in Sede (+€35,00)</span>
             </label>
             <label>
-              <input type="checkbox" id="pcQuickWin11Check" onchange="togglePcQuickAddon('win11', this.checked)" style="margin-top: 2px; accent-color: #d97706;">
+              <input type="checkbox" id="pcQuickWin11Check" onchange="togglePcQuickAddon('win11', this.checked)"
+                style="margin-top: 2px; accent-color: #d97706;">
               <span>🪟 Licenza Originale Microsoft Windows 11 Pro 64-Bit IT (+€122,28)</span>
             </label>
           </div>
 
-          <div style="border-top: 2px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: baseline;">
+          <div
+            style="border-top: 2px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: baseline;">
             <span style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Totale PC (IVA incl.):</span>
             <span style="font-size: 26px; font-weight: 800; color: var(--primary);" id="pcTotalPrice">€0.00</span>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <button class="btn-checkout" onclick="addWholePcToCart()" style="background: var(--primary); color: #ffffff;">
+            <button class="btn-checkout" onclick="addWholePcToCart()"
+              style="background: var(--primary); color: #ffffff;">
               🛒 Aggiungi Tutti i Pezzi al Carrello
             </button>
             <button class="btn-checkout" onclick="sendPcBuildWhatsApp()" style="background: #25d366; color: #ffffff;">
@@ -1543,20 +2269,26 @@
     <div class="section-header">
       <div>
         <h2>Catalogo Ufficiale & Servizi</h2>
-        <p style="color: var(--text-muted); font-size: 14px;">Tutti gli 884 articoli del Listino Camoscio con disponibilità e prezzi aggiornati</p>
+        <p style="color: var(--text-muted); font-size: 14px;">Tutti gli 884 articoli del Listino Camoscio con
+          disponibilità e prezzi aggiornati</p>
       </div>
 
       <div class="category-pills">
         <button class="category-btn active" data-cat="all" onclick="filterCategory('all')">Tutti (888)</button>
-        <button class="category-btn" data-cat="componenti" onclick="filterCategory('componenti')">CPU, Schede & PC</button>
-        <button class="category-btn" data-cat="cooling" onclick="filterCategory('cooling')">Raffreddamento & Ventole</button>
+        <button class="category-btn" data-cat="componenti" onclick="filterCategory('componenti')">CPU, Schede &
+          PC</button>
+        <button class="category-btn" data-cat="cooling" onclick="filterCategory('cooling')">Raffreddamento &
+          Ventole</button>
         <button class="category-btn" data-cat="case" onclick="filterCategory('case')">Case & Chassis</button>
-        <button class="category-btn" data-cat="alimentatori" onclick="filterCategory('alimentatori')">Alimentatori & UPS</button>
+        <button class="category-btn" data-cat="alimentatori" onclick="filterCategory('alimentatori')">Alimentatori &
+          UPS</button>
         <button class="category-btn" data-cat="gaming" onclick="filterCategory('gaming')">Gaming & Sim Racing</button>
         <button class="category-btn" data-cat="storage" onclick="filterCategory('storage')">SSD & Hard Disk</button>
-        <button class="category-btn" data-cat="stampa-reti" onclick="filterCategory('stampa-reti')">Stampa, Reti & Scanner</button>
+        <button class="category-btn" data-cat="stampa-reti" onclick="filterCategory('stampa-reti')">Stampa, Reti &
+          Scanner</button>
         <button class="category-btn" data-cat="scuola" onclick="filterCategory('scuola')">📚 Libri Scolastici</button>
-        <button class="category-btn" data-cat="servizi" onclick="filterCategory('servizi')">Laboratorio & Riparazioni</button>
+        <button class="category-btn" data-cat="servizi" onclick="filterCategory('servizi')">Laboratorio &
+          Riparazioni</button>
       </div>
     </div>
 
@@ -1625,7 +2357,8 @@
   </div>
 
   <!-- Floating WhatsApp Action -->
-  <a href="https://wa.me/393206025789?text=Ciao%20Andrea,%20ti%20contatto%20dal%20sito%20Just%20in%20Time" target="_blank" rel="noopener" class="whatsapp-floater">
+  <a href="https://wa.me/393206025789?text=Ciao%20Andrea,%20ti%20contatto%20dal%20sito%20Just%20in%20Time"
+    target="_blank" rel="noopener" class="whatsapp-floater">
     <span>💬</span>
     <span>Scrivi ad Andrea</span>
   </a>
@@ -1636,7 +2369,8 @@
       <div class="footer-col">
         <h4>Just in Time</h4>
         <p style="margin-bottom: 12px; color: #94a3b8;">di Benegiamo Andrea</p>
-        <p style="color: #94a3b8; line-height: 1.6;">Negozio e centro assistenza informatica, componentistica hardware, gaming, cartoleria e servizi digitali per cittadini e imprese del Salento.</p>
+        <p style="color: #94a3b8; line-height: 1.6;">Negozio e centro assistenza informatica, componentistica hardware,
+          gaming, cartoleria e servizi digitali per cittadini e imprese del Salento.</p>
       </div>
       <div class="footer-col">
         <h4>Sede & Contatti</h4>
@@ -1661,7 +2395,8 @@
         <ul>
           <li><a href="pages-legal/informativa-privacy-gdpr.html" target="_blank">Informativa Privacy (GDPR)</a></li>
           <li><a href="pages-legal/informativa-privacy-gdpr.html#cookie" target="_blank">Cookie Policy</a></li>
-          <li><a href="pages-legal/termini-condizioni-e-recesso.html" target="_blank">Termini di Vendita e Recesso</a></li>
+          <li><a href="pages-legal/termini-condizioni-e-recesso.html" target="_blank">Termini di Vendita e Recesso</a>
+          </li>
           <li><a href="pages-legal/ritiro-in-sede-e-spedizioni.html" target="_blank">Condizioni Ritiro in Sede</a></li>
         </ul>
       </div>
@@ -1680,59 +2415,85 @@
           <span style="font-size: 24px;">📚</span>
           <div>
             <h3 style="margin: 0; font-size: 18px;">Prenotazione Libri di Testo Scolastici</h3>
-            <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Medie e Superiori • Anticipo Zero • Colibrì System</span>
+            <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Medie e Superiori • Anticipo Zero
+              • Colibrì System</span>
           </div>
         </div>
         <button class="modal-close" onclick="closeBookModal()">&times;</button>
       </div>
       <div class="modal-body" style="padding: 24px;">
-        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; font-size: 13px; color: #1e40af; line-height: 1.5;">
+        <div
+          style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; font-size: 13px; color: #1e40af; line-height: 1.5;">
           <strong>🎒 Servizio Ufficiale Just in Time per il Salento:</strong><br>
-          Ordina tutti i libri per le scuole secondarie di I e II grado (Muro Leccese, Maglie, Poggiardo, Otranto, Scorrano, Tricase, ecc.).<br>
-          • <strong>Anticipo Zero:</strong> paghi al ritiro in negozio in Via Corsica 151 man mano che i testi arrivano.<br>
+          Ordina tutti i libri per le scuole secondarie di I e II grado (Muro Leccese, Maglie, Poggiardo, Otranto,
+          Scorrano, Tricase, ecc.).<br>
+          • <strong>Anticipo Zero:</strong> paghi al ritiro in negozio in Via Corsica 151 man mano che i testi
+          arrivano.<br>
           • <strong>Servizio Colibrì System:</strong> copertine protettive trasparenti e igieniche saldate su misura.
         </div>
 
         <form id="bookReservationForm" onsubmit="submitBookReservation(event)">
           <div class="book-form-grid-2">
             <div>
-              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Nome e Cognome Genitore/Studente *</label>
-              <input type="text" id="bookStudentName" required placeholder="Mario Rossi" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+              <label
+                style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Nome
+                e Cognome Genitore/Studente *</label>
+              <input type="text" id="bookStudentName" required placeholder="Mario Rossi"
+                style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
             </div>
             <div>
-              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Cellulare / WhatsApp *</label>
-              <input type="tel" id="bookPhone" required placeholder="320 1234567" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+              <label
+                style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Cellulare
+                / WhatsApp *</label>
+              <input type="tel" id="bookPhone" required placeholder="320 1234567"
+                style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
             </div>
           </div>
 
           <div class="book-form-grid-2-1">
             <div>
-              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Istituto Scolastico *</label>
-              <input type="text" id="bookSchool" required placeholder="Es. Liceo Capece Maglie / Medie Muro L." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+              <label
+                style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Istituto
+                Scolastico *</label>
+              <input type="text" id="bookSchool" required placeholder="Es. Liceo Capece Maglie / Medie Muro L."
+                style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
             </div>
             <div>
-              <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Classe e Sez. *</label>
-              <input type="text" id="bookGrade" required placeholder="Es. 1A, 2B, 3 Sc." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+              <label
+                style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Classe
+                e Sez. *</label>
+              <input type="text" id="bookGrade" required placeholder="Es. 1A, 2B, 3 Sc."
+                style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; box-sizing: border-box;">
             </div>
           </div>
 
           <div style="margin-bottom: 14px;">
-            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Elenco Libri di Testo (Incolla lista o Codici ISBN o scrivi 'Lista completa') *</label>
-            <textarea id="bookListText" required rows="4" placeholder="Incolla l'elenco dei libri oppure scrivi 'Lista completa adottata dalla scuola' o le materie richieste..." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+            <label
+              style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main);">Elenco
+              Libri di Testo (Incolla lista o Codici ISBN o scrivi 'Lista completa') *</label>
+            <textarea id="bookListText" required rows="4"
+              placeholder="Incolla l'elenco dei libri oppure scrivi 'Lista completa adottata dalla scuola' o le materie richieste..."
+              style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
           </div>
 
-          <div style="margin-bottom: 20px; background: #fffdf5; border: 1px solid #fde68a; border-radius: 8px; padding: 12px;">
-            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 13px; color: #78350f;">
-              <input type="checkbox" id="bookColibriCheck" checked style="margin-top: 3px; accent-color: #d97706; width: 16px; height: 16px;">
-              <span><strong>Servizio Colibrì System:</strong> Richiedi la foderatura protettiva trasparente saldata su misura per tutti i volumi ritirati.</span>
+          <div
+            style="margin-bottom: 20px; background: #fffdf5; border: 1px solid #fde68a; border-radius: 8px; padding: 12px;">
+            <label
+              style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 13px; color: #78350f;">
+              <input type="checkbox" id="bookColibriCheck" checked
+                style="margin-top: 3px; accent-color: #d97706; width: 16px; height: 16px;">
+              <span><strong>Servizio Colibrì System:</strong> Richiedi la foderatura protettiva trasparente saldata su
+                misura per tutti i volumi ritirati.</span>
             </label>
           </div>
 
           <div style="display: flex; gap: 10px; flex-direction: column;">
-            <button type="submit" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; padding: 14px 20px; border-radius: 30px; font-weight: 800; font-size: 15px; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">
+            <button type="submit"
+              style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; padding: 14px 20px; border-radius: 30px; font-weight: 800; font-size: 15px; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">
               <span>💬</span> Invia Prenotazione ad Andrea su WhatsApp (Anticipo Zero)
             </button>
-            <button type="button" onclick="filterCategory('scuola'); closeBookModal();" style="background: transparent; color: var(--text-muted); border: none; font-size: 13px; text-decoration: underline; cursor: pointer; padding: 6px;">
+            <button type="button" onclick="filterCategory('scuola'); closeBookModal();"
+              style="background: transparent; color: var(--text-muted); border: none; font-size: 13px; text-decoration: underline; cursor: pointer; padding: 6px;">
               Visualizza scheda servizio nel catalogo
             </button>
           </div>
@@ -1750,11 +2511,14 @@
       </div>
       <div class="modal-body" style="padding: 24px;">
         <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
-          Inserisci il numero di scheda rilasciato al banco (es. <code>LAB-2026-0012</code>) per verificare in tempo reale lo stato del tuo computer o dispositivo.
+          Inserisci il numero di scheda rilasciato al banco (es. <code>LAB-2026-0012</code>) per verificare in tempo
+          reale lo stato del tuo computer o dispositivo.
         </p>
         <div style="display: flex; gap: 8px; margin-bottom: 20px;">
-          <input type="text" id="trackTicketInput" placeholder="Codice Scheda (es. LAB-2026-0012)" style="flex: 1; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-weight: bold; font-family: monospace; font-size: 15px; text-transform: uppercase;">
-          <button class="btn-modal-confirm" onclick="trackRepairTicket()" style="white-space: nowrap; padding: 0 18px;">Cerca</button>
+          <input type="text" id="trackTicketInput" placeholder="Codice Scheda (es. LAB-2026-0012)"
+            style="flex: 1; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-weight: bold; font-family: monospace; font-size: 15px; text-transform: uppercase;">
+          <button class="btn-modal-confirm" onclick="trackRepairTicket()"
+            style="white-space: nowrap; padding: 0 18px;">Cerca</button>
         </div>
         <div id="repairTrackerResult"></div>
       </div>
@@ -1793,17 +2557,20 @@
           </div>
           <div class="form-group form-full">
             <label>Note per Andrea (opzionale)</label>
-            <input type="text" id="custNotes" placeholder="Es. orario di ritiro preferito, modello PC per verifica compatibilità...">
+            <input type="text" id="custNotes"
+              placeholder="Es. orario di ritiro preferito, modello PC per verifica compatibilità...">
           </div>
         </div>
 
         <div class="checkout-step-title">2. Modalità di Pagamento</div>
         <div class="payment-options-grid">
-          <label class="payment-option-card selected" id="card-pos_on_pickup" onclick="selectPaymentCard('pos_on_pickup')">
+          <label class="payment-option-card selected" id="card-pos_on_pickup"
+            onclick="selectPaymentCard('pos_on_pickup')">
             <input type="radio" name="paymentOption" value="pos_on_pickup" checked>
             <div class="payment-card-content">
               <h5>🏪 Al Ritiro in Negozio (Contanti o POS) <span class="payment-badge">Zero Commissioni</span></h5>
-              <p>Ritira in Via Corsica 151 a Muro Leccese e paga direttamente al banco in contanti o con carta (Bancomat/SumUp).</p>
+              <p>Ritira in Via Corsica 151 a Muro Leccese e paga direttamente al banco in contanti o con carta
+                (Bancomat/SumUp).</p>
             </div>
           </label>
 
@@ -1811,7 +2578,8 @@
             <input type="radio" name="paymentOption" value="stripe">
             <div class="payment-card-content">
               <h5>💳 Carta di Credito / Debito Online o PayByLink</h5>
-              <p>Paga in sicurezza con Visa, Mastercard, Postepay, Apple Pay o ricevi il link di pagamento rapido via WhatsApp.</p>
+              <p>Paga in sicurezza con Visa, Mastercard, Postepay, Apple Pay o ricevi il link di pagamento rapido via
+                WhatsApp.</p>
             </div>
           </label>
 
@@ -1819,7 +2587,8 @@
             <input type="radio" name="paymentOption" value="bank_transfer">
             <div class="payment-card-content">
               <h5>🏛️ Bonifico Bancario Anticipato</h5>
-              <p>Ti verranno fornite le coordinate bancarie (IBAN) di Just in Time per effettuare il bonifico prima del ritiro/spedizione.</p>
+              <p>Ti verranno fornite le coordinate bancarie (IBAN) di Just in Time per effettuare il bonifico prima del
+                ritiro/spedizione.</p>
             </div>
           </label>
         </div>
@@ -2027,6 +2796,7 @@
     }
 
     function filterCategory(cat) {
+      closePcBuilderSection();
       currentCategory = cat;
       document.querySelectorAll('.category-btn').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
@@ -2505,9 +3275,131 @@
       isVirtual: true
     };
 
+    let pcDragPayload = null;
+
+    function openPcBuilderSection() {
+      const builderSec = document.getElementById('pcBuilderSection');
+      const catSec = document.getElementById('catalogoSection');
+      const heroSec = document.getElementById('heroBannerSection');
+      const trustSec = document.getElementById('trustBadgesSection');
+      if (builderSec) builderSec.classList.add('active-view');
+      if (catSec) catSec.style.display = 'none';
+      if (heroSec) heroSec.style.display = 'none';
+      if (trustSec) trustSec.style.display = 'none';
+      updatePcBuilderUI();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      try { history.replaceState(null, '', '#pcBuilderSection'); } catch (e) {}
+    }
+
+    function closePcBuilderSection() {
+      const builderSec = document.getElementById('pcBuilderSection');
+      const catSec = document.getElementById('catalogoSection');
+      const heroSec = document.getElementById('heroBannerSection');
+      const trustSec = document.getElementById('trustBadgesSection');
+      if (builderSec) builderSec.classList.remove('active-view');
+      if (catSec) catSec.style.display = '';
+      if (heroSec) heroSec.style.display = '';
+      if (trustSec) trustSec.style.display = '';
+      try {
+        if (location.hash === '#pcBuilderSection') {
+          history.replaceState(null, '', location.pathname + location.search);
+        }
+      } catch (e) {}
+    }
+
     function scrollToPcBuilder() {
-      const el = document.getElementById('pcBuilderSection');
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      openPcBuilderSection();
+    }
+
+    function onPcOptionDragStart(e, stepKey, sku) {
+      pcDragPayload = { mode: 'install', stepKey, sku };
+      if (e.dataTransfer) {
+        e.dataTransfer.effectAllowed = 'copyMove';
+        e.dataTransfer.setData('text/plain', JSON.stringify(pcDragPayload));
+      }
+      if (e.currentTarget) e.currentTarget.classList.add('is-dragging');
+      const installBanner = document.getElementById('pcInstallDropBanner');
+      if (installBanner) {
+        installBanner.classList.add('drag-active');
+        installBanner.innerHTML = '📥 <strong>Rilascia qui il componente per installarlo nel PC!</strong>';
+      }
+      const targetSlot = document.querySelector(`.pc-slot-row[data-step="${stepKey}"]`);
+      if (targetSlot) targetSlot.classList.add('drag-over-slot');
+    }
+
+    function onPcSlotDragStart(e, stepKey) {
+      if (!pcBuild[stepKey]) {
+        e.preventDefault();
+        return;
+      }
+      pcDragPayload = { mode: 'remove', stepKey };
+      if (e.dataTransfer) {
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', JSON.stringify(pcDragPayload));
+      }
+      if (e.currentTarget) e.currentTarget.classList.add('is-dragging');
+      const trashZone = document.getElementById('pcTrashDropZone');
+      if (trashZone) {
+        trashZone.classList.add('drag-remove-active');
+        trashZone.innerHTML = '🗑️ <strong>Rilascia qui (o nella colonna di sinistra) per SMONTARE il componente dal PC!</strong>';
+      }
+    }
+
+    function onPcDragEnd() {
+      document.querySelectorAll('.is-dragging, .drag-over-slot').forEach(el => {
+        el.classList.remove('is-dragging', 'drag-over-slot');
+      });
+      const installBanner = document.getElementById('pcInstallDropBanner');
+      if (installBanner) {
+        installBanner.classList.remove('drag-active');
+        installBanner.innerHTML = '📥 Trascina qui un componente dalla lista a sinistra per installarlo nel PC';
+      }
+      const trashZone = document.getElementById('pcTrashDropZone');
+      if (trashZone) {
+        trashZone.classList.remove('drag-remove-active');
+        trashZone.innerHTML = '🗑️ <strong>Zona Smontaggio:</strong> Trascina qui un componente già montato per toglierlo dal PC';
+      }
+      pcDragPayload = null;
+    }
+
+    function onPcAllowInstallDrop(e) {
+      if (pcDragPayload && pcDragPayload.mode === 'install') {
+        e.preventDefault();
+        if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy';
+      }
+    }
+
+    function onPcDropInstall(e, targetStepKey) {
+      e.preventDefault();
+      e.stopPropagation();
+      let payload = pcDragPayload;
+      if (!payload && e.dataTransfer) {
+        try { payload = JSON.parse(e.dataTransfer.getData('text/plain')); } catch (err) {}
+      }
+      onPcDragEnd();
+      if (payload && payload.mode === 'install' && payload.stepKey && payload.sku) {
+        selectPcPart(payload.stepKey, payload.sku);
+      }
+    }
+
+    function onPcAllowRemoveDrop(e) {
+      if (pcDragPayload && pcDragPayload.mode === 'remove') {
+        e.preventDefault();
+        if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
+      }
+    }
+
+    function onPcDropRemove(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      let payload = pcDragPayload;
+      if (!payload && e.dataTransfer) {
+        try { payload = JSON.parse(e.dataTransfer.getData('text/plain')); } catch (err) {}
+      }
+      onPcDragEnd();
+      if (payload && payload.mode === 'remove' && payload.stepKey) {
+        clearPcStep(payload.stepKey);
+      }
     }
 
     function getCpuSocket(cpu) {
@@ -2758,7 +3650,8 @@
           const stockLabel = item.isVirtual ? item.avail : (item.stock > 0 ? `Disponibile (${item.stock} pz)` : 'Su ordinazione (24/48h)');
           const priceLabel = item.price === 0 ? '€0.00 (Incluso)' : `€${item.price.toFixed(2)}`;
           return `
-            <div class="pc-option-item ${isSel ? 'selected' : ''}" onclick="selectPcPart('${step.key}', '${item.sku}')">
+            <div class="pc-option-item ${isSel ? 'selected' : ''}" draggable="true" ondragstart="onPcOptionDragStart(event, '${step.key}', '${item.sku}')" ondragend="onPcDragEnd()" onclick="selectPcPart('${step.key}', '${item.sku}')" title="Trascina nel riepilogo a destra o clicca per selezionare">
+              <span class="pc-drag-handle" title="Trascina nel PC">⠿</span>
               <div class="pc-option-thumb" style="font-size: 22px; background: ${isSel ? '#d1fae5' : '#f1f5f9'};">${isSel ? '✅' : step.icon}</div>
               <div class="pc-option-info">
                 <div class="pc-option-title">${item.title}</div>
@@ -2770,7 +3663,7 @@
               </div>
               <div class="pc-option-right">
                 <div class="pc-option-price">${priceLabel}</div>
-                <button type="button" class="btn-pick-part">${isSel ? '✓ Selezionato' : 'Scegli'}</button>
+                <button type="button" class="btn-pick-part">${isSel ? '✓ Montato' : '🧲 Trascina / Scegli'}</button>
               </div>
             </div>
           `;
@@ -2907,11 +3800,12 @@
         const rowClass = item ? 'filled' : (st.required ? 'missing-req' : '');
         const priceStr = item ? (item.price === 0 ? 'Incluso' : `€${(item.price * qty).toFixed(2)}`) : (st.required ? 'Manca' : 'Opz.');
         return `
-          <div class="pc-slot-row ${rowClass}" onclick="goToPcStep(${idx})" title="Clicca per modificare ${st.title}">
+          <div class="pc-slot-row ${rowClass}" data-step="${st.key}" ${item ? 'draggable="true"' : ''} ondragstart="onPcSlotDragStart(event, '${st.key}')" ondragend="onPcDragEnd()" ondragover="onPcAllowInstallDrop(event)" ondrop="onPcDropInstall(event, '${st.key}')" onclick="goToPcStep(${idx})" title="${item ? 'Trascina nel cestino 🗑️ per togliere oppure clicca per cambiare' : 'Trascina qui un componente o clicca per scegliere'}">
+            ${item ? '<span class="pc-drag-handle" title="Trascina fuori per smontare">⠿</span>' : ''}
             <div style="min-width: 0; flex: 1;">
               <div style="font-weight: 800; color: var(--text-main);">${st.num}. ${st.icon} ${st.shortTitle}</div>
               <div style="color: ${item ? '#065f46' : 'var(--text-muted)'}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                ${item ? `${qty > 1 ? qty + 'x ' : ''}${item.title}` : 'Clicca per scegliere...'}
+                ${item ? `${qty > 1 ? qty + 'x ' : ''}${item.title}` : 'Trascina qui o clicca per scegliere...'}
               </div>
             </div>
             <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
@@ -3120,6 +4014,13 @@
     applyCatalogFilters(true);
     updateCartUI();
     updatePcBuilderUI();
+    if (location.hash === '#pcBuilderSection' || location.pathname.endsWith('configuratore.html')) {
+      openPcBuilderSection();
+    }
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#pcBuilderSection') openPcBuilderSection();
+    });
   </script>
 </body>
+
 </html>
