@@ -1414,10 +1414,14 @@
 
     .pc-builder-body {
       display: grid;
-      grid-template-columns: 1.65fr 1fr;
+      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
       gap: 24px;
       padding: 24px;
       background: #f8fafc;
+    }
+    .pc-builder-body > div {
+      min-width: 0;
+      max-width: 100%;
     }
 
     .pc-steps-nav {
@@ -1917,9 +1921,37 @@
       }
 
       .pc-builder-body {
-        grid-template-columns: 1fr;
-        padding: 14px;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 12px;
         gap: 16px;
+      }
+
+      .pc-wizard-stage,
+      .pc-summary-panel,
+      .pc-builder-card,
+      #pcLeftWizardCol {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .pc-stage-toolbar input {
+        min-width: 0;
+        width: 100%;
+      }
+
+      #pcStageExtraControls,
+      #pcStageExtraControls label,
+      #pcStageExtraControls select {
+        max-width: 100%;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+      }
+
+      .pc-option-title,
+      .pc-option-meta {
+        word-break: break-word;
+        overflow-wrap: anywhere;
       }
 
       .pc-steps-nav {
