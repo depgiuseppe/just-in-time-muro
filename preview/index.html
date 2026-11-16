@@ -2942,7 +2942,9 @@
         requestAnimationFrame(() => {
           const firstCard = document.querySelector('#productsGrid .product-card') || document.getElementById('productsGrid') || document.getElementById('catalogoSection');
           if (firstCard) {
-            const top = firstCard.getBoundingClientRect().top + window.scrollY - 20;
+            const headerEl = document.querySelector('header');
+            const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 80;
+            const top = firstCard.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
             window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
           }
         });
