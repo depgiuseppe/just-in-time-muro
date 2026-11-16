@@ -2125,7 +2125,7 @@
   </section>
 
   <!-- Configuratore PC Custom Passo-Passo (Sezione Dedicata a Parte con Drag & Drop) -->
-  <section class="pc-builder-section" id="pcBuilderSection">
+  <section class="pc-builder-section" id="pcBuilderSection" style="display: none;">
     <div class="pc-back-bar">
       <button type="button" class="btn-back-catalog" onclick="closePcBuilderSection()">
         ← Torna al Catalogo Completo (888 articoli)
@@ -3282,13 +3282,15 @@
       const catSec = document.getElementById('catalogoSection');
       const heroSec = document.getElementById('heroBannerSection');
       const trustSec = document.getElementById('trustBadgesSection');
-      if (builderSec) builderSec.classList.add('active-view');
+      if (builderSec) {
+        builderSec.classList.add('active-view');
+        builderSec.style.display = 'block';
+      }
       if (catSec) catSec.style.display = 'none';
       if (heroSec) heroSec.style.display = 'none';
       if (trustSec) trustSec.style.display = 'none';
       updatePcBuilderUI();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      try { history.replaceState(null, '', '#pcBuilderSection'); } catch (e) {}
     }
 
     function closePcBuilderSection() {
@@ -3296,12 +3298,15 @@
       const catSec = document.getElementById('catalogoSection');
       const heroSec = document.getElementById('heroBannerSection');
       const trustSec = document.getElementById('trustBadgesSection');
-      if (builderSec) builderSec.classList.remove('active-view');
+      if (builderSec) {
+        builderSec.classList.remove('active-view');
+        builderSec.style.display = 'none';
+      }
       if (catSec) catSec.style.display = '';
       if (heroSec) heroSec.style.display = '';
       if (trustSec) trustSec.style.display = '';
       try {
-        if (location.hash === '#pcBuilderSection') {
+        if (location.hash) {
           history.replaceState(null, '', location.pathname + location.search);
         }
       } catch (e) {}
@@ -4014,12 +4019,11 @@
     applyCatalogFilters(true);
     updateCartUI();
     updatePcBuilderUI();
-    if (location.hash === '#pcBuilderSection' || location.pathname.endsWith('configuratore.html')) {
+    if (location.pathname.endsWith('configuratore.html')) {
       openPcBuilderSection();
+    } else {
+      closePcBuilderSection();
     }
-    window.addEventListener('hashchange', () => {
-      if (location.hash === '#pcBuilderSection') openPcBuilderSection();
-    });
   </script>
 </body>
 
