@@ -1557,8 +1557,8 @@
     "ean": "4710483773334",
     "img": "assets/images/camoscio/COCGRFZA85.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Cougar — DISSIPATORI ARIA. Codice Produttore: CGR-FZA85 • EAN: 4710483773334"
   },
   {
@@ -1777,8 +1777,8 @@
     "ean": "4710483776564",
     "img": "assets/images/camoscio/COCGRPSDELRGBW360.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Cougar — DISSIPATORI LIQUIDO. Codice Produttore: CGR-PSDELRGB-W-360 • EAN: 4710483776564"
   },
   {
@@ -1975,8 +1975,8 @@
     "ean": "4710483778087",
     "img": "assets/images/camoscio/COCGRSPOBLB.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Cougar — SEDIA COUGAR. Codice Produttore: CGR-SPO-BLB • EAN: 4710483778087"
   },
   {
@@ -1997,8 +1997,8 @@
     "ean": "4711649770037",
     "img": "assets/images/camoscio/COCGRSPOWHW.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Cougar — SEDIA COUGAR. Codice Produttore: CGR-SPO-WHW • EAN: 4711649770037"
   },
   {
@@ -2437,8 +2437,8 @@
     "ean": "5032037281980",
     "img": "assets/images/camoscio/CPUICU7265KFBOX.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Intel — INTEL CORE ULTRA ARROW LAKE S1851. Codice Produttore: BX80768265KF • EAN: 5032037281980"
   },
   {
@@ -2591,8 +2591,8 @@
     "ean": "4711027798578",
     "img": "assets/images/camoscio/CYPCP1350EPFCLCD.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "CyberPower — UPS CYBER POWER. Codice Produttore: CP1350EPFCLCD • EAN: 4711027798578"
   },
   {
@@ -2613,8 +2613,8 @@
     "ean": "4711027798615",
     "img": "assets/images/camoscio/CYPCP1600EPFCLCD.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "CyberPower — UPS CYBER POWER. Codice Produttore: CP1600EPFCLCD • EAN: 4711027798615"
   },
   {
@@ -3273,8 +3273,8 @@
     "ean": "4710578830218",
     "img": "assets/images/camoscio/DEZCTDADBSVM2BK3.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Dezctop — DEZCTOP DESK (componibili - motorizzate). Codice Produttore: DA-DBSVM2-BK3 • EAN: 4710578830218"
   },
   {
@@ -6001,8 +6001,8 @@
     "ean": "6933412721154",
     "img": "assets/images/camoscio/DPPL650D.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "DeepCool — ATX STANDARD. Codice Produttore: R-PL650D-FC0B-EU • EAN: 6933412721154"
   },
   {
@@ -6133,8 +6133,8 @@
     "ean": "6933412700043",
     "img": "assets/images/camoscio/DPZ5.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "DeepCool — ACCESSORI CUSTOM. Codice Produttore: DP-TIM-Z5-2 • EAN: 6933412700043"
   },
   {
@@ -6353,8 +6353,8 @@
     "ean": "7340172709640",
     "img": "assets/images/camoscio/FRFDCEPO1A02.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Fractal Design — FORMATO MID TOWER comp.rad 360. Codice Produttore: FD-C-EPO1A-02 • EAN: 7340172709640"
   },
   {
@@ -8773,8 +8773,8 @@
     "ean": "4711514504774",
     "img": "assets/images/camoscio/GAMATLASP6CG.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Gamdias — FORMATO MID TOWER comp.rad 360. Codice Produttore: ATLAS P6 CG • EAN: 4711514504774"
   },
   {
@@ -9103,8 +9103,8 @@
     "ean": "4711514505313",
     "img": "assets/images/camoscio/GAMCHIONEM5360.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Gamdias — DISSIPATORI LIQUIDO. Codice Produttore: CHIONE M5-360 • EAN: 4711514505313"
   },
   {
@@ -10445,8 +10445,8 @@
     "ean": "8719706028288",
     "img": "assets/images/camoscio/HDST4000VX016.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Seagate — HARD DISK INTERNI 3.5. Codice Produttore: ST4000VX016 • EAN: 8719706028288"
   },
   {
@@ -11633,8 +11633,8 @@
     "ean": "1220000352353",
     "img": "assets/images/camoscio/HYCSHYTEY70MM.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "HYTE — FORMATO MID TOWER comp.rad 360. Codice Produttore: CS-HYTE-Y70-MM • EAN: 1220000352353"
   },
   {
@@ -12403,8 +12403,8 @@
     "ean": "8056157881711",
     "img": "assets/images/camoscio/ITNBSD65.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "iTek — NOTEBOOK. Codice Produttore: ITNBSD65 • EAN: 8056157881711"
   },
   {
@@ -12557,8 +12557,8 @@
     "ean": "4711581490376",
     "img": "assets/images/camoscio/MBASRB850MPROAWIFI.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "ASRock — SOCKET AM5. Codice Produttore: B850M PRO-A WIFI • EAN: 4711581490376"
   },
   {
@@ -12799,8 +12799,8 @@
     "ean": "4711581490833",
     "img": "assets/images/camoscio/MBASRH810MH.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "ASRock — SOCKET 1851. Codice Produttore: H810M-H • EAN: 4711581490833"
   },
   {
@@ -12887,8 +12887,8 @@
     "ean": "4719072749927",
     "img": "assets/images/camoscio/MBMSIA520MAPRO.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — SOCKET AM4. Codice Produttore: A520M-A PRO • EAN: 4719072749927"
   },
   {
@@ -13415,8 +13415,8 @@
     "ean": "4897093961327",
     "img": "assets/images/camoscio/MCGLIDE13.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Mad Catz — TAPPETINI MOUSE & TASTIERA. Codice Produttore: SGHPNS13BL001-0 • EAN: 4897093961327"
   },
   {
@@ -14207,8 +14207,8 @@
     "ean": "8435693111139",
     "img": "assets/images/camoscio/MGMCPWXIT.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Mars Gaming — KIT TASTIERA MOUSE. Codice Produttore: MCPWXIT • EAN: 8435693111139"
   },
   {
@@ -15417,8 +15417,8 @@
     "ean": "6936358059084",
     "img": "assets/images/camoscio/PANBM4300ADW.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Pantum — STAMPANTI & MULTIFUNZIONE. Codice Produttore: BM4300ADW • EAN: 6936358059084"
   },
   {
@@ -15571,8 +15571,8 @@
     "ean": "6936358048293",
     "img": "assets/images/camoscio/PANCTLA2100HC.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Pantum — STAMPANTI ACCESSORI. Codice Produttore: CTL-A2100HC • EAN: 6936358048293"
   },
   {
@@ -15593,8 +15593,8 @@
     "ean": "6936358048323",
     "img": "assets/images/camoscio/PANCTLA2100HK.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Pantum — STAMPANTI ACCESSORI. Codice Produttore: CTL-A2100HK • EAN: 6936358048323"
   },
   {
@@ -15615,8 +15615,8 @@
     "ean": "6936358048309",
     "img": "assets/images/camoscio/PANCTLA2100HM.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Pantum — STAMPANTI ACCESSORI. Codice Produttore: PANCTLA2100HM • EAN: 6936358048309"
   },
   {
@@ -15637,8 +15637,8 @@
     "ean": "6936358048316",
     "img": "assets/images/camoscio/PANCTLA2100HY.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Pantum — STAMPANTI ACCESSORI. Codice Produttore: CTL-A2100HY • EAN: 6936358048316"
   },
   {
@@ -15967,8 +15967,8 @@
     "ean": "4715109924732",
     "img": "assets/images/camoscio/RAATREUSBT4BLACK.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Raijintek — FORMATO MID TOWER comp.rad 360. Codice Produttore: 0R20B00255 • EAN: 4715109924732"
   },
   {
@@ -15989,8 +15989,8 @@
     "ean": "4715109924756",
     "img": "assets/images/camoscio/RAATREUSBT7BLACK.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Raijintek — FORMATO MID TOWER comp.rad 360. Codice Produttore: 0R20B00258 • EAN: 4715109924756"
   },
   {
@@ -16253,8 +16253,8 @@
     "ean": "",
     "img": "assets/images/camoscio/RIPHDST2000VN003.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Seagate — VARI RIGENERATI. Codice Produttore: RIP ST2000VN003"
   },
   {
@@ -16319,8 +16319,8 @@
     "ean": "6930788486847",
     "img": "assets/images/camoscio/SAMAA40L.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "SAMA — DISSIPATORI ARIA. Codice Produttore: A40-XXWAYXOX-G • EAN: 6930788486847"
   },
   {
@@ -16495,8 +16495,8 @@
     "ean": "6930788404476",
     "img": "assets/images/camoscio/SAMAG1000BK.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "SAMA — ATX MODULARI. Codice Produttore: G1000-BKGFF001-EU • EAN: 6930788404476"
   },
   {
@@ -16891,8 +16891,8 @@
     "ean": "6930788487172",
     "img": "assets/images/camoscio/SAMAU60.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "SAMA — DISSIPATORI ARIA. Codice Produttore: U60-BKWNYXOX-G • EAN: 6930788487172"
   },
   {
@@ -17111,8 +17111,8 @@
     "ean": "6930788486915",
     "img": "assets/images/camoscio/SAMAX30.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "SAMA — DISSIPATORI ARIA. Codice Produttore: A30-BKWNYXOX-G • EAN: 6930788486915"
   },
   {
@@ -17287,8 +17287,8 @@
     "ean": "4042485369636",
     "img": "assets/images/camoscio/SCAPLOF8300ISE.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Plustek — SCANNER per FILM e FOTOGRAFIE. Codice Produttore: OF8300I SE • EAN: 4042485369636"
   },
   {
@@ -17309,8 +17309,8 @@
     "ean": "4042485089381",
     "img": "assets/images/camoscio/SCAPLOPA320E.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Plustek — SCANNER PIANI. Codice Produttore: A320E • EAN: 4042485089381"
   },
   {
@@ -17331,8 +17331,8 @@
     "ean": "4042485080029",
     "img": "assets/images/camoscio/SCAPLOPA390.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Plustek — SCANNER PIANI. Codice Produttore: A390 • EAN: 4042485080029"
   },
   {
@@ -17353,8 +17353,8 @@
     "ean": "4042485286223",
     "img": "assets/images/camoscio/SCAPLOPTICSLIM1180.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Plustek — SCANNER da SCRIVANIA. Codice Produttore: OpticSlim 1180 • EAN: 4042485286223"
   },
   {
@@ -17573,8 +17573,8 @@
     "ean": "4711711160537",
     "img": "assets/images/camoscio/THERCA11R00M1WN00.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Thermaltake — FORMATO MID TOWER. Codice Produttore: CA-11R-00M1WN-00 • EAN: 4711711160537"
   },
   {
@@ -17749,8 +17749,8 @@
     "ean": "4711475649736",
     "img": "assets/images/camoscio/THERGSCGM5MSASBB22.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Thermaltake — SISTEMA DI MOVIMENTO. Codice Produttore: GSC-GM5-MSASBB-22 • EAN: 4711475649736"
   },
   {
@@ -17793,8 +17793,8 @@
     "ean": "4711658544728",
     "img": "assets/images/camoscio/THERGSCR30CPASBB01.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Thermaltake — SEDUTE. Codice Produttore: GSC-R30-CPASBB-01 • EAN: 4711658544728"
   },
   {
@@ -17815,8 +17815,8 @@
     "ean": "4711475643703",
     "img": "assets/images/camoscio/THERGSCR50CPASBB01.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Thermaltake — SEDUTE. Codice Produttore: GSC-R50-CPASBB-01 • EAN: 4711475643703"
   },
   {
@@ -17991,8 +17991,8 @@
     "ean": "6935364089474",
     "img": "assets/images/camoscio/TPLARCHERC25.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "TP-Link — ROUTER e MODEM ROUTER WIRELESS. Codice Produttore: ARCHER C24 • EAN: 6935364089474"
   },
   {
@@ -18101,8 +18101,8 @@
     "ean": "1210002618519",
     "img": "assets/images/camoscio/TPLEAP225OUTDOOR.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "TP-Link — ACCESS POINT WIRELESS. Codice Produttore: EAP225-OUTDOOR • EAN: 1210002618519"
   },
   {
@@ -18585,8 +18585,8 @@
     "ean": "6977029650698",
     "img": "assets/images/camoscio/TRYXCF500FFM1EG0K.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "TRYX — FORMATO MID TOWER. Codice Produttore: C-F500F-FM1E-G0K • EAN: 6977029650698"
   },
   {
@@ -18915,8 +18915,8 @@
     "ean": "6977029650551",
     "img": "assets/images/camoscio/TRYXLS360ADM3MG0K.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "TRYX — DISSIPATORI LIQUIDO. Codice Produttore: L-S360A-DM3M-G0K • EAN: 6977029650551"
   },
   {
@@ -18981,8 +18981,8 @@
     "ean": "4711377344272",
     "img": "assets/images/camoscio/VGAMSIRTX50608GV2XOC.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — NVIDIA PCIe. Codice Produttore: RTX 5060 8G VENTUS 2X OC • EAN: 4711377344272"
   },
   {
@@ -19047,8 +19047,8 @@
     "ean": "4711377303927",
     "img": "assets/images/camoscio/VGAMSIRTX507012GAMTO.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — NVIDIA PCIe. Codice Produttore: RTX 5070 12G GAMING TRIO OC • EAN: 4711377303927"
   },
   {
@@ -19069,8 +19069,8 @@
     "ean": "4711377308229",
     "img": "assets/images/camoscio/VGAMSIRTX507012VE2XO.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — NVIDIA PCIe. Codice Produttore: RTX 5070 12G VENTUS 2X OC • EAN: 4711377308229"
   },
   {
@@ -19091,8 +19091,8 @@
     "ean": "4711377301541",
     "img": "assets/images/camoscio/VGAMSIRTX5070T16GTO.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — NVIDIA PCIe. Codice Produttore: RTX 5070 Ti 16G GAMING TRIO OC • EAN: 4711377301541"
   },
   {
@@ -19113,8 +19113,8 @@
     "ean": "4711377301589",
     "img": "assets/images/camoscio/VGAMSIRTX5070T16GV3X.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — NVIDIA PCIe. Codice Produttore: RTX 5070 Ti 16G VENTUS 3X OC • EAN: 4711377301589"
   },
   {
@@ -19135,8 +19135,8 @@
     "ean": "4711377292160",
     "img": "assets/images/camoscio/VGAMSIRTX50816GAMTOC.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — NVIDIA PCIe. Codice Produttore: RTX 5080 16G GAMING TRIO OC • EAN: 4711377292160"
   },
   {
@@ -19157,8 +19157,8 @@
     "ean": "4711377423779",
     "img": "assets/images/camoscio/VGAMSIRTX50816V3XOCB.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "MSI — NVIDIA PCIe. Codice Produttore: RTX 5080 16G VENTUS 3X OC BLACK • EAN: 4711377423779"
   },
   {
@@ -19223,8 +19223,8 @@
     "ean": "5298003820175",
     "img": "assets/images/camoscio/VKAIRSL125B.jpg",
     "featured": false,
-    "avail": "Su ordinazione (24/48h)",
-    "availState": "order",
+    "avail": "In arrivo (24/48h)",
+    "availState": "incoming",
     "desc": "Valkyrie — DISSIPATORI ARIA. Codice Produttore: VK-AIRSL125B • EAN: 5298003820175"
   },
   {

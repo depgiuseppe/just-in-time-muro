@@ -166,8 +166,8 @@ def main():
             avail_text = f"In arrivo ({next_date})"
             avail_state = "incoming"
         else:
-            avail_text = "Su ordinazione (24/48h)"
-            avail_state = "order"
+            avail_text = "In arrivo (24/48h)"
+            avail_state = "incoming"
 
         products.append({
             "id": len(products) + 1,

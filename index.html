@@ -1238,6 +1238,21 @@
     .pc-builder-section.active-view {
       display: block;
     }
+    .pc-mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 150;
+      background: #0f4c81;
+      color: #ffffff;
+      padding: 10px 16px;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
     .pc-back-bar {
       display: flex;
       justify-content: space-between;
@@ -1947,6 +1962,59 @@
         padding: 16px;
       }
 
+      .pc-dnd-hint-bar,
+      .pc-drop-install-banner,
+      .pc-drop-remove-zone,
+      .pc-drag-handle {
+        display: none !important;
+      }
+
+      .pc-presets-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .btn-preset {
+        font-size: 11px;
+        padding: 8px 10px;
+        text-align: center;
+      }
+
+      .pc-options-list {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+      }
+
+      .btn-pick-part {
+        min-height: 40px;
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+
+      .pc-stage-nav-btns button {
+        flex: 1;
+        min-height: 44px;
+        justify-content: center;
+      }
+
+      #pcStepProgressText {
+        display: none;
+      }
+
+      .pc-builder-section.active-view {
+        padding-bottom: 84px;
+      }
+
+      body.pc-builder-open .pc-mobile-sticky-bar {
+        display: flex !important;
+      }
+
+      body.pc-builder-open .whatsapp-float {
+        bottom: 78px;
+      }
+
       .results-counter {
         margin-left: 0;
         width: 100%;
@@ -2033,7 +2101,7 @@
       </div>
 
       <div class="header-actions">
-        <button id="headerPcBuilderBtn" onclick="openPcBuilderSection()"
+        <button id="headerPcBuilderBtn" onclick="togglePcBuilderSection()"
           style="padding: 8px 14px; font-size: 13px; font-weight: 800; border-radius: 8px; border: 1px solid var(--primary); background: #eff6ff; cursor: pointer; color: var(--primary); display: flex; align-items: center; gap: 6px;">
           🖥️ Configura PC
         </button>
@@ -2261,6 +2329,17 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Barra Fissa Mobile in Basso (Totale + Salta al Riepilogo) -->
+    <div class="pc-mobile-sticky-bar" id="pcMobileStickyBar">
+      <div>
+        <div style="font-size: 11px; opacity: 0.85; font-weight: 600;" id="pcMobileStickyMeta">0/8 pezzi • ⚡ ~75W</div>
+        <div style="font-size: 18px; font-weight: 800;" id="pcMobileStickyPrice">€0.00</div>
+      </div>
+      <button type="button" onclick="document.getElementById('pcSummaryDropZone').scrollIntoView({ behavior: 'smooth', block: 'start' })" style="background: var(--accent); color: #000000; border: none; padding: 10px 16px; border-radius: 22px; font-size: 13px; font-weight: 800; cursor: pointer; white-space: nowrap;">
+        📋 Riepilogo ↓
+      </button>
     </div>
   </section>
 
@@ -3282,6 +3361,7 @@
       const catSec = document.getElementById('catalogoSection');
       const heroSec = document.getElementById('heroBannerSection');
       const trustSec = document.getElementById('trustBadgesSection');
+      const hdrBtn = document.getElementById('headerPcBuilderBtn');
       if (builderSec) {
         builderSec.classList.add('active-view');
         builderSec.style.display = 'block';
@@ -3289,6 +3369,12 @@
       if (catSec) catSec.style.display = 'none';
       if (heroSec) heroSec.style.display = 'none';
       if (trustSec) trustSec.style.display = 'none';
+      document.body.classList.add('pc-builder-open');
+      if (hdrBtn) {
+        hdrBtn.style.background = 'var(--primary)';
+        hdrBtn.style.color = '#ffffff';
+        hdrBtn.innerHTML = '🖥️ Chiudi Configura PC';
+      }
       updatePcBuilderUI();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -3298,6 +3384,7 @@
       const catSec = document.getElementById('catalogoSection');
       const heroSec = document.getElementById('heroBannerSection');
       const trustSec = document.getElementById('trustBadgesSection');
+      const hdrBtn = document.getElementById('headerPcBuilderBtn');
       if (builderSec) {
         builderSec.classList.remove('active-view');
         builderSec.style.display = 'none';
@@ -3305,11 +3392,26 @@
       if (catSec) catSec.style.display = '';
       if (heroSec) heroSec.style.display = '';
       if (trustSec) trustSec.style.display = '';
+      document.body.classList.remove('pc-builder-open');
+      if (hdrBtn) {
+        hdrBtn.style.background = '#eff6ff';
+        hdrBtn.style.color = 'var(--primary)';
+        hdrBtn.innerHTML = '🖥️ Configura PC';
+      }
       try {
         if (location.hash) {
           history.replaceState(null, '', location.pathname + location.search);
         }
       } catch (e) {}
+    }
+
+    function togglePcBuilderSection() {
+      const builderSec = document.getElementById('pcBuilderSection');
+      if (builderSec && builderSec.classList.contains('active-view')) {
+        closePcBuilderSection();
+      } else {
+        openPcBuilderSection();
+      }
     }
 
     function scrollToPcBuilder() {
@@ -3549,6 +3651,10 @@
           </button>
         `;
       }).join('');
+      const activeTab = nav.querySelector('.pc-step-tab.active');
+      if (activeTab && window.innerWidth <= 768) {
+        activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
     }
 
     function renderPcStepOptions() {
@@ -3610,8 +3716,7 @@
         if (compatFiltered.length > 0) candidates = compatFiltered;
       }
       if (onlyStock) {
-        const stockFiltered = candidates.filter(p => p.stock > 0);
-        if (stockFiltered.length > 0) candidates = stockFiltered;
+        candidates = candidates.filter(p => p.stock > 0);
       }
       if (q) {
         candidates = candidates.filter(p =>
@@ -3652,7 +3757,7 @@
         listEl.innerHTML = visibleSlice.map(item => {
           const isSel = selectedItem && selectedItem.sku === item.sku;
           const badge = getCompatBadgeText(step.key, item);
-          const stockLabel = item.isVirtual ? item.avail : (item.stock > 0 ? `Disponibile (${item.stock} pz)` : 'Su ordinazione (24/48h)');
+          const stockLabel = item.isVirtual ? item.avail : (item.stock > 0 ? `Disponibile (${item.stock} pz)` : (item.nextDate ? `In arrivo (${item.nextDate})` : 'In arrivo (24/48h)'));
           const priceLabel = item.price === 0 ? '€0.00 (Incluso)' : `€${item.price.toFixed(2)}`;
           return `
             <div class="pc-option-item ${isSel ? 'selected' : ''}" draggable="true" ondragstart="onPcOptionDragStart(event, '${step.key}', '${item.sku}')" ondragend="onPcDragEnd()" onclick="selectPcPart('${step.key}', '${item.sku}')" title="Trascina nel riepilogo a destra o clicca per selezionare">
@@ -3803,7 +3908,7 @@
         const item = pcBuild[st.key];
         const qty = (st.key === 'ram' && item) ? pcBuild.ramQty : 1;
         const rowClass = item ? 'filled' : (st.required ? 'missing-req' : '');
-        const priceStr = item ? (item.price === 0 ? 'Incluso' : `€${(item.price * qty).toFixed(2)}`) : (st.required ? 'Manca' : 'Opz.');
+        const priceStr = item ? (item.price === 0 ? 'Incluso' : `€${(item.price * qty).toFixed(2)}`) : (st.required ? 'Da scegliere' : 'Opz.');
         return `
           <div class="pc-slot-row ${rowClass}" data-step="${st.key}" ${item ? 'draggable="true"' : ''} ondragstart="onPcSlotDragStart(event, '${st.key}')" ondragend="onPcDragEnd()" ondragover="onPcAllowInstallDrop(event)" ondrop="onPcDropInstall(event, '${st.key}')" onclick="goToPcStep(${idx})" title="${item ? 'Trascina nel cestino 🗑️ per togliere oppure clicca per cambiare' : 'Trascina qui un componente o clicca per scegliere'}">
             ${item ? '<span class="pc-drag-handle" title="Trascina fuori per smontare">⠿</span>' : ''}
@@ -3826,6 +3931,10 @@
 
       const total = calculatePcTotalPrice();
       document.getElementById('pcTotalPrice').textContent = `€${total.toFixed(2)}`;
+      const stickyPrice = document.getElementById('pcMobileStickyPrice');
+      const stickyMeta = document.getElementById('pcMobileStickyMeta');
+      if (stickyPrice) stickyPrice.textContent = `€${total.toFixed(2)}`;
+      if (stickyMeta) stickyMeta.textContent = `${filledReq}/${reqSteps.length} pezzi • ⚡ ~${estimated}W`;
     }
 
     function calculatePcTotalPrice() {
